@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>최광희(KwangHee.Choi)</title>
+    <link rel="stylesheet" type="text/css" href="./css/choi.css" />
+    <script>
+        let cnt = 1;
+        function a() {
+            let writer = f.writer.value;
+            let pwd = f.pwd.value;
+            let content = f.content.value;
+            let el = mkDiv(writer, pwd, content);
+            let list = document.getElementById("list");
+            list.appendChild(el);
+            f.writer.value = "";
+            f.pwd.value = "";
+            f.content.value = "";
+        }
+        function mkDiv(writer, pwd, content) {
+            let newDiv = document.createElement("div");//새 div태그 생성  <div id="d_1" pwd='111'>
+            newDiv.id = "d_" + cnt;//생성한 div에 id 지정. d_cnt
+            newDiv.pwd = pwd;
+            let html = ""; //생성된 div에 출력될 내용
+            html += "<span class='writername' id='w_" + cnt + "'>" + writer + "</span><br/>";
+            html += "<textarea type='text' class='content' rows='4' cols='1' style='height: 70px' id='c_" + cnt + "'>" + content + "</textarea><br/>"
+            html += "<input type='button' class='revise' value='수정' onclick=editForm(" + cnt + ")>"; //editForm(2)
+            html += "<input type='button' value='삭제' onclick=del(" + cnt + ")>";
+            newDiv.innerHTML = html;
+            cnt++;
+            return newDiv;
+        }
+        function editForm(cnt) {
+            let editDiv = document.getElementById("d_" + cnt); //수정할 글의 div
+            let editForm = document.getElementById("editf");
+            editDiv.appendChild(editForm);
+            let writer = document.getElementById("w_" + cnt).innerHTML;
+            let content = document.getElementById("c_" + cnt).innerHTML;
+            document.getElementById("editwriter").value = writer;
+            document.getElementById("editcontent").value = content;
+            document.getElementById("editbtn").cnt = cnt;//버튼에 cnt속성을 추가해서, 수정 글번호를 저장
+            editForm.style.display = '';
+        }
+        function cancel() {
+            let editForm = document.getElementById("editf");
+            editForm.style.display = 'none';
+            document.getElementsByTagName("body")[0].appendChild(editForm);
+        }
+        function edit() {
+            let cnt = document.getElementById("editbtn").cnt;
+            let editDiv = document.getElementById("d_" + cnt);
+            let pwd2 = document.getElementById("editpwd").value;//수정폼에 입력한 비밀번호
+            if (editDiv.pwd != pwd2) {
+                alert("비밀번호 불일치. 수정불가");
+            } else {
+                let newWriter = document.getElementById("editwriter").value;
+                let newContent = document.getElementById("editcontent").value;
+                document.getElementById("w_" + cnt).innerHTML = newWriter;
+                document.getElementById("c_" + cnt).innerHTML = newContent;
+            }
+            document.getElementById("editwriter").value = "";
+            document.getElementById("editcontent").value = "";
+            document.getElementById("editpwd").value = "";
+            cancel();
+        }
+        function del(cnt) {
+            let pwd = prompt("비밀번호");
+            let delDiv = document.getElementById("d_" + cnt);
+            if (pwd == delDiv.pwd) {
+                document.getElementById("list").removeChild(delDiv);
+            } else {
+                alert("비밀번호 불일치. 삭제취소");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="mainsite">
+        <div><a href="https://www.youtube.com/">일단 버티조</a></div>
+        <div class="profile">
+            <img src="./images/choi/IMG_3008.jpg" width="150" height="200" alt="프로필 이미지">
+        </div>
+        <div>
+            <h3 class="myname">최광희 입니다.</h3>
+            <hr color="white" size="6px">
+        </div>
+        <div class="menubox">
+            <div>
+                <h5> 나의 MBTI 및 성격</h5>
+                    <textarea type="text" class="textbox"
+                        style="height: 80px;"> 저의 MBTI는 INFJ입니다. 성실하다고 많이 듣지만 귀찮아 할때도 많아요! 특출나게 잘하는건 딱히 없어서 항상 열심히 하려고 노력하는 성격입니다.</textarea>
+                    <label for="floatingInput"></label>
+            </div>
+        </div>
+        <div class="menubox">
+            <div>
+                <h5> 나의 장점</h5>
+                    <textarea type="text" class="textbox" style="height: 80px;"> 다른 사람의 이야기를 경청할줄 알며, 잘못된 점이 있을때 인정할줄 알고 고치려고 노력합니다.
+                            </textarea>
+                    <label for="floatingInput"></label>
+            </div>
+        </div>
+        <div class="menubox">
+            <h5> 나의 협업 스타일</h5>
+                <textarea type="text" class="textbox" style="height: 80px;"> 해봐야 알것 같습니다.
+                            </textarea>
+                <label for="floatingInput"></label>
+        </div>
+        <hr color="white" size="6px">
+        <h5>방명록</h5>
+        <form name="f">
+            <table id="t1">
+                <tr>
+                    <textarea type="text" class="content" id="content" rows="4" cols="1"
+                        style="height: 70px;"></textarea>
+                </tr>
+                <tr>
+                    <th class="writer">작성자</th>
+                    <td>
+                        <input type="text" name="writer" id="writer">
+                    </td>
+                    <th class="password">비밀번호</th>
+                    <td>
+                        <input type="password" name="pwd" id="pwd">
+                    </td>
+                    <td>
+                        <input type="button" class="submitbtn" value="작성" onclick="a()">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <hr color="white" size="10px" padding="0px">
+        <ul id="list">
+            
+        </ul>
+        <table id="editf" style="display: none;">
+            <tr>
+                <th class="revisecontent">내용</th>
+                <td>
+                    <input type="text" name="editcontent" id="editcontent">
+                </td>
+            </tr>
+            <th class="revisecontent">작성자</th>
+            <td>
+                <input type="text" name="editwriter" id="editwriter">
+            </td>
+            </tr>
+            <tr>
+                <th class="revisecontent">비밀번호</th>
+                <td>
+                    <input type="password" name="editpwd" id="editpwd">
+                </td>
+                <td>
+                    <input type="button" value="수정완료" id="editbtn" onclick="edit()">
+                    <input type="button" value="취소" id="cancelbtn" onclick="cancel()">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script type="module" src="./js/choi_firebase.js"></script>
+    <script type="module" src="./js/mini.js"></script>
+    </div>
+</body>
+
+</html>

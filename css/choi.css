@@ -1,0 +1,184 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+*{
+    font-family: 'Gowun Dodum', sans-serif;
+}
+body,
+button,
+dd,
+dl,
+dt,
+fieldset,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+legend,
+li,
+ol,
+p,
+select,
+table,
+td,
+textarea,
+th,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    line-height: 36px;
+}
+
+.mainsite {
+    background-color: rgb(240, 237, 255);
+    margin-top : 10px;
+}
+
+a {
+    background-color: rgb(240, 237, 255);
+    font-size: 30px;
+    text-decoration: none;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    color: rgb(129, 107, 255);
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.profile{
+    background-color: white;
+    padding-top: 8px;
+    padding-left: 285px;
+}
+.myname {
+    background-color: rgb(240, 237, 255);
+    color: rgb(129, 107, 255);
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+hr {
+    margin:0px;
+}
+.menubox {
+    margin: 5px;
+}
+
+.textbox {
+    word-wrap: break-word;
+    color: black;
+    width: 700px;
+    resize: none;
+    border-style: hidden;
+    margin: 5px;
+    border-radius: 7px;
+}
+
+h5 {
+    color : rgb(129, 107, 255);
+    margin: 10px 0px -5px 5px;
+}
+
+.visitor{
+    background-color: rgb(240, 237, 255);
+    padding : 5px 10px 5px 10px;
+    margin : 10px 0px 0px 0px;
+}
+
+.guestbook{
+    color : rgb(129, 107, 255);
+    font-size: small;
+    margin : 0px 0px -5px 5px;
+}
+
+.content {
+    word-wrap: break-word;
+    color: black;
+    width: 700px;
+    resize: none;
+    border-style: hidden;
+    margin: 5px;
+    border-radius: 7px;
+}
+
+.tablebox {
+    margin-top: -20px;
+}
+
+.writer {
+    color : black;
+    font-size: small;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.password {
+    font-size: small;
+    padding-left: 30px;
+    padding-top: 10px;
+}
+
+.submit {
+    font-size: small;
+    padding-left: 30px;
+    padding-top: 10px;
+}
+
+.commentbox {
+    word-wrap: break-word;
+    color: black;
+    width: 700px;
+    resize: none;
+    border-style: hidden;
+    margin: 5px;
+    border-radius: 7px;
+}
+
+.submitbtn{
+    margin-left: 160px;
+}
+
+#d_1 {
+    padding-bottom: 20px;
+}
+
+.revise {
+    margin-left: 616px;
+}
+
+.revisecontent{
+    font-size: 15px;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+#editbtn{
+    margin-left: 348px;
+}
+
+#canclebtn{
+    margin-right: 5px;
+}
+.writername{
+    font-size: 15px;
+    padding-left: 10px;
+}
