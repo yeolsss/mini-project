@@ -1,3 +1,6 @@
+/*font import*/
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&family=Space+Mono:wght@400;700&display=swap");
+
 /* Rest */
 body,
 div {
@@ -26,6 +29,7 @@ body {
   height: auto;
   padding: 2rem;
   box-sizing: border-box;
+  font-family: "Nanum Gothic Coding", cursive;
 }
 
 .wrapper {

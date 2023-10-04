@@ -26,7 +26,6 @@ const commentObj = {
   commentContents: "",
   regDate: "",
 };
-
 // 방명록 등록 날짜 만들기
 const getDate = () => {
   const today = new Date();
@@ -141,7 +140,7 @@ const commentCardSection = document.querySelector(".comment-card__section");
 let commentLimit = 5;
 // 방명록 더 보기 버튼
 const commentMoreBtn = document.querySelector("#more_btn");
-commentMoreBtn.addEventListener("click", event => {
+commentMoreBtn.addEventListener("click", async event => {
   event.preventDefault();
   commentLimit += 5;
   searchComment();
@@ -336,7 +335,6 @@ updateModelCloseBtn.addEventListener("click", event => {
 // modal에서 수정 버튼 눌렀을때
 updateModalConfirm.addEventListener("click", async event => {
   event.preventDefault();
-
   if (!validData(updateUserName) || !validData(updateInputPassword) || !validData(updateTextarea)) return;
 
   const getPassword = doc(db, "yeol_comment", currentCommentId);
