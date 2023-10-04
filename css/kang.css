@@ -1,0 +1,394 @@
+body {
+    width: 1500px;
+    background-color: #ffcccc;
+}
+
+/* 페이지 박스 부분*/
+.wrap {
+    display: block;
+    background-color: #f5f6fa;
+    width: 1100px;
+    position: absolute;
+    border-radius: 25px;
+    left: 15%;
+    top: 150px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    overflow: hidden; /* 높이가 넘칠 경우 스크롤이 생기지 않도록 설정 */
+}
+
+/* 페이지 헤더 부분 */
+.wrap #header {
+    margin-top: 80px;
+}
+
+.wrap #header .hd-team-name {
+    font-size: 3rem;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ff7675;
+}
+
+.wrap #header .hd-member-name {
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-align: center;
+    margin: 30px;
+}
+
+.wrap #header .hd-member-img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-image: url('../images/kang/1682240202623.jpg');
+    background-repeat: no-repeat;
+    background-position: 40% 57%;
+    margin: 5% 0 0 35%;
+}
+
+.wrap #header .hd-member-text {
+    text-align: center;
+    line-height: 20px;
+    font-weight: 600;
+    color: #7b7b7b;
+}
+
+/* 페이지 내용 부분 */
+.wrap #main {
+    width: 800px;
+    height: 1000px;
+    border-radius: 25px;
+    top: 15%;
+    left: 250px;
+    margin: 50px 0 0 250px;
+}
+
+.wrap #main h3 {
+    color: #ff7675;
+}
+
+.wrap #main article .itm-box {
+    width: 600px;
+    height: auto;
+    min-height: 120px;
+    background-color: #fad6d6;
+    margin: 10px 0 25px 0;
+    line-height: 20px;
+}
+
+.wrap #main article .itm-box p {
+    padding: 20px;
+    font-weight: 600;
+}
+
+.wrap #main hr {
+    width: 90%;
+    margin: 35px 0 0 -60px;
+    border: 1px solid #fad6d6;
+}
+
+/* 방명록 작성 부분 */
+.wrap #main #guest-book {
+    margin: 35px 0 0 0;
+}
+
+.wrap #main #guest-book h3 {
+    font-size: 1.5rem;
+}
+
+.wrap #main #guest-book #inputForm label {
+    display: none;
+}
+
+.wrap #main #guest-book #gb-name {
+    width: 250px;
+    height: 30px;
+    border-radius: 8px;
+    margin: 20px 10px 0 0;
+}
+
+.wrap #main #guest-book #gb-pwd {
+    width: 200px;
+    height: 30px;
+    border-radius: 8px;
+    margin: 20px 0 0 0;
+}
+
+.wrap #main #guest-book #gb-content {
+    border-radius: 8px;
+    margin: 20px 0 0 0;
+}
+
+.wrap #main #guest-book #check-msg {
+    position: absolute;
+    margin: 15px 0 0 0;
+    font-weight: 600;
+    color: #51534e;
+    font-size: 0.9rem;
+}
+
+.wrap #main #guest-book .btn-gb-apply {
+    margin: 15px 0 0 480px;
+    width: 100px;
+    height: 35px;
+    background-color: #ff7675;
+    border: 1px solid #ffcccc;
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* 방명록 댓글 부분 */
+.wrap #main #gb-comment-wrap {
+    margin: 20px 0 0 20px;
+}
+
+.wrap #main #gb-comment-wrap .gb-comment-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 20px 0 30px 0;
+}
+
+.wrap #main #gb-comment-wrap .comment-cnt {
+    color: #ff7675;
+}
+
+.wrap #main #gb-comment-wrap .gb-comment {
+    margin-bottom: 60px;
+}
+
+.wrap #main #gb-comment-wrap .gb-comment .comment-name {
+    font-weight: 600;
+    color: #ff7675;
+}
+
+.wrap #main #gb-comment-wrap .gb-comment .comment-name .edit-marker {
+    font-weight: 600;
+    color: #a66363;
+    font-size: 0.9rem;
+}
+
+.wrap #main #gb-comment-wrap .gb-comment .comment-date {
+    font-weight: 600;
+    color: #958f8f;
+}
+
+.wrap #main #gb-comment-wrap .gb-comment .btn-comment-update {
+    font-weight: 600;
+    color: #babdccdd;
+    cursor: pointer;
+    margin: 0 0 0 300px;
+    border: 0;
+    line-height: 20px;
+}
+
+.wrap #main #gb-comment-wrap .gb-comment .btn-comment-del {
+    font-weight: 600;
+    color: #babdccdd;
+    cursor: pointer;
+    margin: 0 0 0 5px;
+    border: 0;
+    line-height: 20px;
+}
+
+.wrap #main #gb-comment-wrap .gb-comment .btn-comment-update:hover {
+    color: #ff7675;
+}
+
+.wrap #main #gb-comment-wrap .gb-comment .btn-comment-del:hover {
+    color: #ff7675;
+}
+
+.wrap #main #gb-comment-wrap .gb-comment .comment-box {
+    width: 560px;
+    height: auto;
+    min-height: 150px;
+    border-radius: 10px;
+    background-color: #fad6d6;
+    margin: 10px 0 10px 0;
+    padding: 30px;
+    font-weight: 600;
+    color: #747474;
+    letter-spacing: 1.1px;
+    line-height: 120%;
+}
+
+/* 비밀번호 입력 모달창 */
+.wrap #main #pwd-modal-wrap {
+    position: fixed; /* Stay in place */
+    z-index: 9999; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    display: none;
+}
+
+.wrap #main #pwd-modal-wrap .comment-pwd-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 180px;
+    padding: 30px 30px;
+    margin: 100px auto;
+    border-radius: 10px;
+    background-color: #fff;
+    border: 3px solid #afafaf;
+}
+
+.wrap #main #pwd-modal-wrap .comment-pwd-modal label {
+    font-weight: 600;
+    color: #ff7675;
+}
+
+.wrap #main #pwd-modal-wrap .comment-pwd-modal #comment-pwd {
+    margin: 15px;
+    width: 200px;
+    height: 25px;
+    text-align: center;
+    border: 2px solid #cac5c5;
+    border-radius: 5px;
+}
+
+.wrap #main #pwd-modal-wrap .comment-pwd-modal .message-pwd {
+    font-weight: 600;
+    color: #51534e;
+    font-size: 0.9rem;
+    text-align: center;
+    margin: -5px 0 10px 0;
+}
+
+.wrap #main #pwd-modal-wrap .comment-pwd-modal .comment-modal-btn {
+    margin-left: 15px;
+}
+
+.wrap #main #pwd-modal-wrap .comment-pwd-modal .comment-del-confirm {
+    width: 60px;
+    height: 30px;
+    font-weight: 600;
+    color: #babdccdd;
+    cursor: pointer;
+    border: 0;
+    line-height: 20px;
+    margin: 0 20px 0 -15px;
+    border-radius: 5px;
+    display: none;
+}
+
+.wrap #main #pwd-modal-wrap .comment-pwd-modal .comment-update-confirm {
+    width: 60px;
+    height: 30px;
+    font-weight: 600;
+    color: #babdccdd;
+    cursor: pointer;
+    border: 0;
+    line-height: 20px;
+    margin: 0 20px 0 -15px;
+    border-radius: 5px;
+    display: none;
+}
+
+.wrap #main #pwd-modal-wrap .comment-pwd-modal .comment-pwd-cancel {
+    width: 60px;
+    height: 30px;
+    font-weight: 600;
+    color: #babdccdd;
+    cursor: pointer;
+    border: 0;
+    line-height: 20px;
+    border-radius: 5px;
+}
+
+.wrap #main #pwd-modal-wrap .comment-pwd-modal .comment-del-confirm:hover {
+    color: #ff7675;
+}
+
+.wrap #main #pwd-modal-wrap .comment-pwd-modal .comment-update-confirm:hover {
+    color: #ff7675;
+}
+
+.wrap #main #pwd-modal-wrap .comment-pwd-modal .comment-pwd-cancel:hover {
+    color: #ff7675;
+}
+
+/* 수정 입력창 */
+.wrap #main #gb-comment-wrap .gb-comment-edit {
+    margin-bottom: 20px;
+}
+
+.wrap #main #gb-comment-wrap .gb-comment-edit .comment-name-edit {
+    font-weight: 600;
+    color: #ff7675;
+}
+
+.wrap #main #gb-comment-wrap #gb-content-confirm {
+    margin: 10px 0 10px 0;
+    font-size: 1rem;
+}
+
+.wrap #main #gb-comment-wrap .btn-update-confirm {
+    font-weight: 600;
+    color: #babdccdd;
+    cursor: pointer;
+    margin: 0 0 0 450px;
+    border: 0;
+    line-height: 20px;
+}
+
+
+.wrap #main #gb-comment-wrap .btn-update-cancel {
+    font-weight: 600;
+    color: #babdccdd;
+    cursor: pointer;
+    margin: 0 0 0 10px;
+    border: 0;
+    line-height: 20px;
+}
+
+.wrap #main #gb-comment-wrap .btn-update-confirm:hover {
+    color: #ff7675;
+}
+
+
+.wrap #main #gb-comment-wrap .btn-update-cancel:hover {
+    color: #ff7675;
+}
+
+/* 더보기 버튼 */
+.wrap #main #scroll .btn-load-more {
+    width: 75%;
+    height: 30px;
+    border: 0;
+    background-color: #dadbe1dd;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #747474;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 50px;
+    display: none;
+}
+
+/* 맨위로 버튼 */
+.scroll-top-wrap {
+    position: fixed;
+    right: 3%;
+    bottom: 20px;
+    z-index: 999;
+}
+
+.scroll-top-wrap #scroll-top {
+    width: 80px;
+    height: 100px;
+    background-image: url('../icon/arrow_circle_up_FILL0_wght400_GRAD0_opsz24.svg');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: contain;
+    border: 0;
+    cursor: pointer;
+}
