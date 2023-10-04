@@ -41,7 +41,7 @@
           <li tabindex="1" class="card-title" id="card-3">나의 협업 스타일</li>
         </ul>
 
-        <div class="card-main-container hidden">
+        <div class="card-main-container card-1-contents hidden">
           <p class="card-contents">
             저의 MBTI는 INTP 입니다.저는 조용하고 집에있는 것을 좋아합니다. 그렇다고 365일 집에 있는 것은 아니고 여행을
             좋아해 한번 세상에 대한 호기심이 발동하면 하루에 3만보씩 걸어다니기도 합니다. 계획없이 발길 닿는대로 걸어서
@@ -59,7 +59,7 @@
           </div>
         </div>
 
-        <div class="card-main-container hidden">
+        <div class="card-main-container card-2-contents hidden">
           <p class="card-contents">
             저는 조용하고 집에있는 것을 좋아합니다. 그렇다고 365일 집에 있는 것은 아니고 여행을 좋아해 한번 세상에 대한
             호기심이 발동하면 하루에 3만보씩 걸어다니기도 합니다. 계획없이 발길 닿는대로 걸어서 그런가 봅니다. 제가 말
@@ -74,7 +74,7 @@
           </div>
         </div>
 
-        <div class="card-main-container hidden">
+        <div class="card-main-container card-3-contents hidden">
           <p class="card-contents">
             INTP가 개인주의라고 하는데 협업에서는 그렇지 않습니다! 저는 결과물을 위해 꼭 소통도 필요하다고 생각하고, 제
             할 일을 다했다고 쉬지 않습니다. 다른 팀원들이 못 다한 부분이 있으면 도와주는 편입니다. 필요하다면 주말에도
@@ -132,6 +132,7 @@
 
     <!-- Edit Comments Modal -->
     <form class="edit-comments-form hidden">
+      <p class="edit-msg"></p>
       <div class="edit-user-info-container">
         <input class="eidt-user-name" type="text" placeholder="이름을 적어주세요." required maxlength="20" />
         <input class="edit-password" type="password" placeholder="비밀번호를 입력해주세요." required />
@@ -139,7 +140,7 @@
       <textarea class="edit-comments" name="" id="edit-comments" cols="30" rows="10" placeholder=""></textarea>
 
       <div class="edit-btn-container">
-        <input type="submit" class="edit-cancel outline-btn" value="취소" />
+        <input type="button" class="edit-cancel outline-btn" value="취소" />
         <input type="submit" class="edit btn" value="수정" />
       </div>
     </form>

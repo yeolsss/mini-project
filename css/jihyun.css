@@ -114,8 +114,8 @@ body {
   grid-template-columns: repeat(3, 200px);
   justify-content: center;
   align-items: center;
-  background-color: var(--secondary);
-  color: var(--black);
+  background-color: var(--black);
+  color: var(--white);
   font-weight: 700;
   border-radius: 20px;
   width: fit-content;
@@ -128,7 +128,8 @@ body {
 }
 
 .card-main-section .card-title-container li:hover {
-  background-color: #ff9454;
+  background-color: var(--white);
+  color: var(--black);
   border-radius: 20px;
 }
 
@@ -204,10 +205,7 @@ body {
   border-radius: 5px;
 }
 
-.board-form-container
-  .board-form
-  .user-info-container
-  .input-field::placeholder {
+.board-form-container .board-form .user-info-container .input-field::placeholder {
   color: var(--gray);
 }
 
