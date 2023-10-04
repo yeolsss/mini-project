@@ -1,0 +1,559 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&family=Space+Mono:wght@400;700&display=swap");
+
+/*Reset*/
+body,
+div {
+  margin: unset;
+  padding: unset;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-size: unset;
+  font-weight: unset;
+}
+
+a {
+  text-decoration: unset;
+  color: unset;
+}
+
+input {
+  text-decoration: unset;
+  outline: unset;
+  border: unset;
+}
+
+button {
+  margin: unset;
+  padding: unset;
+  background-color: unset;
+  border: unset;
+  cursor: pointer;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+  border: unset;
+  outline: unset;
+}
+
+/*Typography*/
+:root {
+  --main-font-family-mono: "Space Mono ", monospace;
+  --main-font-family-sans: "Space Mono ", sans-serif;
+  --strong-cyan: hsl(172, 67%, 45%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --very-light-grayish-cyan: hsl(180, 29%, 91%);
+  --contents-bg-color: hsl(0, 0%, 100%);
+  --error-color: #e66767;
+  --del-btn: #ea8685;
+}
+
+body {
+  font-size: 62.5%;
+  font-family: "Nanum Gothic Coding", cursive;
+  display: flex;
+  background-color: var(--light-grayish-cyan);
+  padding: 0 5%;
+  position: relative;
+}
+
+h1,
+p {
+  color: var(--dark-grayish-cyan);
+  font-weight: 700;
+}
+
+/*Contents*/
+
+.wrapper {
+  max-width: 144rem;
+  margin: 0 auto;
+  height: auto;
+  padding-bottom: 10rem;
+  position: relative;
+}
+
+header {
+  text-align: center;
+  font-size: 4rem;
+}
+
+header h1 {
+  color: var(--very-dark-cyan);
+}
+
+.contents-wrapper,
+.comment-form,
+.comment-card__section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.2rem 4rem;
+  box-sizing: border-box;
+  background-color: var(--contents-bg-color);
+  border-radius: 0.5rem;
+  max-width: 75rem;
+}
+
+.main-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-header img {
+  border-radius: 10rem;
+}
+
+.main-header h1 {
+  font-size: 3rem;
+}
+
+.main-header p {
+  width: 60%;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+.main-contents {
+  width: 100%;
+}
+
+.main-contents .main-contents__info-section h1 {
+  font-size: 2.4rem;
+}
+
+.main-contents .main-contents__info-section__text-box {
+  font-size: 1.6rem;
+  background-color: var(--very-dark-cyan);
+  border-radius: 0.3rem;
+  padding: 1rem 1rem;
+  box-sizing: border-box;
+}
+
+.main-contents .main-contents__info-section__text-box p {
+  color: var(--very-light-grayish-cyan);
+  line-height: 1.35;
+}
+
+.comment-form,
+.comment-card__section {
+  margin-top: 2rem;
+}
+
+.comment-form {
+  align-items: center;
+  position: relative;
+  padding-bottom: 5rem;
+}
+
+.comment-form form {
+  width: 100%;
+}
+
+.comment-wrapper label {
+  display: none;
+}
+
+.comment-wrapper h1 {
+  font-size: 2.4rem;
+  text-align: center;
+}
+
+.comment-wrapper input {
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.comment-form .comment-form__input-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+input {
+  width: 45%;
+  color: var(--very-dark-cyan);
+  font-size: 1.8rem;
+  font-weight: 700;
+  background-color: var(--very-light-grayish-cyan);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 0.18rem solid rgb(0, 0, 0, 0);
+  box-sizing: border-box;
+  transition: border 0.3s ease-in;
+}
+
+input:focus {
+  border: 0.18rem solid var(--strong-cyan);
+}
+
+textarea {
+  width: 100%;
+  background-color: var(--very-light-grayish-cyan);
+  color: var(--very-dark-cyan);
+  font-size: 1.6rem;
+  border-radius: 0.5rem;
+  border: 0.18rem solid rgb(0, 0, 0, 0);
+  transition: border 0.3s ease-in;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+textarea:focus {
+  border: 0.18rem solid var(--strong-cyan);
+}
+
+.comment-form button,
+.comment-card__section .comment-card__more-btn {
+  background-color: var(--very-dark-cyan);
+  color: var(--very-light-grayish-cyan);
+  padding: 0.5rem 2rem;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  font-weight: 700;
+  border-radius: 0.2rem;
+  position: absolute;
+
+  transition:
+    background-color 0.2s ease-in,
+    color 0.2s ease-in;
+}
+
+.comment-form button {
+  bottom: 2%;
+  right: 5%;
+}
+
+.comment-form button:hover,
+.comment-card__section .comment-card__more-btn:hover {
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+
+.comment-card__section {
+  position: relative;
+  align-items: unset;
+}
+
+.comment-card__section .comment-card__more-btn {
+  bottom: -3rem;
+  left: 50%;
+  right: 50%;
+  width: 10rem;
+  transform: translate(-50%, -50%);
+}
+
+.comment-card__section h1 {
+  text-align: center;
+}
+
+.comment-card__section .comment-card {
+  background-color: var(--very-dark-cyan);
+  padding: 0.5rem 1rem;
+  border-radius: 1.5rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.comment-card__section h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--very-light-grayish-cyan);
+}
+
+.comment-card__section p {
+  font-size: 1.6rem;
+  line-height: 1.3;
+  color: var(--strong-cyan);
+}
+
+.comment-card__section .comment-card .comment-card__delete {
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  top: 3%;
+  right: 0.5%;
+}
+
+.comment-card__section .comment-card .comment-card__update {
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  top: 3%;
+  right: calc(0.5% + 3.5rem);
+  transition: all 0.1s ease-in;
+}
+
+.comment-card__section .comment-card button {
+  width: 100%;
+  height: 100%;
+  background-color: var(--very-light-grayish-cyan);
+  border-radius: 1.2rem;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment-card__section .comment-card:hover button {
+  display: flex;
+}
+
+.comment-card__section .comment-card .comment-card__update button svg {
+  width: 60%;
+  height: 60%;
+  transition: all 0.3s ease-in;
+  pointer-events: none;
+}
+
+.comment-card__section .comment-card .comment-card__delete button:after,
+.comment-card__section .comment-card .comment-card__delete button:before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  will-change: transform, margin-top;
+  transition-property: transform, margin-top;
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+  content: "";
+  width: 2rem;
+  height: 0.3rem;
+  background-color: var(--very-dark-cyan);
+}
+
+.comment-card__section .comment-card .comment-card__delete button:hover {
+  background-color: var(--error-color);
+}
+
+.comment-card__section .comment-card .comment-card__delete button:after {
+  transform: translate(-50%, -50%) rotateZ(-45deg);
+}
+
+.comment-card__section .comment-card .comment-card__delete button:before {
+  transform: translate(-50%, -50%) rotateZ(45deg);
+}
+
+.comment-card__section .comment-card .comment-card__delete button:hover:after {
+  transform: translate(-50%, -50%) rotateZ(45deg);
+  background-color: var(--contents-bg-color);
+}
+
+.comment-card__section .comment-card .comment-card__delete button:hover:before {
+  transform: translate(-50%, -50%) rotateZ(-45deg);
+  background-color: var(--contents-bg-color);
+}
+
+.comment-card__section .comment-card .comment-card__update button:hover svg {
+  fill: var(--contents-bg-color) !important;
+  transform: scaleX(-1);
+}
+
+.comment-card__section .comment-card .comment-card__update button:hover {
+  background-color: var(--strong-cyan);
+}
+
+.delete-modal,
+.update-modal {
+  position: fixed;
+  top: 100%;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(0, 0, 0, 0.5);
+  display: flex;
+  transition: top 600ms cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.delete-modal__form,
+.update-modal__form {
+  margin: auto;
+  background-color: var(--very-dark-cyan);
+  border-radius: 0.5rem;
+  overflow: scroll;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.delete-modal__form {
+  flex-direction: column;
+  padding: 2rem;
+  margin: auto;
+  width: 40%;
+  max-height: 17rem;
+  height: 45%;
+}
+
+.update-modal__form {
+  max-height: unset;
+  width: 60%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  margin: auto;
+}
+
+.delete-modal__form h1,
+.update-modal__form h1 {
+  font-size: 2.4rem;
+  text-align: center;
+  color: var(--strong-cyan);
+}
+
+.delete-modal__form form,
+.update-modal__form form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.update-modal__form form {
+  margin-top: calc(3% + 0.5rem);
+  flex-grow: 1;
+}
+
+.delete-modal__form input,
+.update-modal__form input,
+.update-modal__form textarea {
+  width: 80%;
+}
+
+.update-modal__form textarea {
+  height: 20rem;
+}
+
+.delete-modal__form__btn-group,
+.update-modal__form__btn-group {
+  width: 80%;
+  display: flex;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.delete-modal__form__btn-group button:first-child,
+.update-modal__form__btn-group button:first-child {
+  background-color: var(--very-light-grayish-cyan);
+  color: var(--dark-grayish-cyan);
+  margin-right: 2rem;
+}
+
+.delete-modal__form__btn-group button:first-child:hover,
+.update-modal__form__btn-group button:first-child:hover {
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+
+.delete-modal__form__btn-group button:last-child,
+.update-modal__form__btn-group button:last-child {
+  background-color: var(--del-btn);
+  color: var(--very-dark-cyan);
+}
+
+.delete-modal__form__btn-group button:last-child:hover,
+.update-modal__form__btn-group button:last-child:hover {
+  background-color: var(--error-color);
+}
+
+.update-password {
+  margin-bottom: 1%;
+}
+
+.delete-modal__form__btn-group button,
+.update-modal__form__btn-group button {
+  font-size: 1.6rem;
+  font-weight: 700;
+  padding: calc(5% - 1rem) 10%;
+  border-radius: 0.5rem;
+  transition:
+    color 0.3s ease-in,
+    background-color 0.3s ease-in;
+}
+
+.update-modal__form .update-input__group label {
+  display: none;
+}
+
+.update-modal__form .update-input__group {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-bottom: calc(3% + 0.5rem);
+}
+
+.update-modal__form .update-input__group input:first-child {
+  margin-right: 0.3rem;
+}
+
+.update-modal__form .update-input__group input:last-child {
+  margin-left: 0.3rem;
+}
+
+.turn-up {
+  position: fixed;
+  width: calc(3.5% + 1rem);
+  height: calc(10% + 1rem);
+  bottom: 3%;
+  right: 3%;
+}
+
+.turn-up button {
+  width: 100%;
+  height: 100%;
+  background-color: var(--contents-bg-color);
+  border-radius: 0.5rem;
+  transition: background-color 0.2s ease-in;
+  box-sizing: border-box;
+  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.1);
+}
+
+.turn-up button svg {
+  width: 50%;
+  height: 50%;
+  transition: fill 0.5s ease-in;
+  pointer-events: none;
+}
+
+.turn-up button:hover {
+  background-color: var(--strong-cyan);
+}
+
+.turn-up button:hover svg {
+  fill: var(--contents-bg-color);
+  animation: arrowRotation 1s ease infinite alternate forwards;
+}
+
+@keyframes arrowRotation {
+  to {
+    transform: scaleX(-1);
+  }
+  from {
+    transform: scaleX(1);
+  }
+}
+
+.input-error {
+  border-color: var(--error-color);
+}
+
+.input-error:focus {
+  border-color: var(--error-color) !important;
+}
+
+.active {
+  top: 0;
+}
+
+.hide {
+  display: none;
+}

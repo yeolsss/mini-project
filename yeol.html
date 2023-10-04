@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>권경열 소개</title>
+    <link rel="stylesheet" href="./css/yeol.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="#">일단 버티조</a></h1>
+      </header>
+
+      <main class="contents-wrapper">
+        <div class="main-header">
+          <img src="./images/yeol/profile04.png" alt="" />
+          <h1>권경열</h1>
+          <p>
+            안녕하세요? 저는 권경열이라고합니다. 프론트앤드로 직무 변경을 위해 내배캠을 신청하게 되었습니다.<br />
+            약 5개월 간 잘 부탁드리고 열심히 하겠습니다.
+          </p>
+        </div>
+        <div class="main-contents">
+          <section class="main-contents__info-section">
+            <h1>나의 MBTI 및 성격</h1>
+            <div class="main-contents__info-section__text-box">
+              <p>
+                MBTI는 ISFP이지만 대원카드 작성하려고 처음 해보아서 뭔지 사실 잘 모릅니다. 제 생각에는 성격은
+                내향적이라고 생각합니다. 그렇지만 인간 관계에서는 최대한 먼저 다가가려고 노력(?)을 하는 편입니다.(그렇지
+                않은 경우가 더 많아요)
+              </p>
+            </div>
+          </section>
+        </div>
+        <div class="main-contents">
+          <section class="main-contents__info-section">
+            <h1>나의 장점</h1>
+            <div class="main-contents__info-section__text-box">
+              <p>
+                뭔가 하나에 꽂히면 그것만 하는 장점(?)이 있습니다. <br />
+                다행히 지금 그 하나에 꽂힌게 개발이구요! <br />
+                가끔씩 다른곳에 꽂히면 좀 큰일납니다..
+              </p>
+            </div>
+          </section>
+        </div>
+        <div class="main-contents">
+          <section class="main-contents__info-section">
+            <h1>나의 협업 스타일</h1>
+            <div class="main-contents__info-section__text-box">
+              <p>
+                의사소통을 많이 하는 스타일입니다. <br />
+                의사소통을 많이 해야 진행 진척도나 앞으로 해결해야할 일 등등 현재의 많은 상황을 파악 할 수 있기
+                때문입니다. <br />
+                의견을 경청하는 편이긴 하나 의견이 없을경우 쥐어짜서라도 내는 편입니다.
+              </p>
+            </div>
+          </section>
+        </div>
+      </main>
+      <main class="comment-wrapper">
+        <section class="comment-form">
+          <h1>방명록 작성</h1>
+          <form>
+            <div class="comment-form__input-group">
+              <label for="comment_name">이름</label>
+              <input id="comment_name" type="text" placeholder="이름을 입력해주세요." />
+              <label for="comment_password"></label>
+              <input id="comment_password" type="password" placeholder="비밀번호를 입력해주세요." />
+            </div>
+            <label for="comment"></label>
+            <textarea id="comment" rows="10" required placeholder="내용을 입력해주세요."></textarea>
+            <button id="comment_add_btn">등록</button>
+          </form>
+        </section>
+        <section class="comment-card__section">
+          <div>
+            <h1>방명록</h1>
+          </div>
+          <div id="comment-card-wrapper"></div>
+          <button id="more_btn" class="comment-card__more-btn">더보기</button>
+        </section>
+      </main>
+
+      <!--delete modal start-->
+      <div class="delete-modal">
+        <div class="delete-modal__form">
+          <h1>방명록 삭제</h1>
+          <form>
+            <label for="del_password"></label>
+            <input id="del_password" type="password" placeholder="비밀번호를 입력해주세요." />
+            <div class="delete-modal__form__btn-group">
+              <button id="del_modal_confirm">확인</button>
+              <button id="del_modal_close">취소</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--delete modal end-->
+
+    <!--turn up button start-->
+    <div class="turn-up">
+      <button id="turn_up">
+        <svg fill="hsl(183, 100%, 15%)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+          <!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+          <path
+            d="M32 448c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0c53 0 96-43 96-96l0-306.7 73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 109.3 160 416c0 17.7-14.3 32-32 32l-96 0z" />
+        </svg>
+      </button>
+    </div>
+    <!--turn up button enc-->
+
+    <!--update modal start-->
+    <div class="update-modal">
+      <div class="update-modal__form">
+        <h1>방명록 수정</h1>
+        <form>
+          <div class="update-input__group">
+            <label for="update_user_name">작성자 이름</label>
+            <input id="update_user_name" class="update-password" type="text" placeholder="이름을 입력해주세요." />
+            <label for="update_password">비밀번호</label>
+            <input
+              id="update_password"
+              class="update-password"
+              type="password"
+              placeholder="비밀번호를 입력해주세요." />
+          </div>
+          <textarea id="update_comment_contents"></textarea>
+          <div class="update-modal__form__btn-group">
+            <button id="update_modal_confirm">수정</button>
+            <button id="update_modal_close">취소</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!--update modal end-->
+
+    <script type="module" src="./js/yeol_firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
+    <script type="module" src="./js/yeol.js"></script>
+  </body>
+</html>
