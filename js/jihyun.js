@@ -11,6 +11,8 @@ import {
   doc,
   orderBy,
   query,
+  setDoc,
+  updateDoc,
 } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -26,6 +28,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const ref = collection(db, "miniProject");
+
+console.log(ref);
 
 // ! 방명록 제출 event
 const userNameInput = document.querySelector(".user-name");
@@ -68,7 +72,7 @@ async function getComments() {
 
 // ! 제출한 방명록 추가하기
 function addComment(docs) {
-  docs.forEach((doc) => {
+  docs.forEach(doc => {
     let data = doc.data();
     let comments = data.comments;
     let userName = data.userName;
@@ -108,7 +112,7 @@ let currentCommentId = "";
 
 // card delete button에 event 추가하기
 function deleteComments() {
-  document.querySelectorAll(".delete-btn").forEach((button) =>
+  document.querySelectorAll(".delete-btn").forEach(button =>
     button.addEventListener("click", function (e) {
       openModal(checkPasswordForm);
       currentCommentId = e.target.value;
@@ -128,11 +132,9 @@ checkPasswordBtn.addEventListener("click", async function (e) {
   const getData = doc(db, "miniProject", currentCommentId);
   const getDelDoc = await getDoc(getData);
   const password = getDelDoc.data().password;
-  console.log(password);
 
   if (checkPasswordInput.value === "") {
     message.innerText = "비밀번호를 입력해주세요";
-    checkPasswordInput.value = "";
   } else if (password !== checkPasswordInput.value) {
     message.innerText = "비밀번호를 다시 입력해주세요";
     checkPasswordInput.value = "";
@@ -145,7 +147,7 @@ checkPasswordBtn.addEventListener("click", async function (e) {
         window.location.reload();
         console.log("deleted");
       })
-      .catch((err) => {
+      .catch(err => {
         console.log("error");
       });
   }
@@ -154,27 +156,87 @@ checkPasswordBtn.addEventListener("click", async function (e) {
 // 방명록 수정 Modal
 const editCommentsForm = document.querySelector(".edit-comments-form");
 const editCommentsInput = document.querySelector(".edit-comments");
-const editUserName = document.querySelector(".eidt-user-name");
-const editPassword = document.querySelector(".edit-password");
+const editUserNameInput = document.querySelector(".eidt-user-name");
+const editPasswordInput = document.querySelector(".edit-password");
 const cancelEditCommentsBtn = document.querySelector(".edit-cancel");
 const editCommentsBtn = document.querySelector(".edit");
+const editMessage = document.querySelector(".edit-msg");
 
 // card delete button에 event 추가하기
 function editComments() {
-  document.querySelectorAll(".edit-btn").forEach((button) =>
-    button.addEventListener("click", function (e) {
+  document.querySelectorAll(".edit-btn").forEach(button =>
+    button.addEventListener("click", async function (e) {
       openModal(editCommentsForm);
       currentCommentId = e.target.value;
+      const getData = doc(db, "miniProject", currentCommentId);
+      const getEditDoc = await getDoc(getData);
+      console.log(getEditDoc);
+      const comment = getEditDoc.data().comments;
+      const userName = getEditDoc.data().userName;
+      editCommentsInput.value = comment;
+      editUserNameInput.value = userName;
     })
   );
 }
 
-// editCommentsBtn.addEventListener("click");
+// 방명록 수정 취소 버튼 event
+cancelEditCommentsBtn.addEventListener("click", closeModal(editCommentsForm));
 
-// 나의 소개
+// 방명록 수정 확인 버튼 event
+editCommentsBtn.addEventListener("click", async function (e) {
+  e.preventDefault();
+
+  const getData = doc(db, "miniProject", currentCommentId);
+  const getEditDoc = await getDoc(getData);
+  const editPassword = getEditDoc.data().password;
+
+  const editData = {
+    userName: editUserNameInput.value,
+    comments: editCommentsInput.value,
+  };
+
+  if (editPasswordInput.value === "") {
+    editMessage.innerText = "비밀번호를 입력해주세요";
+  } else if (editPassword !== editPasswordInput.value) {
+    editMessage.innerText = "비밀번호를 다시 입력해주세요";
+    editPasswordInput.value = "";
+  } else if (editPassword === editPasswordInput.value) {
+    console.log("수정되었습니다.");
+    editPasswordInput.value = "";
+    updateDoc(getData, editData)
+      .then(getData => {
+        window.location.reload();
+        console.log("edit data");
+      })
+      .catch(err => console.log("error"));
+  }
+});
+
+// 나의 소개 보이기
 const showMainCard1 = document.querySelector("#card-1");
 const showMainCard2 = document.querySelector("#card-2");
 const showMainCard3 = document.querySelector("#card-3");
+const firstCardContents = document.querySelector(".card-1-contents");
+const secondCardContents = document.querySelector(".card-2-contents");
+const thirdCardContents = document.querySelector(".card-3-contents");
+
+showMainCard1.addEventListener("click", function () {
+  firstCardContents.classList.remove("hidden");
+  secondCardContents.classList.add("hidden");
+  thirdCardContents.classList.add("hidden");
+});
+
+showMainCard2.addEventListener("click", function () {
+  firstCardContents.classList.add("hidden");
+  secondCardContents.classList.remove("hidden");
+  thirdCardContents.classList.add("hidden");
+});
+
+showMainCard3.addEventListener("click", function () {
+  firstCardContents.classList.add("hidden");
+  secondCardContents.classList.add("hidden");
+  thirdCardContents.classList.remove("hidden");
+});
 
 const mbti = document.querySelector(".hidden-mbti");
 const mbtiImg = document.querySelector(".mbti-img");
