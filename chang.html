@@ -11,121 +11,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css " />
 
-    <link rel="stylesheet" href="./css/chang.css"  />
-
-    <script>
-        let cnt = 1;   // 글번호로 할당
-
-        /* 작성 -*/
-        function a() {
-            let writer = f.writer.value;
-            let pwd = f.pwd.value;
-            let content = f.content.value;
-            let el = makeDiv(writer, pwd, content); // newDiv를 el에 담음 
-            let list = document.getElementById("list");
-            list.appendChild(el);
-
-            // 글 작성 완료되면 입력폼 초기화
-            f.writer.value = "";
-            f.pwd.value = "";
-            f.content.value = "";
-        }
-
-        /* 글<div> 생성 */
-        function makeDiv(writer, pwd, content) {
-            /*-- 1. <div id="d_1" pwd='1111'></div> */
-            let newDiv = document.createElement("div"); //새 <div> 태그 생성
-            newDiv.id = "d_" + cnt; // 생성한 div에 id 지정. d_1, d_2 ...
-            newDiv.pwd = pwd;   // 사용자가 입력한 pwd값을 파라메터로 받아 할당.
-
-            /*-- 2. <div>태그의 innerHTML 값 넣어주기 */
-            let html = "";
-            // 편하게 수정하기 위해 <span></span> 태그로 묶어줌 
-            html += "<span style='font-size: 1.3em' id='w_" + cnt + "'>" + writer + "</span><br/>";
-            html += "<span style='font-size: 1em' id='c_" + cnt + "'>" + content + "</span><br/>";
-            // onclick=함수명(___)에 스페이스 없으면 '' 안붙여도 됨.
-            html += "<input type='button' style='margin-right: 5px' class='btn btn-outline-warning mb-3' value='수정' onclick=editForm(" + cnt + ")>"; //editForm('글번호')
-            html += "<input type='button' class='btn btn-outline-danger mb-3' value='삭제' onclick=del(" + cnt + ")>";
-            newDiv.innerHTML = html;
-            //<div>writer content 수정버튼 삭제버튼</div>
-
-            cnt++;
-            return newDiv;
-        }
-
-        /* 1-1. 수정 폼 보여주기 (이전에 작성한 내용과 함께)*/
-        function editForm(cnt) {
-            let editDiv = document.getElementById("d_" + cnt); // 수정할 글의 div
-            let editForm = document.getElementById("editf"); // 수정폼 div 
-
-            // 수정할 글(부모요소)에 수정폼(자식요소)을 추가하기 (<body>에 숨어있던 수정폼을 잘라내서(Ctrl+X) 첨부)
-            editDiv.appendChild(editForm);
-
-            // <span></span> 사잇값을 변수에 담기 
-            let writer = document.getElementById("w_" + cnt).innerHTML;
-            let content = document.getElementById("c_" + cnt).innerHTML;
-
-            // 수정폼에 사잇값 담기 
-            document.getElementById("editwriter").value = writer;
-            document.getElementById("editcontent").value = content;
-
-            // 버튼에 cnt 속성을 추가해서 수정 글번호를 저장 
-            // <input type="button" value="수정완료" id="editbtn" cnt="1" onclick="edit()">
-            document.getElementById("editbtn").cnt = cnt;
-
-            editForm.style.display = ''; // 화면에 수정폼이 나타나게 하기 
-        }
-
-        /* 1-2. 수정 완료하기 */
-        function edit() {
-            let cnt = document.getElementById("editbtn").cnt;  // 수정할 글의 번호 
-            let editDiv = document.getElementById("d_" + cnt); // 수정할 글의 div
-            let pwd2 = document.getElementById("editpwd").value; // 수정폼에 입력한 글 비밀번호 
-
-            if (editDiv.pwd != pwd2) { // 원 글 비번과 수정폼 비번 비교 
-                alert("password가 일치하지 않습니다!")
-            } else {
-                let newWriter = document.getElementById("editwriter").value;
-                let newcontent = document.getElementById("editcontent").value;
-                // 폼에 작성한 내용을 글 div에 담기
-                // 입력양식에 입력한 값 = value
-                // <></> 태그 사이에 적힌 값 = innerHTML
-                document.getElementById("w_" + cnt).innerHTML = newWriter;
-                document.getElementById("c_" + cnt).innerHTML = newcontent;
-            }
-
-            // 입력폼 초기화 
-            document.getElementById("editwriter").value = "";
-            document.getElementById("editpwd").value = "";
-            document.getElementById("editcontent").value = "";
-
-            // 폼 사라지기 
-            cancel();
-        }
-
-        /* 1-3. 수정 취소하기 */
-        function cancel() {
-            let editForm = document.getElementById("editf"); // 수정폼div를 변수에 담기
-            editForm.style.display = 'none'; // 화면에 사라지게 하고 자리 뺌
-            // 수정글에 붙여놓은 수정폼을 다시 <body>로 돌려놓음 (원래 자리)
-            // <body> 태그는 하나밖에 없으니까 [0]. 
-            document.getElementsByTagName("body")[0].appendChild(editForm);
-        }
-
-        /* 2. 삭제 */
-        function del(cnt) {
-            // prompt(): alert에 입력받는 창이 뜸.
-            let pwd = prompt("password를 입력해 주세요.");
-            let delDiv = document.getElementById("d_" + cnt);
-            if (pwd == delDiv.pwd) {
-                // <div id = "list"> <delDiv> </div>
-                document.getElementById("list").removeChild(delDiv);
-            } else {
-                alert("password가 일치하지 않습니다!");
-            }
-
-        }
-    </script>
+    <link rel="stylesheet" href="./css/chang.css" />
 
 </head>
 
@@ -179,6 +65,7 @@
             </div>
             <hr>
 
+
             <!-- guest book -->
             <h3>방명록 작성</h3>
             <!-- 서버로 데이터를 전송하려면 form이 꼭 필요함. -->
@@ -210,7 +97,7 @@
                             </div>
                         </td>
                     <tr>
-                        <td><input class="btn btn-primary mb-3" type="button" value="작성하기" onclick="a()"></td>
+                        <td><input id="savebtn" class="btn btn-primary mb-3" type="button" value="작성하기"></td>
                     </tr>
                 </table>
             </form>
@@ -221,44 +108,7 @@
                 <!-- <div id="d_2">작성자:<span id="w_2">bbb</span><br/>내용:<span id="c_2">qwer</span><br/>수정 삭제</div> -->
                 <!-- <div id="d_3">작성자:<span id="w_3">ccc</span><br/>내용:<span id="c_3">zxcv</span><br/>수정 삭제</div> -->
             </div>
-
-            <!-- 수정 폼 -->
-            <!-- none: 화면에 안보이게 하고 자리 할당 안함. <body>에 있긴 함. -->
-            <table id="editf" style="display: none;">
-                <tr>
-                    <td>
-                        <div class="form-floating mb-3">
-                            <input type="text" name="editwriter" class="form-control" id="editwriter"
-                                style="width:500px" placeholder="작성자">
-                            <label for="floatingInput">작성자</label>
-                        </div>
-                    </td>
-
-                </tr>
-                <tr>
-                    <td>
-                        <div class="form-floating mb-3">
-                            <input type="password" name="editpwd" class="form-control" id="editpwd"
-                                placeholder="Password">
-                            <label for="floatingPassword">Password</label>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="form-floating mb-3">
-                            <textarea type="text" name="editcontent" class="form-control" placeholder="내용을 입력해 주세요."
-                                id="editcontent" style="height: 100px"></textarea>
-                            <label for="내용을 입력해 주세요.">내용을 입력해 주세요.</label>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td><input class="btn btn-primary" type="button" value="수정완료" id="editbtn" onclick="edit()">
-                        <input class="btn btn-danger" type="button" value="취소하기" onclick="cancel()">
-                    </td>
-                </tr>
-            </table>
+        </div>
     </section>
     <script type="module" src="./js/hyochang_firebase.js"></script>
     <script type="module" src="./js/chang.js"></script>
