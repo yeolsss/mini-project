@@ -19,16 +19,15 @@ h5 {
 
 /* Typography */
 :root {
-  --member-card-bg-color:    
-;
+  --member-card-bg-color: #fbc531;
+  --member-card-font-color: black;
 }
 body {
   font-size: 62.5%;
 }
 
-svg {
-  width: 1.5rem;
-  height: 1.5rem;
+a {
+  color: unset;
 }
 
 /* Contents */
@@ -89,7 +88,7 @@ body {
 .member-section .member-section__cards > div {
   display: flex;
   flex-wrap: wrap;
-  max-width: 50rem;
+  max-width: 60rem;
   margin: 0 auto;
   justify-content: center;
 }
@@ -98,6 +97,55 @@ body {
   display: flex;
   flex-direction: column;
   margin: 2rem;
+}
+.member-section .member-section__cards .member-section__card {
+  width: 10rem;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  background-color: var(--member-card-bg-color);
+  border-radius: 0.5rem;
+}
+
+.member-section .member-section__cards .member-section__card > a > img {
+  border-radius: 0.5rem;
+  width: 100%;
+  height: 100%;
+  transition: scale 0.2s ease-in;
+}
+
+.member-section .member-section__cards .member-section__card > a > img:hover {
+  scale: 110%;
+}
+
+.member-section .member-section__cards .member-section__card .member-section__card__info {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.4rem;
+}
+.member-section .member-section__cards .member-section__card .member-section__card__info > div {
+  margin-top: 1rem;
+  display: flex;
+}
+.member-section .member-section__cards .member-section__card .member-section__card__info > div > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.member-section .member-section__cards .member-section__card .member-section__card__info > div > div:last-child {
+  margin-left: 0.4rem;
+}
+.member-section .member-section__cards .member-section__card .member-section__card__info > div > div svg {
+  width: 1.5rem;
+  height: 1.2rem;
+  transition: scale 0.2s ease-in;
+}
+.member-section .member-section__cards .member-section__card .member-section__card__info > div > div svg:hover {
+  scale: 200%;
+}
+.member-section .member-section__cards .member-section__card .member-section__card__info > div > div > span {
+  color: var(--member-card-font-color);
 }
 
 /* 좋아요 섹션 css*/
