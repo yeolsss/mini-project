@@ -9,12 +9,9 @@ import {
   doc,
   query,
   orderBy,
-  deleteDoc,
-  limit,
 } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js";
 
 /*  https://www.chartjs.org/docs/latest/configuration/responsive.html      차트 재설정*/
-
 const ctx = document.getElementById("myChart");
 
 // firebase 초기 데이터 호출
@@ -22,15 +19,22 @@ const ctx = document.getElementById("myChart");
 const db = getFirestore(app);
 const likeRef = collection(db, "member_like");
 
-const likesData = await getDocs(query(likeRef, orderBy("order", "asc")));
-// chart에 필요한 data array
 let nameArr = [];
 let likeArr = [];
-likesData.forEach(data => {
-  const getData = data.data();
-  nameArr.push(getData.name);
-  likeArr.push(getData.like);
-});
+let dataIdArr = [];
+const getLikes = async () => {
+  const likesData = await getDocs(query(likeRef, orderBy("order", "asc")));
+  // chart에 필요한 data array
+  likesData.forEach(data => {
+    const getData = data.data();
+    dataIdArr.push(data.id);
+    nameArr.push(getData.name);
+    likeArr.push(getData.like);
+  });
+};
+
+// 첫 로딩시 통계 출력
+await getLikes();
 
 // chart color 생성 랜덤 함수
 const randomNum = () => Math.floor(Math.random() * (235 - 52 + 1) + 52);
@@ -81,6 +85,27 @@ new Chart(ctx, {
   },
 });
 /*--------------차트 생성 end--------------*/
+
+const likeObj = {
+  name: "",
+  like: 0,
+};
+
+// 좋아요 버튼
+const likeBtns = document.querySelectorAll(".member-section__like-btn");
+likeBtns.forEach((btn, index) => {
+  btn.addEventListener("click", async event => {
+    event.preventDefault();
+    const currentLikeId = dataIdArr[index - 1];
+    const getLike = await getDoc(doc(db, "member_like", currentLikeId));
+    likeObj.name = getLike.data().name;
+    likeObj.like = getLike.data().like + 1;
+    await setDoc(doc(likeRef, currentLikeId), likeObj).then(() => {
+      getLikes();
+      alert("통계 재호출");
+    });
+  });
+});
 
 /*-------------- swiper 생성 start --------------*/
 const swiper = new Swiper(".swiper", {

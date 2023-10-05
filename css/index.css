@@ -192,3 +192,9 @@ body {
   width: 40rem !important;
   height: 20rem !important;
 }
+
+.member-section__like-chart h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--title-font-color);
+}
