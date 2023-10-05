@@ -138,7 +138,7 @@ commentData.forEach(item => {
             <div class="comment-box">
             ${dataContentEdit}
             </div>
-            <span class="comment-date">${dataReg}</span>
+            <span class="comment-date">${editDate}</span>
             <button class="btn-comment-update" value=${dataId}>수정</button>
             <button class="btn-comment-del" value=${dataId}>삭제</button>
             </div>
