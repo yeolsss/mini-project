@@ -113,7 +113,18 @@ header h1 {
   margin-bottom: 2rem;
 }
 
+.main-header .profile-img {
+  background-image: url("../images/yeol/IMG_6772.jpg");
+  width: 20rem;
+  height: 20rem;
+  background-size: 36rem;
+  background-position: -8rem -5rem;
+  border-radius: 10rem;
+}
+
 .main-header img {
+  width: 20rem;
+  height: 20rem;
   border-radius: 10rem;
 }
 

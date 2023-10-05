@@ -110,6 +110,7 @@ body {
   flex-direction: column;
   background-color: var(--member-card-bg-color);
   border-radius: 0.5rem;
+  overflow: hidden;
 }
 
 .member-section .member-section__cards .member-section__card > a > img {
