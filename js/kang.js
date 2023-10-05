@@ -103,16 +103,18 @@ const inputCheck = () => {
 // 데이터 날짜 최신순(가장 최근에 쓴게 위로)으로 정렬하기
 const commentData = await getDocs(query(commentRef, orderBy("regDate", "desc"), limit(4)));
 commentData.forEach(item => {
-    let row = item.data();
-    let dataName = row['commentName'];
-    let dataContent = row['commentContents'];
-    let dataReg = row['regDate'];
-    let dataContentEdit = row['commentEditContents'];
-    let dateEdit = row['editDate'];
+    const {
+        commentId: dataId,
+        commentName: dataName,
+        commentContents: dataContent,
+        commentEditContents: dataContentEdit,
+        regDate,
+        editDate,
+        } = item.data();
 
     // 등록된 댓글 html
     let commentHtml = `
-    <div class="gb-comment" data-id=${row['commentId']} value=${row['commentId']}>
+    <div class="gb-comment" data-id=${dataId} value=${dataId}>
     <p class="comment-name">
     ${dataName}
     </p>
@@ -120,8 +122,8 @@ commentData.forEach(item => {
     ${dataContent}
     </div>
     <span class="comment-date">${dataReg}</span>
-    <button class="btn-comment-update" value=${row['commentId']}>수정</button>
-    <button class="btn-comment-del" value=${row['commentId']}>삭제</button>
+    <button class="btn-comment-update" value=${dataId}>수정</button>
+    <button class="btn-comment-del" value=${dataId}>삭제</button>
     </div>
     `;
 
@@ -129,7 +131,7 @@ commentData.forEach(item => {
     // 첫번째 방법
     if (dataContentEdit) {
         commentHtml = `
-            <div class="gb-comment" data-id=${row['commentId']} value=${row['commentId']}>
+            <div class="gb-comment" data-id=${dataId} value=${dataId}>
             <p class="comment-name">
             ${dataName}
             <span class="edit-marker">수정됨(${dateEdit})</span>
@@ -138,14 +140,14 @@ commentData.forEach(item => {
             ${dataContentEdit}
             </div>
             <span class="comment-date">${dataReg}</span>
-            <button class="btn-comment-update" value=${row['commentId']}>수정</button>
-            <button class="btn-comment-del" value=${row['commentId']}>삭제</button>
+            <button class="btn-comment-update" value=${dataId}>수정</button>
+            <button class="btn-comment-del" value=${dataId}>삭제</button>
             </div>
         `;
     }
     // 수정된 댓글이 있다면 수정된 html로 붙여주기
     $commentWrap.append(commentHtml);
-
+                        
     autoScroll();
 
     // 더보기 버튼 보여주기
