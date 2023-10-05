@@ -108,7 +108,7 @@ commentData.forEach(item => {
         commentName: dataName,
         commentContents: dataContent,
         commentEditContents: dataContentEdit,
-        regDate,
+        dataReg,
         editDate,
         } = item.data();
 
@@ -128,13 +128,12 @@ commentData.forEach(item => {
     `;
 
     // 수정된 댓글 html
-    // 첫번째 방법
     if (dataContentEdit) {
         commentHtml = `
             <div class="gb-comment" data-id=${dataId} value=${dataId}>
             <p class="comment-name">
             ${dataName}
-            <span class="edit-marker">수정됨(${dateEdit})</span>
+            <span class="edit-marker">수정됨(${editDate})</span>
             </p>
             <div class="comment-box">
             ${dataContentEdit}
@@ -145,9 +144,9 @@ commentData.forEach(item => {
             </div>
         `;
     }
-    // 수정된 댓글이 있다면 수정된 html로 붙여주기
+    // html태그 방명록테두리안에 넣어주기
     $commentWrap.append(commentHtml);
-                        
+
     autoScroll();
 
     // 더보기 버튼 보여주기
