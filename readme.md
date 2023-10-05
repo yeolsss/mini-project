@@ -51,8 +51,12 @@ images폴더 안에는 이미지가 섞이지 않게 각자 이름을 딴 이미
  ┣ 📂images  
  ┃ ┣ 📂chang  
  ┃ ┃ ┗ 📜profile-img-1.jpg  
+ ┃ ┃ ┗ 📜profile-img-main.jpg  
  ┃ ┣ 📂choi  
- ┃ ┃ ┗ 📜IMG_3008.jpg  
+ ┃ ┃ ┗ 📜IMG_2.jpg  
+ ┃ ┃ ┗ 📜IMG_3.jpg  
+ ┃ ┃ ┗ 📜IMG_4.jpg  
+ ┃ ┃ ┗ 📜IMG_5.jpg  
  ┃ ┣ 📂jihyun_img  
  ┃ ┃ ┣ 📜62779a335772f853c873c94e_Loop 3.svg  
  ┃ ┃ ┣ 📜Screenshot 2023-09-27 at 1.30.35 PM.png  
