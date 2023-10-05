@@ -13,10 +13,6 @@ import {
 
 const db = getFirestore(app);
 const commentRef = collection(db, "comment");
-const testdata = await getDocs(commentRef);
-testdata.forEach(item => {
-  console.log(item.data());
-})
 
 const commentObj = {
   commentId: '',
@@ -28,7 +24,6 @@ const commentObj = {
 
 const getDate = () => {
   let today = new Date();
-
   let year = String(today.getFullYear()); // 년도
   let month = String(today.getMonth() + 1).padStart(2, '0'); // 월
   let date = String(today.getDate()).padStart(2, '0'); // 날짜
@@ -38,20 +33,45 @@ const getDate = () => {
   return `${year}.${month}.${date} ${hours}:${minutes}:${seconds}`;
 };
 
-commentObj.commentId = Date.now();
-commentObj.commentName = '최광희';
-commentObj.commentPassword = 'asdfadfawef';
-commentObj.commentContents =
-  'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos quibusdam amet incidunt fugit nobis esse repellendus eius debitis. Illum, minus deleniti! Pariatur architecto a quaerat repellat soluta similique deserunt veritatis.';
-commentObj.regDate = getDate();
+const writer = document.querySelector("#writer");
+const pwd = document.querySelector("#pwd");
+const content = document.querySelector("#content");
+const savebtn = document.querySelector("#savebtn");
+const list = document.querySelector("#list");
 
-const testAdd = async () => {
+savebtn.addEventListener("click", async function (event){
+  commentObj.commentId = Date.now();
+  commentObj.commentName = writer.value;
+  commentObj.commentPassword = pwd.value;
+  commentObj.commentContents = content.value.replaceAll("\n", "<br>");
+  commentObj.regDate = getDate();
+
   await setDoc(doc(commentRef, `${Date.now()}`), commentObj)
-    .then((refDoc) => {
-      console.log('등록완료');
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-};
+  .then((refDoc) => {
+    alert("등록이 완료되었습니다.");
+    createCommentCard();
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+});
 
+/*방명록 불러오기*/
+async function createCommentCard (){
+  const dataList = await getDocs(query(commentRef, orderBy("regDate", "desc")));
+  list.innerHTML = "";
+  dataList.forEach(item => {
+  
+    const commentDiv = document.createElement("div");
+    commentDiv.innerHTML = `
+    작성자:<span id="w_1">${item.data().commentName}</span>
+        <br/>
+          내용:<span id="c_1">${item.data().commentContents}</span>
+        <br/>
+      </div>
+    `;
+    list.appendChild(commentDiv);
+  });
+}
+
+await createCommentCard();
