@@ -113,14 +113,30 @@ body {
   overflow: hidden;
 }
 
-.member-section .member-section__cards .member-section__card > a > img {
+.member-section .member-section__cards .member-section__card .member-section__card-img {
   border-radius: 0.5rem;
   width: 100%;
-  height: 100%;
+  height: 20rem;
   transition: scale 0.2s ease-in;
+  background-repeat: no-repeat;
+}
+/*member image demo*/
+.member-section .member-section__cards .member-section__card .member-section__card-img {
+  background-image: url("../images/yeol/profile04.png");
 }
 
-.member-section .member-section__cards .member-section__card > a > img:hover {
+.member-section .member-section__cards .member-section__card:nth-child(1) .member-section__card-img {
+  background-image: url("../images/yeol/IMG_6772.jpg");
+  background-size: 36rem;
+  background-position: -6rem -5rem;
+}
+.member-section .member-section__cards .member-section__card:nth-child(4) .member-section__card-img {
+  background-image: url("../images/kang/1682240202623.jpg");
+  background-size: 100rem;
+  background-position: -31rem -61rem;
+}
+
+.member-section .member-section__cards .member-section__card .member-section__card-img:hover {
   scale: 110%;
 }
 
