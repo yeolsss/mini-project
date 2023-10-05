@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css " />
 
-    <link rel="stylesheet" href="./css/chang.css" />
+    <link rel="stylesheet" href="./css/chang.css"  />
 
     <script>
         let cnt = 1;   // 글번호로 할당
@@ -151,54 +151,95 @@
                         </a>
                     </div>
                 </div>
-            </div>
-            <div class="column">
-                <div class="card">
-                    <h3>나의 MBTI 및 성격</h3>
-                    <P>저의 MBTI는 ISFP입니다! 내향 적이긴하나 친해지면 내향적인면을 잘느끼지 못할정도로 활발해요!
-                        저는 남에게 피해를 끼치는 행동을 정말 싫어합니다. 남에게 피해가 가지않게 어떻게든 일을 제 선에서 해결하려고합니다.
-                        그런과정에서 남에게 도움을 잘 구하려 하지않아 미련하다는 말도 자주들어요(물론 기한내에 정말 어떻게해도 안될때는 최소한의 도움을 받아요!!).
-                    </P>
+                <div class="column">
+                    <div class="card">
+                        <h3>나의 MBTI 및 성격</h3>
+                        <P>저의 MBTI는 ISFP입니다! 내향 적이긴하나 친해지면 내향적인면을 잘느끼지 못할정도로 활발해요!
+                            저는 남에게 피해를 끼치는 행동을 정말 싫어합니다. 남에게 피해가 가지않게 어떻게든 일을 제 선에서 해결하려고합니다.
+                            그런과정에서 남에게 도움을 잘 구하려 하지않아 미련하다는 말도 자주들어요(물론 기한내에 정말 어떻게해도 안될때는 최소한의 도움을 받아요!!).
+                        </P>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <h3>나의 장점</h3>
+                        <P>저는 개방적인 사고와 책임감이 강한편입니다! 맡은일에 대해서 책임감을 가지고 최선을 다하며,
+                            맡은일에 대해 문제가 발생했을때 해결방법이 잘 찾아지지 않을때 포기하지않고 해결방안에 대해서 여러방법을 시도해 가장 알맞는법을 찾아내려고 합니다!
+                        </P>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <h3>나의 협업 스타일</h3>
+                        <P>위 장점에서 소개했지만 저는 책임감이 강한편으로, 협업의 목표를 달성하기위해 최대한 협력하며 팀원들에게 신뢰를 갖고 좋은자료를 공유하며, 팀원의 기대를 넘어서기 위해
+                            항상
+                            노력합니다. 또한 어려운 상황에서도 문제를 해결하는 능력을 발휘하고자 합니다. </P>
+                    </div>
                 </div>
             </div>
-            <div class="column">
-                <div class="card">
-                    <h3>나의 장점</h3>
-                    <P>저는 개방적인 사고와 책임감이 강한편입니다! 맡은일에 대해서 책임감을 가지고 최선을 다하며,
-                        맡은일에 대해 문제가 발생했을때 해결방법이 잘 찾아지지 않을때 포기하지않고 해결방안에 대해서 여러방법을 시도해 가장 알맞는법을 찾아내려고 합니다!
-                    </P>
-                </div>
-            </div>
-            <div class="column">
-                <div class="card">
-                    <h3>나의 협업 스타일</h3>
-                    <P>위 장점에서 소개했지만 저는 책임감이 강한편으로, 협업의 목표를 달성하기위해 최대한 협력하며 팀원들에게 신뢰를 갖고 좋은자료를 공유하며, 팀원의 기대를 넘어서기 위해 항상
-                        노력합니다. 또한 어려운 상황에서도 문제를 해결하는 능력을 발휘하고자 합니다. </P>
-                </div>
-            </div>
-        </div>
-        </div>
-        </div>
-        <hr>
+            <hr>
 
-        <!-- guest book -->
-        <h3>방명록 작성</h3>
-        <!-- 서버로 데이터를 전송하려면 form이 꼭 필요함. -->
-        <form name="f">
-            <table id="t1">
+            <!-- guest book -->
+            <h3>방명록 작성</h3>
+            <!-- 서버로 데이터를 전송하려면 form이 꼭 필요함. -->
+            <form name="f">
+                <table id="t1">
+                    <tr>
+                        <td>
+                            <div class="form-floating mb-3">
+                                <input type="text" name="writer" class="form-control" id="writer" style="width:500px"
+                                    placeholder="작성자">
+                                <label for="floatingInput">작성자</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-floating mb-3">
+                                <input type="password" name="pwd" class="form-control" id="pwd" placeholder="Password">
+                                <label for="floatingPassword">Password</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-floating mb-3">
+                                <textarea type="text" name="content" class="form-control" placeholder="내용을 입력해 주세요."
+                                    id="content" style="height: 100px"></textarea>
+                                <label for="내용을 입력해 주세요.">내용을 입력해 주세요.</label>
+                            </div>
+                        </td>
+                    <tr>
+                        <td><input class="btn btn-primary mb-3" type="button" value="작성하기" onclick="a()"></td>
+                    </tr>
+                </table>
+            </form>
+            <h3>방명록</h3>
+            <div id="list">
+                <!-- 새로 생길 요소의 자리를 미리 만들어놓음 -->
+                <!-- <div id="d_1">작성자:<span id="w_1">aaa</span><br/>내용:<span id="c_1">asdf</span><br/>수정 삭제</div> -->
+                <!-- <div id="d_2">작성자:<span id="w_2">bbb</span><br/>내용:<span id="c_2">qwer</span><br/>수정 삭제</div> -->
+                <!-- <div id="d_3">작성자:<span id="w_3">ccc</span><br/>내용:<span id="c_3">zxcv</span><br/>수정 삭제</div> -->
+            </div>
+
+            <!-- 수정 폼 -->
+            <!-- none: 화면에 안보이게 하고 자리 할당 안함. <body>에 있긴 함. -->
+            <table id="editf" style="display: none;">
                 <tr>
                     <td>
                         <div class="form-floating mb-3">
-                            <input type="text" name="writer" class="form-control" id="writer" style="width:500px"
-                                placeholder="작성자">
+                            <input type="text" name="editwriter" class="form-control" id="editwriter"
+                                style="width:500px" placeholder="작성자">
                             <label for="floatingInput">작성자</label>
                         </div>
                     </td>
+
                 </tr>
                 <tr>
                     <td>
                         <div class="form-floating mb-3">
-                            <input type="password" name="pwd" class="form-control" id="pwd" placeholder="Password">
+                            <input type="password" name="editpwd" class="form-control" id="editpwd"
+                                placeholder="Password">
                             <label for="floatingPassword">Password</label>
                         </div>
                     </td>
@@ -206,62 +247,18 @@
                 <tr>
                     <td>
                         <div class="form-floating mb-3">
-                            <textarea type="text" name="content" class="form-control" placeholder="내용을 입력해 주세요."
-                                id="content" style="height: 100px"></textarea>
+                            <textarea type="text" name="editcontent" class="form-control" placeholder="내용을 입력해 주세요."
+                                id="editcontent" style="height: 100px"></textarea>
                             <label for="내용을 입력해 주세요.">내용을 입력해 주세요.</label>
                         </div>
                     </td>
+                </tr>
                 <tr>
-                    <th></th>
-                    <td><input class="btn btn-primary mb-3" type="button" value="작성하기" onclick="a()"></td>
+                    <td><input class="btn btn-primary" type="button" value="수정완료" id="editbtn" onclick="edit()">
+                        <input class="btn btn-danger" type="button" value="취소하기" onclick="cancel()">
+                    </td>
                 </tr>
             </table>
-        </form>
-        <h3>방명록</h3>
-        <div id="list">
-            <!-- 새로 생길 요소의 자리를 미리 만들어놓음 -->
-            <!-- <div id="d_1">작성자:<span id="w_1">aaa</span><br/>내용:<span id="c_1">asdf</span><br/>수정 삭제</div> -->
-            <!-- <div id="d_2">작성자:<span id="w_2">bbb</span><br/>내용:<span id="c_2">qwer</span><br/>수정 삭제</div> -->
-            <!-- <div id="d_3">작성자:<span id="w_3">ccc</span><br/>내용:<span id="c_3">zxcv</span><br/>수정 삭제</div> -->
-        </div>
-
-        <!-- 수정 폼 -->
-        <!-- none: 화면에 안보이게 하고 자리 할당 안함. <body>에 있긴 함. -->
-        <table id="editf" style="display: none;">
-            <tr>
-                <td>
-                    <div class="form-floating mb-3">
-                        <input type="text" name="editwriter" class="form-control" id="editwriter" style="width:500px"
-                            placeholder="작성자">
-                        <label for="floatingInput">작성자</label>
-                    </div>
-                </td>
-
-            </tr>
-            <tr>
-                <td>
-                    <div class="form-floating mb-3">
-                        <input type="password" name="editpwd" class="form-control" id="editpwd" placeholder="Password">
-                        <label for="floatingPassword">Password</label>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="form-floating mb-3">
-                        <textarea type="text" name="editcontent" class="form-control" placeholder="내용을 입력해 주세요."
-                            id="editcontent" style="height: 100px"></textarea>
-                        <label for="내용을 입력해 주세요.">내용을 입력해 주세요.</label>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <th></th>
-                <td><input class="btn btn-primary" type="button" value="수정완료" id="editbtn" onclick="edit()">
-                    <input class="btn btn-danger" type="button" value="취소" onclick="cancel()">
-                </td>
-            </tr>
-        </table>
     </section>
     <script type="module" src="./js/hyochang_firebase.js"></script>
     <script type="module" src="./js/chang.js"></script>
