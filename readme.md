@@ -87,6 +87,7 @@ images폴더안에는 이미지폴더를 각자 따로 생성해주었다.
 
 
 ## 개인 블로그 주소
+블로그에는 프로젝트를 만들 때 발생한 에러와 해결방식이 담겨있다.
 > 권경열: https://velog.io/@yeol10  
 > 최광희: https://velog.io/@rkdgh4427  
 > 강지향: https://velog.io/@kanjang96  
