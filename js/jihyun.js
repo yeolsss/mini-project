@@ -29,6 +29,18 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const ref = collection(db, "miniProject");
 
+// 방명록 날짜
+function createDate() {
+  const today = new Date();
+  const year = String(today.getFullYear()); // 년도
+  const month = String(today.getMonth() + 1).padStart(2, "0"); // 월
+  const date = String(today.getDate()).padStart(2, "0"); // 날짜
+  const hours = String(today.getHours()).padStart(2, "0");
+  const minutes = String(today.getMinutes()).padStart(2, "0");
+  const seconds = String(today.getSeconds()).padStart(2, "0");
+  return `${year}.${month}.${date} ${hours}:${minutes}:${seconds}`;
+}
+
 // ! 방명록 제출 event
 const userNameInput = document.querySelector(".user-name");
 const passwordInput = document.querySelector(".password");
@@ -43,14 +55,14 @@ submitBtn.addEventListener("click", async function (e) {
   // * Input 값 가져오기
   let getUserName = userNameInput.value;
   let getComments = commentInput.value;
-  let getDate = Timestamp.fromDate(new Date());
+  let getDate = createDate();
   let getPassword = passwordInput.value;
 
   // * 가져온 Input 값 firestore에 저장하기
   let doc = {
     userName: getUserName,
-    comments: getComments.replaceAll("\n", "</br>"),
-    date: getDate.toDate(),
+    comments: getComments.replaceAll("\n", "<br>"),
+    date: getDate,
     password: getPassword,
   };
 
@@ -117,12 +129,10 @@ function addComment(docs) {
 
 // **************************** 수정 및 삭제 **************************** //
 const deleteModal = document.querySelector(".delete-modal");
-const overlayBackground = document.querySelector(".overlay");
-const checkPasswordForm = document.querySelector(".check-password-form");
 const checkPasswordInput = document.querySelector(".delete-password-input");
 const cancelDeleteBtn = document.querySelector(".delete-cancel");
 const checkPasswordBtn = document.querySelector(".delete");
-const message = document.querySelector(".password-message");
+const message = document.querySelector(".delete-error-message");
 
 let currentCommentId = "";
 
@@ -150,12 +160,12 @@ checkPasswordBtn.addEventListener("click", async function (e) {
   const password = getDelDoc.data().password;
 
   if (checkPasswordInput.value === "") {
-    message.innerText = "비밀번호를 입력해주세요";
+    message.innerText = "비밀번호를 입력해주세요.";
   } else if (password !== checkPasswordInput.value) {
-    message.innerText = "비밀번호를 다시 입력해주세요";
+    message.innerText = `비밀번호가 일치하지 않습니다. \n 다시 입력해주세요.`;
     checkPasswordInput.value = "";
   } else if (password === checkPasswordInput.value) {
-    console.log("삭제되었습니다");
+    console.log("삭제되었습니다.");
     checkPasswordInput.value = "";
     deleteDoc(getData)
       .then(() => {
@@ -170,33 +180,34 @@ checkPasswordBtn.addEventListener("click", async function (e) {
 });
 
 // 방명록 수정 Modal
-const editCommentsForm = document.querySelector(".edit-comments-form");
+const editModal = document.querySelector(".edit-modal");
 const editCommentsInput = document.querySelector(".edit-comments");
-const editUserNameInput = document.querySelector(".eidt-user-name");
+const editUserNameInput = document.querySelector(".eidt-username");
 const editPasswordInput = document.querySelector(".edit-password");
 const cancelEditCommentsBtn = document.querySelector(".edit-cancel");
 const editCommentsBtn = document.querySelector(".edit");
-const editMessage = document.querySelector(".edit-msg");
+const editMessage = document.querySelector(".edit-error-message");
 
 // card delete button에 event 추가하기
 function editComments() {
   document.querySelectorAll(".edit-btn").forEach(button =>
     button.addEventListener("click", async function (e) {
-      openModal(editCommentsForm);
+      openModal(editModal);
       currentCommentId = e.target.value;
       const getData = doc(db, "miniProject", currentCommentId);
       const getEditDoc = await getDoc(getData);
-      console.log(getEditDoc);
-      const comment = getEditDoc.data().comments;
+      const comment = getEditDoc.data().comments.replaceAll("<br>", "\n");
       const userName = getEditDoc.data().userName;
-      editCommentsInput.value = comment;
-      editUserNameInput.value = userName;
+      (editCommentsInput.value = comment), (editUserNameInput.value = userName);
     })
   );
 }
 
 // 방명록 수정 취소 버튼 event
-cancelEditCommentsBtn.addEventListener("click", closeModal(editCommentsForm));
+cancelEditCommentsBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  closeModal(editModal);
+});
 
 // 방명록 수정 확인 버튼 event
 editCommentsBtn.addEventListener("click", async function (e) {
@@ -212,9 +223,9 @@ editCommentsBtn.addEventListener("click", async function (e) {
   };
 
   if (editPasswordInput.value === "") {
-    editMessage.innerText = "비밀번호를 입력해주세요";
+    editMessage.innerText = "비밀번호를 입력해주세요.";
   } else if (editPassword !== editPasswordInput.value) {
-    editMessage.innerText = "비밀번호를 다시 입력해주세요";
+    editMessage.innerText = "비밀번호가 일치하지 않습니다. \n 다시 입력해주세요.";
     editPasswordInput.value = "";
   } else if (editPassword === editPasswordInput.value) {
     console.log("수정되었습니다.");
@@ -229,9 +240,9 @@ editCommentsBtn.addEventListener("click", async function (e) {
 });
 
 // 나의 소개 보이기
-const showMainCard1 = document.querySelector("#card-1");
-const showMainCard2 = document.querySelector("#card-2");
-const showMainCard3 = document.querySelector("#card-3");
+const showMainCard1 = document.querySelector(".card-1");
+const showMainCard2 = document.querySelector(".card-2");
+const showMainCard3 = document.querySelector(".card-3");
 const firstCardContents = document.querySelector(".card-1-contents");
 const secondCardContents = document.querySelector(".card-2-contents");
 const thirdCardContents = document.querySelector(".card-3-contents");
@@ -244,6 +255,7 @@ showMainCard1.addEventListener("click", function () {
 
 showMainCard2.addEventListener("click", function () {
   firstCardContents.classList.add("hidden");
+  showMainCard1.classList.remove("selected");
   secondCardContents.classList.remove("hidden");
   thirdCardContents.classList.add("hidden");
 });
@@ -254,19 +266,9 @@ showMainCard3.addEventListener("click", function () {
   thirdCardContents.classList.remove("hidden");
 });
 
-const mbti = document.querySelector(".hidden-mbti");
-const mbtiImg = document.querySelector(".mbti-img");
-
 // ************************* Modal ************************* //
 function openModal(modal) {
   modal.classList.remove("hidden");
-  let positionX = window.event.pageX / 2;
-  let positionY = window.event.pageY;
-  modal.style.top = `${positionY}px`;
-  modal.style.left = `${positionX}px`;
-
-  console.log(modal);
-  console.log(window.event);
 }
 
 function closeModal(modal) {
@@ -274,5 +276,3 @@ function closeModal(modal) {
 }
 
 getComments();
-
-// x, screenX, pageX, offsetX, layerX, clientX

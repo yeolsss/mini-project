@@ -11,7 +11,7 @@
   --black: #272727;
 
   /* Font Size */
-  --caption: 12px;
+  --caption: 14px;
   --body: 16px;
   --h3: 21.33px;
   --h2: 28.43px;
@@ -96,12 +96,18 @@ body {
   width: 150px;
   height: 150px;
   border-radius: 50%;
+  background-image: url(../images/jihyun_img/jihyun-photo.JPG);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .card-header-section .my-name {
   font-size: var(--h3);
   font-weight: 800;
 }
+
 .card-header-section .my-goal {
+  font-size: var(--caption);
 }
 
 /* Card Main Container */
@@ -122,27 +128,35 @@ body {
   width: fit-content;
   margin: 10px auto 20px auto;
 }
-.card-main-section .card-title-container li {
+
+.card-main-section .card-title-container .card-title {
   text-align: center;
   padding: 10px;
   cursor: pointer;
 }
 
-.card-main-section .card-title-container li:hover {
+.card-main-section .card-title-container .card-title:hover {
   background-color: var(--white);
   color: var(--black);
   border-radius: 20px;
 }
 
-.card-main-section .card-title-container li:focus {
+.card-main-section .card-title-container .card-title:active,
+.card-main-section .card-title-container .card-title:focus,
+.selected {
   background-color: var(--secondary);
   color: var(--black);
   border-radius: 20px;
 }
 
+.card-main-section {
+  display: block;
+  text-align: center;
+}
+
 .card-main-section .card-main-container .card-contents {
   line-height: 1.3;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 .card-main-section .card-main-container .tag-container {
   display: flex;
@@ -218,7 +232,7 @@ body {
 .board-form-container .board-form .user-info-container .input-field:active,
 .board-form-container .board-form .comments:focus,
 .board-form-container .board-form .comments:active {
-  border: 3px solid var(--white);
+  border: 3px solid var(--primary);
   border-radius: 5px;
 }
 
@@ -242,7 +256,7 @@ body {
 .board-contents-section {
   background-color: var(--white);
   width: 700px;
-  margin: 0 auto;
+  margin: 0 auto 50px auto;
   border-radius: 20px;
 }
 
@@ -323,12 +337,18 @@ body {
   background-color: var(--secondary);
 }
 
-/* Delete Modal */
-.delete-modal {
-  position: absolute;
-  z-index: 2;
+/* Delete & Edit Modal */
+.delete-modal,
+.edit-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(0, 0, 0, 0.5);
+  display: flex;
+  transition: top 600ms cubic-bezier(0.86, 0, 0.07, 1);
 }
-
 .check-password-form {
   display: flex;
   flex-direction: column;
@@ -337,8 +357,15 @@ body {
   width: 500px;
   height: 500px;
   background-color: var(--black);
-  margin: 0 auto;
+  margin: 100px auto;
   border-radius: 10px;
+}
+.delete-modal .delete-error-message,
+.edit-modal .edit-error-message {
+  color: var(--white);
+  margin-bottom: 20px;
+  line-height: 1.5;
+  text-align: center;
 }
 .check-password-form .delete-password-input {
   height: 40px;
@@ -350,56 +377,79 @@ body {
   padding: 0 10px;
 }
 .check-password-form .delete-password-input:focus {
-  border: 2px solid var(--primary);
+  border: 3px solid var(--primary);
   border-radius: 5px;
   padding: 0 10px;
 }
-.check-password-form .password-message {
-}
-.check-password-form .delete-btn-container {
-}
-.check-password-form .delete-btn-container .delete-cancel {
-}
-.check-password-form .delete-btn-container .delete {
-}
 
 /* Edit Comments Modal */
+
 .edit-comments-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   width: 500px;
   height: 500px;
-  background-color: var(--gray);
-  margin: 0 auto;
+  background-color: var(--black);
+  margin: 100px auto;
   border-radius: 10px;
+  padding: 0 50px;
 }
+
+.edit-modal .edit-comments-form .edit-user-info-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.edit-modal .edit-comments-form .edit-user-info-container .eidt-username {
+  margin-right: 10px;
+}
+
+.edit-modal .edit-comments-form .edit-user-info-container .input-field {
+  width: 100%;
+  height: 35px;
+  color: var(--white);
+  background-color: transparent;
+  outline: none;
+  border: 1px solid var(--white);
+  border-radius: 5px;
+  padding: 0 10px;
+}
+
+.edit-modal .edit-comments-form .edit-comments-container {
+  display: flex;
+  justify-content: center;
+}
+
 .edit-comments-form .edit-comments {
-  width: 400px;
-  height: 300px;
-  margin-bottom: 10px;
+  width: 100%;
+  font-family: "IBM Plex Sans KR", sans-serif;
+  color: var(--white);
+  background-color: transparent;
+  outline: none;
+  border: 1px solid var(--white);
+  border-radius: 7px;
+  padding: 10px;
   resize: none;
+  margin-top: 20px;
 }
+
+.edit-modal .edit-comments-form .edit-user-info-container .input-field:focus,
+.edit-modal .edit-comments-form .edit-user-info-container .input-field:active,
+.edit-comments-form .edit-comments:focus,
+.edit-comments-form .edit-comments:active {
+  border: 3px solid var(--primary);
+  border-radius: 5px;
+}
+
 .edit-comments-form .edit-btn-container {
-}
-.edit-comments-form .edit-btn-container .edit-cancel {
-}
-.edit-comments-form .edit-btn-container .edit {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
 }
 
 /* 소개 숨기기 */
 .hidden {
   display: none;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--black);
-  opacity: 0.8;
-  z-index: 1;
 }

@@ -20,33 +20,31 @@
     <div class="card-container">
       <!-- Team Name Section -->
       <header class="team-name-container">
-        <a class="team-name" href="javascript:void(0)">일단버티조</a>
+        <a class="team-name" href="./index.html">일단버티조</a>
       </header>
 
       <!-- Card Header Section -->
       <section class="card-header-section">
-        <img
-          class="my-image"
-          src="https://images.unsplash.com/photo-1695133402115-84bd24b42e5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80"
-          alt="" />
+        <div class="my-image"></div>
         <h1 class="my-name">전지현</h1>
-        <p class="my-goal">안녕하세요</p>
+        <p class="my-goal">안녕하세요. UI/UX디자이너에서 프론트엔드 개발자로 이직을 준비하고 있습니다.</p>
       </section>
 
       <!-- Card Main Section -->
       <section class="card-main-section">
         <ul class="card-title-container">
-          <li tabindex="1" class="card-title" id="card-1">나의 MBTI 및 성격</li>
-          <li tabindex="1" class="card-title" id="card-2">나의 장점</li>
-          <li tabindex="1" class="card-title" id="card-3">나의 협업 스타일</li>
+          <li tabindex="1" class="card-title card-1 selected">나의 MBTI 및 성격</li>
+          <li tabindex="1" class="card-title card-2">나의 장점</li>
+          <li tabindex="1" class="card-title card-3">나의 협업 스타일</li>
         </ul>
 
-        <div class="card-main-container card-1-contents hidden">
+        <div class="card-main-container card-1-contents">
+          <img src="./images/jihyun_img/mbti.png" alt="INTP 특징들" />
           <p class="card-contents">
             저의 MBTI는 INTP 입니다.저는 조용하고 집에있는 것을 좋아합니다. 그렇다고 365일 집에 있는 것은 아니고 여행을
-            좋아해 한번 세상에 대한 호기심이 발동하면 하루에 3만보씩 걸어다니기도 합니다. 계획없이 발길 닿는대로 걸어서
-            그런가 봅니다. 제가 말 없이 무표정일 때가 많아 가끔 '화났니?' 라는 말을 자주 듣는데, 아닙니다! 멍때리거나
-            생각하고 있는겁니다.
+            좋아해 한번 세상에 대한 호기심이 발동하면 아침부터 밤까지 걸어 다니기도 합니다. 계획없이 발길 닿는대로
+            걸어서 그런가 봅니다. 제가 말 없이 무표정일 때가 많아 가끔 영혼 없어 보일 때가 있지만 화가난건 아니니까
+            언제든지 와서 말걸어주세요.
           </p>
           <div class="tag-container">
             <span class="tag">#조용한</span>
@@ -61,9 +59,9 @@
 
         <div class="card-main-container card-2-contents hidden">
           <p class="card-contents">
-            저는 조용하고 집에있는 것을 좋아합니다. 그렇다고 365일 집에 있는 것은 아니고 여행을 좋아해 한번 세상에 대한
-            호기심이 발동하면 하루에 3만보씩 걸어다니기도 합니다. 계획없이 발길 닿는대로 걸어서 그런가 봅니다. 제가 말
-            없이 무표정일 때가 많아 가끔 '화났니?' 라는 말을 자주 듣는데, 아닙니다! 멍때리거나 생각하고 있는겁니다.
+            저는 호기심이 많고 다른 사람들의 생각들을 듣는 것을 좋아합니다. 그리고 제가 흥미 있어하는 분야에는
+            집요함(?)과 인내심을 가지고 파고드는 경향이 있습니다. 자유분방하지만 정해진 규칙이 있으면 타인에게
+            피해가가지 않도록 규칙을 잘 지키는 편입니다.
           </p>
           <div class="tag-container">
             <span class="tag">#오픈마인드</span>
@@ -131,7 +129,7 @@
     <!-- Delete Modal -->
     <div class="delete-modal hidden">
       <form class="check-password-form">
-        <p class="password-message"></p>
+        <p class="delete-error-message"></p>
         <label for="password"></label>
         <input class="delete-password-input" type="password" placeholder="비밀번호를 입력해주세요" />
         <div class="delete-btn-container">
@@ -141,20 +139,29 @@
       </form>
     </div>
 
-    <div class="overlay hidden"></div>
-
     <!-- Edit Comments Modal -->
     <div class="edit-modal hidden">
-      <form class="edit-comments-form hidden">
-        <p class="edit-msg"></p>
+      <form class="edit-comments-form">
+        <p class="edit-error-message"></p>
         <div class="edit-user-info-container">
-          <input class="eidt-user-name" type="text" placeholder="이름을 적어주세요." required maxlength="20" />
-          <input class="edit-password" type="password" placeholder="비밀번호를 입력해주세요." required />
+          <label for="edit-username"></label>
+          <input
+            class="eidt-username input-field"
+            id="edit-user-name"
+            type="text"
+            placeholder="이름을 입력해주세요. (최대 20자)" />
+          <label for="edit-password"></label>
+          <input
+            class="edit-password input-field"
+            id="edit-password"
+            type="password"
+            placeholder="비밀번호를 입력해주세요." />
         </div>
-        <textarea class="edit-comments" name="" id="edit-comments" cols="30" rows="10" placeholder=""></textarea>
-
+        <div class="edit-comments-container">
+          <textarea class="edit-comments" name="" id="edit-comments" cols="30" rows="10" placeholder=""></textarea>
+        </div>
         <div class="edit-btn-container">
-          <input type="button" class="edit-cancel outline-btn" value="취소" />
+          <input type="reset" class="edit-cancel outline-btn" value="취소" />
           <input type="submit" class="edit btn" value="수정" />
         </div>
       </form>
