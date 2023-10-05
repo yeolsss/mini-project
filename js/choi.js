@@ -50,6 +50,9 @@ savebtn.addEventListener("click", async function (event){
   .then((refDoc) => {
     alert("등록이 완료되었습니다.");
     createCommentCard();
+    writer.value = "";
+    pwd.value = "";
+    content.value = "";
   })
   .catch((error) => {
     console.error(error);
@@ -64,11 +67,10 @@ async function createCommentCard (){
   
     const commentDiv = document.createElement("div");
     commentDiv.innerHTML = `
-    작성자:<span id="w_1">${item.data().commentName}</span>
-        <br/>
-          내용:<span id="c_1">${item.data().commentContents}</span>
-        <br/>
-      </div>
+    <div>
+    <span id="w_1">작성자:${item.data().commentName}</span><br/>
+    <textarea type="text" rows="4" cols="1" id="c_1">${item.data().commentContents}</textarea><br/>
+    </div>
     `;
     list.appendChild(commentDiv);
   });
