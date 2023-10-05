@@ -57,9 +57,10 @@ textarea {
   --error-color: #e66767;
   --del-btn: #ea8685;
 }
-
-body {
+html {
   font-size: 62.5%;
+}
+body {
   font-family: "Nanum Gothic Coding", cursive;
   display: flex;
   background-color: var(--light-grayish-cyan);
@@ -98,20 +99,32 @@ header h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2.2rem 4rem;
+  padding: 5rem 4rem;
   box-sizing: border-box;
   background-color: var(--contents-bg-color);
   border-radius: 0.5rem;
-  max-width: 75rem;
+  max-width: 90rem;
 }
 
 .main-header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 2rem;
+}
+
+.main-header .profile-img {
+  background-image: url("../images/yeol/IMG_6772.jpg");
+  width: 20rem;
+  height: 20rem;
+  background-size: 36rem;
+  background-position: -8rem -5rem;
+  border-radius: 10rem;
 }
 
 .main-header img {
+  width: 20rem;
+  height: 20rem;
   border-radius: 10rem;
 }
 
@@ -148,7 +161,7 @@ header h1 {
 
 .comment-form,
 .comment-card__section {
-  margin-top: 2rem;
+  margin: 2rem 0 2rem;
 }
 
 .comment-form {
@@ -388,23 +401,20 @@ textarea:focus {
   padding: 2rem;
   margin: auto;
   width: 40%;
-  max-height: 17rem;
-  height: 45%;
+  height: 25rem;
 }
 
 .update-modal__form {
   max-height: unset;
   width: 60%;
-  height: 60%;
   display: flex;
   flex-direction: column;
   padding: 2rem;
-  margin: auto;
 }
 
 .delete-modal__form h1,
 .update-modal__form h1 {
-  font-size: 2.4rem;
+  font-size: 4rem;
   text-align: center;
   color: var(--strong-cyan);
 }
@@ -473,7 +483,7 @@ textarea:focus {
 .update-modal__form__btn-group button {
   font-size: 1.6rem;
   font-weight: 700;
-  padding: calc(5% - 1rem) 10%;
+  padding: calc(1% + 0.5rem) 5%;
   border-radius: 0.5rem;
   transition:
     color 0.3s ease-in,

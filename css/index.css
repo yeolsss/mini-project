@@ -1,5 +1,8 @@
 /*font import*/
+/*나눔고딕*/
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&family=Space+Mono:wght@400;700&display=swap");
+/*동글*/
+@import url("https://fonts.googleapis.com/css2?family=Dongle:wght@400;700&family=Nanum+Gothic+Coding:wght@400;700&family=Space+Mono:wght@400;700&display=swap");
 
 /* Rest */
 body,
@@ -19,10 +22,14 @@ h5 {
 
 /* Typography */
 :root {
+  /* 멤버 카드에 사용하는 컬러 변수*/
   --member-card-bg-color: #fbc531;
   --member-card-font-color: black;
+  /* 각 타이트별 font color*/
+  --title-font-color: black;
 }
-body {
+
+html {
   font-size: 62.5%;
 }
 
@@ -49,14 +56,15 @@ body {
 
 .main-header h1 {
   text-align: center;
-  font-weight: 700;
+  font-weight: bold;
   font-size: 4rem;
+  color: var(--title-font-color);
 }
 
 /*슬라이더 섹션 css*/
 .swiper {
-  width: 90rem;
-  height: 400px;
+  width: 110rem;
+  height: 40rem;
 }
 
 .swiper-slide {
@@ -73,7 +81,7 @@ body {
 }
 
 .member-section .member-section__cards {
-  max-width: 60rem;
+  max-width: 100rem;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -81,71 +89,97 @@ body {
 
 .member-section .member-section__cards h1 {
   text-align: center;
-  font-size: 2.4rem;
+  font-size: 4rem;
   font-weight: bold;
   width: 100%;
+  color: var(--title-font-color);
 }
+
 .member-section .member-section__cards > div {
   display: flex;
   flex-wrap: wrap;
-  max-width: 60rem;
-  margin: 0 auto;
+  margin: 2rem auto 0;
   justify-content: center;
+  gap: 2rem;
 }
+
 .member-section .member-section__cards .member-section__card {
-  width: 10rem;
+  width: 22rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  margin: 2rem;
-}
-.member-section .member-section__cards .member-section__card {
-  width: 10rem;
-  padding: 1.5rem 2rem;
-  display: flex;
-  flex-direction: column;
-  margin: 2rem;
   background-color: var(--member-card-bg-color);
   border-radius: 0.5rem;
+  overflow: hidden;
 }
 
-.member-section .member-section__cards .member-section__card > a > img {
+.member-section .member-section__cards .member-section__card .member-section__card-img {
   border-radius: 0.5rem;
   width: 100%;
-  height: 100%;
+  height: 20rem;
   transition: scale 0.2s ease-in;
+  background-repeat: no-repeat;
 }
 
-.member-section .member-section__cards .member-section__card > a > img:hover {
+/*member image demo*/
+.member-section .member-section__cards .member-section__card .member-section__card-img {
+  background-image: url("../images/yeol/profile04.png");
+  background-size: cover;
+}
+
+/* 권경열 멤버카드 사진 */
+.member-section .member-section__cards .member-section__card:nth-child(1) .member-section__card-img {
+  background-image: url("../images/yeol/IMG_6772.jpg");
+  background-size: 36rem;
+  background-position: -6rem -5rem;
+}
+
+/* 강지향 멤버카드 사진 */
+.member-section .member-section__cards .member-section__card:nth-child(4) .member-section__card-img {
+  background-image: url("../images/kang/1682240202623.jpg");
+  background-size: 100rem;
+  background-position: -31rem -61rem;
+}
+
+.member-section .member-section__cards .member-section__card .member-section__card-img:hover {
   scale: 110%;
 }
 
 .member-section .member-section__cards .member-section__card .member-section__card__info {
   display: flex;
   flex-direction: column;
-  font-size: 1.4rem;
 }
+
 .member-section .member-section__cards .member-section__card .member-section__card__info > div {
-  margin-top: 1rem;
+  margin-top: 2rem;
   display: flex;
 }
+
 .member-section .member-section__cards .member-section__card .member-section__card__info > div > div {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
 }
+
 .member-section .member-section__cards .member-section__card .member-section__card__info > div > div:last-child {
   margin-left: 0.4rem;
 }
+
 .member-section .member-section__cards .member-section__card .member-section__card__info > div > div svg {
-  width: 1.5rem;
-  height: 1.2rem;
+  width: 3.5rem;
+  height: 3.2rem;
   transition: scale 0.2s ease-in;
+  vertical-align: middle;
 }
+
 .member-section .member-section__cards .member-section__card .member-section__card__info > div > div svg:hover {
   scale: 200%;
 }
+
 .member-section .member-section__cards .member-section__card .member-section__card__info > div > div > span {
   color: var(--member-card-font-color);
+  font-family: "Dongle", sans-serif;
+  font-size: 3.5rem;
 }
 
 /* 좋아요 섹션 css*/
