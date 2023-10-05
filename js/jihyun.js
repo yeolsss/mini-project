@@ -29,13 +29,12 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const ref = collection(db, "miniProject");
 
-console.log(ref);
-
 // ! 방명록 제출 event
 const userNameInput = document.querySelector(".user-name");
 const passwordInput = document.querySelector(".password");
 const commentInput = document.querySelector(".comments");
 const submitBtn = document.querySelector(".form-submit");
+const boradErrorMessage = document.querySelector(".board-err-message");
 
 submitBtn.addEventListener("click", async function (e) {
   // * Default 이벤트 제거
@@ -50,15 +49,30 @@ submitBtn.addEventListener("click", async function (e) {
   // * 가져온 Input 값 firestore에 저장하기
   let doc = {
     userName: getUserName,
-    comments: getComments,
+    comments: getComments.replaceAll("\n", "</br>"),
     date: getDate.toDate(),
     password: getPassword,
   };
 
   await addDoc(collection(db, "miniProject"), doc);
 
-  // * Reload browser
   window.location.reload();
+
+  // * Form 유효성 검사
+  // if (getUserName === "") {
+  //   boradErrorMessage.innerText = "이름을 입력해주세요.";
+  // } else if (getUserName.length > 20) {
+  //   boradErrorMessage.innerText = "이름을 20자 이내로 입력해주세요.";
+  // } else if (getPassword === "") {
+  //   boradErrorMessage.innerText = "비밀번호를 입력해주세요.";
+  // } else if (getComments === "") {
+  //   boradErrorMessage.innerText = "내용을 입력해주세요.";
+  // } else {
+  //   await addDoc(collection(db, "miniProject"), doc);
+
+  //   // * Reload browser
+  //   window.location.reload();
+  // }
 });
 
 // ! 작성된 방명록 출력하기
@@ -102,6 +116,8 @@ function addComment(docs) {
 }
 
 // **************************** 수정 및 삭제 **************************** //
+const deleteModal = document.querySelector(".delete-modal");
+const overlayBackground = document.querySelector(".overlay");
 const checkPasswordForm = document.querySelector(".check-password-form");
 const checkPasswordInput = document.querySelector(".delete-password-input");
 const cancelDeleteBtn = document.querySelector(".delete-cancel");
@@ -114,7 +130,7 @@ let currentCommentId = "";
 function deleteComments() {
   document.querySelectorAll(".delete-btn").forEach(button =>
     button.addEventListener("click", function (e) {
-      openModal(checkPasswordForm);
+      openModal(deleteModal);
       currentCommentId = e.target.value;
     })
   );
@@ -123,7 +139,7 @@ function deleteComments() {
 // modal cancel button에 event 추가하기
 cancelDeleteBtn.addEventListener("click", function (e) {
   e.preventDefault();
-  closeModal(checkPasswordForm);
+  closeModal(deleteModal);
 });
 
 // modal delete button에 event 추가하기
@@ -244,6 +260,13 @@ const mbtiImg = document.querySelector(".mbti-img");
 // ************************* Modal ************************* //
 function openModal(modal) {
   modal.classList.remove("hidden");
+  let positionX = window.event.pageX / 2;
+  let positionY = window.event.pageY;
+  modal.style.top = `${positionY}px`;
+  modal.style.left = `${positionX}px`;
+
+  console.log(modal);
+  console.log(window.event);
 }
 
 function closeModal(modal) {
@@ -251,3 +274,5 @@ function closeModal(modal) {
 }
 
 getComments();
+
+// x, screenX, pageX, offsetX, layerX, clientX

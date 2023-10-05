@@ -89,29 +89,38 @@
           </div>
         </div>
       </section>
+    </div>
 
-      <!-- Board Form Section -->
-      <div class="board-form-container">
-        <h3 class="board-form-title">방명록 작성</h3>
-        <form class="board-form">
-          <div class="user-info-container">
-            <input class="user-name input-field" type="text" placeholder="이름을 적어주세요." required maxlength="20" />
-            <input class="password input-field" type="password" placeholder="비밀번호를 입력해주세요." required />
-          </div>
-          <textarea
-            class="comments"
-            name=""
-            id="comments"
-            cols="30"
-            rows="10"
-            placeholder="내용을 입력해 주세요."
-            required></textarea>
+    <!-- Board Form Section -->
+    <div class="board-form-container">
+      <h3 class="board-form-title">방명록 작성</h3>
+      <p class="board-err-message"></p>
+      <form class="board-form" action="#">
+        <div class="user-info-container">
+          <label for="username"></label>
+          <input
+            class="user-name input-field"
+            id="username"
+            type="text"
+            placeholder="이름을 입력해주세요. (최대 20자)"
+            required />
+          <label for="password"></label>
+          <input class="password input-field" id="password" type="password" placeholder="비밀번호를 입력해주세요." />
+        </div>
 
-          <div class="form-submit-btn-container">
-            <input type="submit" class="form-submit btn" value="등록" />
-          </div>
-        </form>
-      </div>
+        <label for="comments"></label>
+        <textarea
+          class="comments"
+          name="comments"
+          id="comments"
+          cols="30"
+          rows="10"
+          placeholder="내용을 입력해 주세요."></textarea>
+
+        <div class="form-submit-btn-container">
+          <input type="submit" class="form-submit btn" value="등록" />
+        </div>
+      </form>
     </div>
 
     <!-- Board Contents Section -->
@@ -119,31 +128,37 @@
       <h3 class="board-contents-title">작성된 게시물</h3>
     </section>
 
-    <!-- Check Password Modal -->
+    <!-- Delete Modal -->
+    <div class="delete-modal hidden">
+      <form class="check-password-form">
+        <p class="password-message"></p>
+        <label for="password"></label>
+        <input class="delete-password-input" type="password" placeholder="비밀번호를 입력해주세요" />
+        <div class="delete-btn-container">
+          <input type="reset" class="delete-cancel outline-btn" value="취소" />
+          <input type="submit" class="delete btn" value="삭제" />
+        </div>
+      </form>
+    </div>
 
-    <form class="check-password-form hidden">
-      <p class="password-message"></p>
-      <input class="delete-password-input" type="password" placeholder="비밀번호를 입력해주세요" />
-      <div class="delete-btn-container">
-        <input type="submit" class="delete-cancel outline-btn" value="취소" />
-        <input type="submit" class="delete btn" value="삭제" />
-      </div>
-    </form>
+    <div class="overlay hidden"></div>
 
     <!-- Edit Comments Modal -->
-    <form class="edit-comments-form hidden">
-      <p class="edit-msg"></p>
-      <div class="edit-user-info-container">
-        <input class="eidt-user-name" type="text" placeholder="이름을 적어주세요." required maxlength="20" />
-        <input class="edit-password" type="password" placeholder="비밀번호를 입력해주세요." required />
-      </div>
-      <textarea class="edit-comments" name="" id="edit-comments" cols="30" rows="10" placeholder=""></textarea>
+    <div class="edit-modal hidden">
+      <form class="edit-comments-form hidden">
+        <p class="edit-msg"></p>
+        <div class="edit-user-info-container">
+          <input class="eidt-user-name" type="text" placeholder="이름을 적어주세요." required maxlength="20" />
+          <input class="edit-password" type="password" placeholder="비밀번호를 입력해주세요." required />
+        </div>
+        <textarea class="edit-comments" name="" id="edit-comments" cols="30" rows="10" placeholder=""></textarea>
 
-      <div class="edit-btn-container">
-        <input type="button" class="edit-cancel outline-btn" value="취소" />
-        <input type="submit" class="edit btn" value="수정" />
-      </div>
-    </form>
+        <div class="edit-btn-container">
+          <input type="button" class="edit-cancel outline-btn" value="취소" />
+          <input type="submit" class="edit btn" value="수정" />
+        </div>
+      </form>
+    </div>
 
     <script src="./js/jihyun.js" type="module"></script>
   </body>
