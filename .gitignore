@@ -1,5 +1,8 @@
 # intellij 설정폴더
 .idea
 
+#vscode 설정폴더
+.vscode
+
 # macos에서 쓰는 파일
 .DS_Store
