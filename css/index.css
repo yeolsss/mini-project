@@ -28,7 +28,8 @@ h5 {
   /* 각 타이트별 font color*/
   --title-font-color: black;
 }
-body {
+
+html {
   font-size: 62.5%;
 }
 
@@ -62,8 +63,8 @@ body {
 
 /*슬라이더 섹션 css*/
 .swiper {
-  width: 90rem;
-  height: 400px;
+  width: 110rem;
+  height: 40rem;
 }
 
 .swiper-slide {
@@ -80,7 +81,7 @@ body {
 }
 
 .member-section .member-section__cards {
-  max-width: 60rem;
+  max-width: 80rem;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -93,15 +94,17 @@ body {
   width: 100%;
   color: var(--title-font-color);
 }
+
 .member-section .member-section__cards > div {
   display: flex;
   flex-wrap: wrap;
-  max-width: 60rem;
+  max-width: 80rem;
   margin: 0 auto;
   justify-content: center;
 }
+
 .member-section .member-section__cards .member-section__card {
-  width: 12rem;
+  width: 20rem;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -125,31 +128,37 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 .member-section .member-section__cards .member-section__card .member-section__card__info > div {
   margin-top: 1rem;
   display: flex;
 }
+
 .member-section .member-section__cards .member-section__card .member-section__card__info > div > div {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
 }
+
 .member-section .member-section__cards .member-section__card .member-section__card__info > div > div:last-child {
   margin-left: 0.4rem;
 }
+
 .member-section .member-section__cards .member-section__card .member-section__card__info > div > div svg {
-  width: 1.5rem;
-  height: 1.2rem;
+  width: 3.5rem;
+  height: 3.2rem;
   transition: scale 0.2s ease-in;
   vertical-align: middle;
 }
+
 .member-section .member-section__cards .member-section__card .member-section__card__info > div > div svg:hover {
   scale: 200%;
 }
+
 .member-section .member-section__cards .member-section__card .member-section__card__info > div > div > span {
   color: var(--member-card-font-color);
   font-family: "Dongle", sans-serif;
-  font-size: 1.8rem;
+  font-size: 4.5rem;
 }
 
 /* 좋아요 섹션 css*/

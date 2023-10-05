@@ -57,9 +57,10 @@ textarea {
   --error-color: #e66767;
   --del-btn: #ea8685;
 }
-
-body {
+html {
   font-size: 62.5%;
+}
+body {
   font-family: "Nanum Gothic Coding", cursive;
   display: flex;
   background-color: var(--light-grayish-cyan);
@@ -98,17 +99,18 @@ header h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2.2rem 4rem;
+  padding: 5rem 4rem;
   box-sizing: border-box;
   background-color: var(--contents-bg-color);
   border-radius: 0.5rem;
-  max-width: 75rem;
+  max-width: 90rem;
 }
 
 .main-header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 2rem;
 }
 
 .main-header img {
@@ -148,7 +150,7 @@ header h1 {
 
 .comment-form,
 .comment-card__section {
-  margin-top: 2rem;
+  margin: 2rem 0 2rem;
 }
 
 .comment-form {
