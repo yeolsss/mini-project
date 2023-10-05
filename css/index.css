@@ -120,16 +120,21 @@ body {
   transition: scale 0.2s ease-in;
   background-repeat: no-repeat;
 }
+
 /*member image demo*/
 .member-section .member-section__cards .member-section__card .member-section__card-img {
   background-image: url("../images/yeol/profile04.png");
+  background-size: cover;
 }
 
+/* 권경열 멤버카드 사진 */
 .member-section .member-section__cards .member-section__card:nth-child(1) .member-section__card-img {
   background-image: url("../images/yeol/IMG_6772.jpg");
   background-size: 36rem;
   background-position: -6rem -5rem;
 }
+
+/* 강지향 멤버카드 사진 */
 .member-section .member-section__cards .member-section__card:nth-child(4) .member-section__card-img {
   background-image: url("../images/kang/1682240202623.jpg");
   background-size: 100rem;
