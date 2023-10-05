@@ -38,9 +38,6 @@ const getLikes = async () => {
 
 // chart color 생성 랜덤 함수
 const randomNum = () => Math.floor(Math.random() * (235 - 52 + 1) + 52);
-const updateChart = () => {
-  chart.update();
-};
 
 // 첫 로딩시 통계 출력
 await getLikes();
