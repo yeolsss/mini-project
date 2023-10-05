@@ -20,10 +20,12 @@ const db = getFirestore(app);
 const likeRef = collection(db, "member_like");
 
 let nameArr = [];
-let likeArr = [];
 let dataIdArr = [];
 const getLikes = async () => {
   const likesData = await getDocs(query(likeRef, orderBy("order", "asc")));
+  nameArr = [];
+  let likeArr = [];
+  dataIdArr = [];
   // chart에 필요한 data array
   likesData.forEach(data => {
     const getData = data.data();
@@ -31,22 +33,26 @@ const getLikes = async () => {
     nameArr.push(getData.name);
     likeArr.push(getData.like);
   });
+  return likeArr;
+};
+
+// chart color 생성 랜덤 함수
+const randomNum = () => Math.floor(Math.random() * (235 - 52 + 1) + 52);
+const updateChart = () => {
+  chart.update();
 };
 
 // 첫 로딩시 통계 출력
 await getLikes();
 
-// chart color 생성 랜덤 함수
-const randomNum = () => Math.floor(Math.random() * (235 - 52 + 1) + 52);
-
 /*--------------차트 생성 start--------------*/
-new Chart(ctx, {
+let chart = new Chart(ctx, {
   type: "bar",
   data: {
     labels: nameArr,
     datasets: [
       {
-        data: likeArr,
+        data: await getLikes(),
         backgroundColor: [
           `rgba(${randomNum()}, ${randomNum()}, ${randomNum()}, 0.3)`,
           `rgba(${randomNum()}, ${randomNum()}, ${randomNum()}, 0.3)`,
@@ -84,11 +90,13 @@ new Chart(ctx, {
     },
   },
 });
+
 /*--------------차트 생성 end--------------*/
 
 const likeObj = {
   name: "",
   like: 0,
+  order: "0",
 };
 
 // 좋아요 버튼
@@ -96,13 +104,14 @@ const likeBtns = document.querySelectorAll(".member-section__like-btn");
 likeBtns.forEach((btn, index) => {
   btn.addEventListener("click", async event => {
     event.preventDefault();
-    const currentLikeId = dataIdArr[index - 1];
+    const currentLikeId = dataIdArr[index];
     const getLike = await getDoc(doc(db, "member_like", currentLikeId));
     likeObj.name = getLike.data().name;
     likeObj.like = getLike.data().like + 1;
-    await setDoc(doc(likeRef, currentLikeId), likeObj).then(() => {
-      getLikes();
-      alert("통계 재호출");
+    likeObj.order = getLike.data().order;
+    await setDoc(doc(likeRef, currentLikeId), likeObj).then(async () => {
+      chart.data.datasets[0].data = await getLikes();
+      chart.update();
     });
   });
 });
