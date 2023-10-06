@@ -38,6 +38,7 @@ h5 {
   --title-font-color: black;
   --main-bg-color: #db0606;
   --swiper-theme-color: #fbc531;
+  --swiper-pagination-bullet-inactive-color: white;
 
   /*slider bg color*/
   --slider-bg-color: #151717;
