@@ -63,6 +63,57 @@ body {
   color: var(--title-font-color);
 }
 
+.main-header .main-text-text {
+  position: absolute;
+}
+
+.main-header .main-team-text {
+  position: absolute;
+  background-image: url('/images/main/B-02.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 50%;
+  width: 200px;
+  height: 100px;
+  margin: 50px 0 0 800px;
+}
+
+.main-header .main-text {
+  position: relative;
+  background-image: url('/images/main/mainText.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 80px 0 0 80px;
+  width: 400px;
+  height: 250px;
+  z-index: 1;
+}
+
+.main-header .main-text-02 {
+  position: relative;
+  background-image: url(/images/main/maingText_02.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 70px 0 0 50px;
+  width: 600px;
+  height: 250px;
+  margin: 100px 0 0 400px;
+  z-index: 1000;
+}
+
+.main-header .main-img {
+  position: absolute;
+  background-image: url(/images/main/Design.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* margin: 150px 0 0 50px; */
+  height: 350px;
+  margin: -500px 0 0 200px;
+  width: 500px;
+  height: 500px;
+  z-index: 100;
+}
+
 /*슬라이더 섹션 css*/
 .swiper {
   width: 110rem;
