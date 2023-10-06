@@ -66,6 +66,7 @@ a {
 }
 
 .profile img{
+    background-color: green;
     width: 60%;
     border-radius: 50%;
 }
@@ -79,7 +80,10 @@ a {
     justify-content: center;
     align-items: center;
     padding-top: 10px;
-    padding-bottom: 10px;
+}
+
+.myResolution {
+    text-align: center;
 }
 
 hr {
@@ -128,6 +132,10 @@ h5 {
 
 .tablebox {
     margin-top: -20px;
+}
+
+.commentbox{
+    text-align: center;
 }
 
 .writer {

@@ -1,18 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Nanum+Pen+Script&display=swap");
 
 * {
-  padding: 0;
-  margin: 0;
+  padding: 0.2rem;
+  margin: 0.2rem;
   box-sizing: border-box;
   font-family: "Gowun Dodum", sans-serif;
-}
-
-a {
-  color: unset;
-  text-decoration: unset;
-}
-a:hover {
-  color: unset;
 }
 
 a {
@@ -56,8 +48,10 @@ h1 {
 }
 
 .card .img-container {
-  width: 8em;
-  height: 7.75em;
+  display: flex;
+  justify-content: center;
+  width: 10rem;
+  height: 10rem;
   background-color: #a993ff;
   padding: 0.5em;
   border-radius: 50%;
@@ -65,6 +59,8 @@ h1 {
 }
 
 .card img {
+  display: flex;
+  justify-content: center;
   width: 100%;
   border-radius: 50%;
 }
@@ -145,5 +141,31 @@ h1 {
 }
 #list:hover {
   background: linear-gradient(#eb7e7e, #8567f7);
+  color: #ffffff;
+}
+
+/* to-top */
+.to-top {
+  display: flex;
+  position: fixed;
+  right: 0.4rem;
+  bottom: 0.4rem;
+}
+
+.to-top > div {
+  padding: 0.6rem 1.5rem;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.2s;
+  color: #1f003b;
+  margin-right: 0.4rem;
+}
+
+.moveTopBtn:hover {
+  background: linear-gradient(#6045ea, #8567f7);
   color: #ffffff;
 }

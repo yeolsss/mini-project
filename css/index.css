@@ -27,6 +27,7 @@ h5 {
   --member-card-font-color: black;
   /* 각 타이트별 font color*/
   --title-font-color: black;
+  --main-bg-color: #db0606;
 }
 
 html {
@@ -42,7 +43,7 @@ body {
   display: flex;
   width: 100vw;
   height: auto;
-  padding: 2rem;
+  padding: 2rem 2rem 5rem;
   box-sizing: border-box;
   font-family: "Nanum Gothic Coding", cursive;
 }
@@ -52,6 +53,7 @@ body {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  background-color: var(--main-bg-color);
 }
 
 .main-header h1 {
