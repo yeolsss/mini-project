@@ -136,7 +136,7 @@ body {
   color: var(--title-font-color);
 }
 
-.member-section .member-section__cards > div {
+.member-section .member-section__cards>div {
   display: flex;
   flex-wrap: wrap;
   margin: 2rem auto 0;
@@ -168,11 +168,13 @@ body {
   background-size: 36rem;
   background-position: -6rem -5rem;
 }
+
 .member-section .member-section__cards .member-section__card:nth-child(2) .member-section__card-img {
   background-image: url("../images/choi/IMG_2.jpg");
   background-size: cover;
   background-position: 0 -6rem;
 }
+
 .member-section .member-section__cards .member-section__card:nth-child(3) .member-section__card-img {
   background-image: url("../images/jihyun_img/jihyun-photo.JPG");
   background-size: 30rem;
@@ -185,6 +187,7 @@ body {
   background-size: 100rem;
   background-position: -31rem -61rem;
 }
+
 .member-section .member-section__cards .member-section__card:nth-child(5) .member-section__card-img {
   background-image: url("../images/chang/profile-img-main.jpg");
   background-size: 26rem;
@@ -200,33 +203,33 @@ body {
   flex-direction: column;
 }
 
-.member-section .member-section__cards .member-section__card .member-section__card__info > div {
+.member-section .member-section__cards .member-section__card .member-section__card__info>div {
   margin-top: 2rem;
   display: flex;
 }
 
-.member-section .member-section__cards .member-section__card .member-section__card__info > div > div {
+.member-section .member-section__cards .member-section__card .member-section__card__info>div>div {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
 }
 
-.member-section .member-section__cards .member-section__card .member-section__card__info > div > div:last-child {
+.member-section .member-section__cards .member-section__card .member-section__card__info>div>div:last-child {
   margin-left: 0.4rem;
 }
 
-.member-section .member-section__cards .member-section__card .member-section__card__info > div > div svg {
+.member-section .member-section__cards .member-section__card .member-section__card__info>div>div svg {
   width: 3.5rem;
   height: 3.2rem;
   transition: scale 0.2s ease-in;
   vertical-align: middle;
 }
 
-.member-section .member-section__cards .member-section__card .member-section__card__info > div > div svg:hover {
+.member-section .member-section__cards .member-section__card .member-section__card__info>div>div svg:hover {
   scale: 200%;
 }
 
-.member-section .member-section__cards .member-section__card .member-section__card__info > div > div > span {
+.member-section .member-section__cards .member-section__card .member-section__card__info>div>div>span {
   color: var(--member-card-font-color);
   font-family: "Dongle", sans-serif;
   font-size: 3.5rem;
@@ -238,6 +241,61 @@ body {
   margin-top: 5rem;
 }
 
+<<<<<<< HEAD
+.member-section__like-cardarea {
+  display: flex;
+}
+
+.member-section__like-card{
+  cursor: pointer;
+  box-shadow: 3px 5px 3px 3px black;
+  margin: 0.5rem;
+  margin-right: 3.3rem;
+  padding-top: 0.5rem;
+  border-radius: 0.5rem;
+}
+#member-section__like-btn1 {
+  background-image: url("../images/yeol/IMG_6772.jpg");
+  background-size: 35rem;
+  background-position: -11rem -6rem;
+}
+
+#member-section__like-btn2 {
+  background-image: url("../images/choi/IMG_2.jpg");
+  background-size: 12rem;
+  background-position: -12rem 0rem;
+}
+
+#member-section__like-btn3 {
+  background-image: url("../images/kang/1682240202623.jpg");
+  background-size: 20rem;
+  background-position: -2rem -9rem;
+}
+
+#member-section__like-btn4 {
+  background-image: url("../images/jihyun_img/jihyun-photo.JPG");
+  background-size: 24rem;
+  background-position: -7rem -18rem;
+}
+
+#member-section__like-btn5 {
+  background-image: url("../images/chang/profile-img-main.jpg");
+  background-size: 16rem;
+  background-position: -1rem -1rem;
+}
+
+.member-section__like-card:active {
+  transform: translate(4px, 4px);
+  box-shadow: 1px 1px 1px 1px black;
+}
+
+.member-section__like-btn2:active {
+  transform: translate(4px, 4px);
+  box-shadow: 1px 1px 1px 1px black;
+}
+
+.member>canvas {
+=======
 .member-section__likes .member-section__like-area .member-section__like-area__container {
   display: flex;
   justify-content: center;
@@ -257,6 +315,7 @@ body {
 }
 
 .member > canvas {
+>>>>>>> f31c732307f31b54aa1edc4ed0af8d09d42730d1
   width: 40rem !important;
   height: 20rem !important;
 }
