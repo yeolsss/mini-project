@@ -283,7 +283,7 @@ body {
   flex-wrap: wrap;
   margin: 2rem auto 0;
   justify-content: center;
-  gap: 2rem;
+  gap: 5rem;
 }
 
 .member-section .member-section__cards .member-section__card {
@@ -419,7 +419,7 @@ body {
 #member-section__like-btn2 {
   background-image: url("../images/choi/IMG_2.jpg");
   background-size: 12rem;
-  background-position: -12rem 0rem;
+  background-position: -12rem 0;
 }
 
 #member-section__like-btn3 {

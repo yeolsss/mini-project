@@ -1,392 +1,427 @@
+html {
+  font-size: 62.5%;
+}
 body {
-    width: 100%;
-    background-color: #ffcccc;
+  /*width: 100%;*/
+  background-color: #ffcccc;
+  padding-bottom: 5rem;
+  box-sizing: border-box;
+  display: flex;
 }
 
 /* 페이지 박스 부분*/
 .wrap {
-    display: block;
-    background-color: #f5f6fa;
-    width: 75%;
-    position: absolute;
-    border-radius: 3rem;
-    left: 15%;
-    top: 20%;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    overflow: hidden; /* 높이가 넘칠 경우 스크롤이 생기지 않도록 설정 */
+  display: block;
+  background-color: #f5f6fa;
+  min-width: 50rem;
+  width: 100%;
+  max-width: 100rem;
+  border-radius: 3rem;
+  margin: auto;
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.19),
+    0 6px 6px rgba(0, 0, 0, 0.23);
+  height: auto;
+  overflow: hidden; /* 높이가 넘칠 경우 스크롤이 생기지 않도록 설정 */
 }
 
 /* 페이지 헤더 부분 */
 .wrap #header {
-    margin-top: 3rem;
+  margin: 6rem 0 3rem;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
 }
 
 .wrap #header .hd-team-name {
-    width: 500px;
-    font-size: 3rem;
-    font-weight: 300;
-    text-align: center;
-    margin: 0 0 3rem 17rem;
-    color: #ff7675;
+  font-size: 5rem;
+  font-weight: 300;
+  color: #ff7675;
+}
+.wrap #header > a {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.wrap #header > a .hd-team-name {
+  vertical-align: middle;
+}
+
+.wrap #header .home-image {
+  width: 5rem;
+  height: 5rem;
+}
+
+.wrap #header > a > div {
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 .wrap #header .hd-member-name {
-    font-size: 2.5rem;
-    font-weight: 300;
-    text-align: center;
-    margin: 2rem;
+  font-size: 2.5rem;
+  font-weight: 300;
+  text-align: center;
+  margin: 2rem;
 }
 
 .wrap #header .hd-member-img {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background-image: url('../images/kang/1682240202623.jpg');
-    background-repeat: no-repeat;
-    background-position: 40% 57%;
-    margin: 5rem 0 0 26rem;
+  width: 30rem;
+  height: 30rem;
+  border-radius: 50%;
+  background-image: url("../images/kang/1682240202623.jpg");
+  background-repeat: no-repeat;
+  background-position: 40% 57%;
+  margin: 2rem auto;
 }
 
 .wrap #header .hd-member-text {
-    text-align: center;
-    line-height: 1.3rem;
-    font-weight: 600;
-    color: #7b7b7b;
+  text-align: center;
+  line-height: 1.3rem;
+  font-weight: 600;
+  color: #7b7b7b;
 }
 
 /* 페이지 내용 부분 */
 .wrap #main {
-    width: 800px;
-    height: 400px;
-    margin: 60px 0 0 300px;
+  margin-top: 5rem;
 }
 
 .wrap #main h3 {
-    color: #ff7675;
+  display: block;
+  color: #ff7675;
 }
-
+.wrap #main article:not(#gb-comment-wrap) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .wrap #main article .itm-box {
-    width: 600px;
-    height: auto;
-    min-height: 120px;
-    background-color: #fad6d6;
-    margin: 10px 0 25px 0;
-    line-height: 20px;
+  width: 60rem;
+  height: auto;
+  min-height: 12rem;
+  background-color: #fad6d6;
+  margin: 10px 0 25px 0;
+  line-height: 2rem;
 }
 
 .wrap #main article .itm-box p {
-    padding: 20px;
-    font-weight: 600;
+  padding: 2rem;
+  font-weight: 600;
 }
 
 .wrap #main hr {
-    width: 90%;
-    margin: 35px 0 0 -60px;
-    border: 1px solid #fad6d6;
+  width: 90%;
+  border: 1px solid #fad6d6;
 }
 
 /* 방명록 작성 부분 */
 .wrap #main #guest-book {
-    margin: 35px 0 0 0;
+  margin: 3.5rem 0 0 0;
+  padding-bottom: 6rem;
+  position: relative;
 }
 
 .wrap #main #guest-book h3 {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .wrap #main #guest-book #inputForm label {
-    display: none;
+  display: none;
 }
 
 .wrap #main #guest-book #gb-name {
-    width: 250px;
-    height: 30px;
-    border-radius: 8px;
-    margin: 20px 10px 0 0;
+  width: 25rem;
+  height: 3rem;
+  border-radius: 0.8rem;
+  margin: 20px 10px 0 0;
 }
 
 .wrap #main #guest-book #gb-pwd {
-    width: 200px;
-    height: 30px;
-    border-radius: 8px;
-    margin: 20px 0 0 0;
+  width: 20rem;
+  height: 3rem;
+  border-radius: 0.8rem;
+  margin: 2rem 0 0 0;
 }
 
 .wrap #main #guest-book #gb-content {
-    border-radius: 8px;
-    margin: 20px 0 0 0;
+  border-radius: 0.8rem;
+  margin: 2rem 0 0 0;
 }
 
 .wrap #main #guest-book #check-msg {
-    position: absolute;
-    margin: 15px 0 0 0;
-    font-weight: 600;
-    color: #51534e;
-    font-size: 0.9rem;
+  position: absolute;
+  margin: 1.5rem 0 0 0;
+  font-weight: 600;
+  color: #51534e;
+  font-size: 0.9rem;
 }
 
 .wrap #main #guest-book .btn-gb-apply {
-    margin: 15px 0 0 480px;
-    width: 100px;
-    height: 35px;
-    background-color: #ff7675;
-    border: 1px solid #ffcccc;
-    border-radius: 5px;
-    color: #ffffff;
-    cursor: pointer;
+  width: 10rem;
+  height: 3.5rem;
+  background-color: #ff7675;
+  border: 0.1rem solid #ffcccc;
+  border-radius: 0.5rem;
+  color: #ffffff;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0.6rem;
+  right: 18.3rem;
 }
 
 /* 방명록 댓글 부분 */
 .wrap #main #gb-comment-wrap {
-    margin: 20px 0 0 20px;
+  margin: 2rem 0 0 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.wrap .gb-comment-title__wrap {
+  width: 55%;
+  margin: auto;
+}
+.wrap #main #gb-comment-wrap > div {
+  margin: auto;
 }
 
-.wrap #main #gb-comment-wrap .gb-comment-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin: 20px 0 30px 0;
+.wrap #main .gb-comment-title__wrap .gb-comment-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 2rem 0 3rem 0;
 }
 
-.wrap #main #gb-comment-wrap .comment-cnt {
-    color: #ff7675;
+.wrap #main .gb-comment-title__wrap .comment-cnt {
+  color: #ff7675;
 }
 
 .wrap #main #gb-comment-wrap .gb-comment {
-    margin-bottom: 60px;
+  margin-bottom: 6rem;
 }
 
 .wrap #main #gb-comment-wrap .gb-comment .comment-name {
-    font-weight: 600;
-    color: #ff7675;
+  font-weight: 600;
+  color: #ff7675;
 }
 
 .wrap #main #gb-comment-wrap .gb-comment .comment-name .edit-marker {
-    font-weight: 600;
-    color: #a66363;
-    font-size: 0.9rem;
+  font-weight: 600;
+  color: #a66363;
+  font-size: 0.9rem;
 }
 
 .wrap #main #gb-comment-wrap .gb-comment .comment-date {
-    font-weight: 600;
-    color: #958f8f;
+  font-weight: 600;
+  color: #958f8f;
 }
 
 .wrap #main #gb-comment-wrap .gb-comment .btn-comment-update {
-    font-weight: 600;
-    color: #babdccdd;
-    cursor: pointer;
-    margin: 0 0 0 300px;
-    border: 0;
-    line-height: 20px;
+  font-weight: 600;
+  color: #babdccdd;
+  cursor: pointer;
+  margin: 0 0 0 36rem;
+  border: 0;
+  line-height: 2rem;
 }
 
 .wrap #main #gb-comment-wrap .gb-comment .btn-comment-del {
-    font-weight: 600;
-    color: #babdccdd;
-    cursor: pointer;
-    margin: 0 0 0 5px;
-    border: 0;
-    line-height: 20px;
+  font-weight: 600;
+  color: #babdccdd;
+  cursor: pointer;
+  margin: 0 0 0 0.5rem;
+  border: 0;
+  line-height: 2rem;
 }
 
 .wrap #main #gb-comment-wrap .gb-comment .btn-comment-update:hover {
-    color: #ff7675;
+  color: #ff7675;
 }
 
 .wrap #main #gb-comment-wrap .gb-comment .btn-comment-del:hover {
-    color: #ff7675;
+  color: #ff7675;
 }
 
 .wrap #main #gb-comment-wrap .gb-comment .comment-box {
-    width: 560px;
-    height: auto;
-    min-height: 150px;
-    border-radius: 10px;
-    background-color: #fad6d6;
-    margin: 10px 0 10px 0;
-    padding: 30px;
-    font-weight: 600;
-    color: #747474;
-    letter-spacing: 1.1px;
-    line-height: 120%;
+  width: 560px;
+  height: auto;
+  min-height: 15rem;
+  border-radius: 1rem;
+  background-color: #fad6d6;
+  margin: 1rem 0 1rem 0;
+  padding: 3rem;
+  font-weight: 600;
+  color: #747474;
+  letter-spacing: 1.1px;
+  line-height: 120%;
 }
 
 /* 비밀번호 입력 모달창 */
 .wrap #main #pwd-modal-wrap {
-    position: fixed; /* Stay in place */
-    z-index: 9999; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    display: none;
+  position: fixed; /* Stay in place */
+  z-index: 9999; /* Sit on top */
+  padding-top: 10rem; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  display: none;
 }
 
 .wrap #main #pwd-modal-wrap .comment-pwd-modal {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 500px;
-    height: 180px;
-    padding: 30px 30px;
-    margin: 100px auto;
-    border-radius: 10px;
-    background-color: #fff;
-    border: 3px solid #afafaf;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50rem;
+  height: 18rem;
+  padding: 3rem;
+  margin: 10rem auto;
+  border-radius: 1rem;
+  background-color: #fff;
+  border: 0.3rem solid #afafaf;
 }
 
 .wrap #main #pwd-modal-wrap .comment-pwd-modal label {
-    font-weight: 600;
-    color: #ff7675;
+  font-weight: 600;
+  color: #ff7675;
 }
 
 .wrap #main #pwd-modal-wrap .comment-pwd-modal #comment-pwd {
-    margin: 15px;
-    width: 200px;
-    height: 25px;
-    text-align: center;
-    border: 2px solid #cac5c5;
-    border-radius: 5px;
+  margin: 1.5rem;
+  width: 20rem;
+  height: 2.5rem;
+  text-align: center;
+  border: 0.2rem solid #cac5c5;
+  border-radius: 0.5rem;
 }
 
 .wrap #main #pwd-modal-wrap .comment-pwd-modal .message-pwd {
-    font-weight: 600;
-    color: #51534e;
-    font-size: 0.9rem;
-    text-align: center;
-    margin: -5px 0 10px 0;
+  font-weight: 600;
+  color: #51534e;
+  font-size: 0.9rem;
+  text-align: center;
+  margin: -0.5rem 0 1rem 0;
 }
 
 .wrap #main #pwd-modal-wrap .comment-pwd-modal .comment-modal-btn {
-    margin-left: 15px;
+  width: 50%;
+  margin-left: 1.5rem;
+  display: flex;
+  justify-content: center;
 }
 
-.wrap #main #pwd-modal-wrap .comment-pwd-modal .comment-del-confirm {
-    width: 60px;
-    height: 30px;
-    font-weight: 600;
-    color: #babdccdd;
-    cursor: pointer;
-    border: 0;
-    line-height: 20px;
-    margin: 0 20px 0 -15px;
-    border-radius: 5px;
-    display: none;
-}
-
+.wrap #main #pwd-modal-wrap .comment-pwd-modal .comment-del-confirm,
 .wrap #main #pwd-modal-wrap .comment-pwd-modal .comment-update-confirm {
-    width: 60px;
-    height: 30px;
-    font-weight: 600;
-    color: #babdccdd;
-    cursor: pointer;
-    border: 0;
-    line-height: 20px;
-    margin: 0 20px 0 -15px;
-    border-radius: 5px;
-    display: none;
+  width: 6rem;
+  height: 3rem;
+  font-weight: 600;
+  color: #babdccdd;
+  cursor: pointer;
+  border: 0;
+  line-height: 2rem;
+  margin: 0 2rem 0 -1.5rem;
+  border-radius: 0.5rem;
+  display: none;
 }
 
 .wrap #main #pwd-modal-wrap .comment-pwd-modal .comment-pwd-cancel {
-    width: 60px;
-    height: 30px;
-    font-weight: 600;
-    color: #babdccdd;
-    cursor: pointer;
-    border: 0;
-    line-height: 20px;
-    border-radius: 5px;
+  width: 6rem;
+  height: 3rem;
+  font-weight: 600;
+  color: #babdccdd;
+  cursor: pointer;
+  border: 0;
+  line-height: 2rem;
+  border-radius: 0.5rem;
 }
 
 .wrap #main #pwd-modal-wrap .comment-pwd-modal .comment-del-confirm:hover {
-    color: #ff7675;
+  color: #ff7675;
 }
 
 .wrap #main #pwd-modal-wrap .comment-pwd-modal .comment-update-confirm:hover {
-    color: #ff7675;
+  color: #ff7675;
 }
 
 .wrap #main #pwd-modal-wrap .comment-pwd-modal .comment-pwd-cancel:hover {
-    color: #ff7675;
+  color: #ff7675;
 }
 
 /* 수정 입력창 */
 .wrap #main #gb-comment-wrap .gb-comment-edit {
-    margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 
 .wrap #main #gb-comment-wrap .gb-comment-edit .comment-name-edit {
-    font-weight: 600;
-    color: #ff7675;
+  font-weight: 600;
+  color: #ff7675;
 }
 
 .wrap #main #gb-comment-wrap #gb-content-confirm {
-    margin: 10px 0 10px 0;
-    font-size: 1rem;
+  margin: 1rem 0 1rem 0;
+  font-size: 1rem;
 }
 
 .wrap #main #gb-comment-wrap .btn-update-confirm {
-    font-weight: 600;
-    color: #babdccdd;
-    cursor: pointer;
-    margin: 0 0 0 450px;
-    border: 0;
-    line-height: 20px;
+  font-weight: 600;
+  color: #babdccdd;
+  cursor: pointer;
+  margin: 0 0 0 45rem;
+  border: 0;
+  line-height: 2rem;
 }
 
-
 .wrap #main #gb-comment-wrap .btn-update-cancel {
-    font-weight: 600;
-    color: #babdccdd;
-    cursor: pointer;
-    margin: 0 0 0 10px;
-    border: 0;
-    line-height: 20px;
+  font-weight: 600;
+  color: #babdccdd;
+  cursor: pointer;
+  margin: 0 0 0 1rem;
+  border: 0;
+  line-height: 2rem;
 }
 
 .wrap #main #gb-comment-wrap .btn-update-confirm:hover {
-    color: #ff7675;
+  color: #ff7675;
 }
 
-
 .wrap #main #gb-comment-wrap .btn-update-cancel:hover {
-    color: #ff7675;
+  color: #ff7675;
 }
 
 /* 더보기 버튼 */
 .wrap #main #scroll .btn-load-more {
-    width: 75%;
-    height: 30px;
-    border: 0;
-    background-color: #dadbe1dd;
-    border-radius: 10px;
-    cursor: pointer;
-    color: #747474;
-    font-weight: 600;
-    font-size: 1rem;
-    margin-bottom: 50px;
-    display: none;
+  width: 75%;
+  height: 3rem;
+  border: 0;
+  background-color: #dadbe1dd;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #747474;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 5rem;
+  display: none;
 }
 
 /* 맨위로 버튼 */
 .scroll-top-wrap {
-    position: fixed;
-    right: 3%;
-    bottom: 20px;
-    z-index: 999;
+  position: fixed;
+  right: 3%;
+  bottom: 2rem;
+  z-index: 999;
 }
 
 .scroll-top-wrap #scroll-top {
-    width: 80px;
-    height: 100px;
-    background-image: url('../images/kang/arrow_circle_up_FILL0_wght400_GRAD0_opsz24.svg');
-    background-repeat: no-repeat;
-    background-color: transparent;
-    background-size: contain;
-    border: 0;
-    cursor: pointer;
+  width: 8rem;
+  height: 10rem;
+  background-image: url("../images/kang/arrow_circle_up_FILL0_wght400_GRAD0_opsz24.svg");
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: contain;
+  border: 0;
+  cursor: pointer;
 }
