@@ -72,7 +72,7 @@
 
 
 ## 배포 주소
-
+https://yeolsss.github.io/mini-project/
 
 ## 개인 블로그 주소
 블로그에는 프로젝트를 만들 때 발생한 에러와 해결방식이 담겨있다.
