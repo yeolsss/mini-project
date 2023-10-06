@@ -68,8 +68,8 @@ async function createCommentCard (){
     const commentDiv = document.createElement("div");
     commentDiv.innerHTML = `
     <div>
-    <span id="w_1">작성자:${item.data().commentName}</span><br/>
-    <p id="c_1">${item.data().commentContents}</p><br/>
+    <span class="w_1">작성자:${item.data().commentName}</span><br/>
+    <p class="c_1">${item.data().commentContents}</p><br/>
     </div>
     `;
     list.appendChild(commentDiv);
