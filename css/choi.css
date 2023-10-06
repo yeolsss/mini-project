@@ -94,6 +94,7 @@ hr {
 }
 
 .textbox {
+    background-color: white;
     word-wrap: break-word;
     color: black;
     width: 700px;
@@ -101,6 +102,9 @@ hr {
     border-style: hidden;
     margin: 5px;
     border-radius: 7px;
+    min-height: 100px;
+    height: auto;
+    font-size: medium;
 }
 
 h5 {
@@ -197,11 +201,13 @@ h5 {
     padding-left: 10px;
 }
 
-#w_1 {
+.w_1 {
     font-size: small;
+    margin-left: 20px;
 }
 
-#c_1 {
+.c_1 {
+    background-color: white;
     word-wrap: break-word;
     color: black;
     width: 700px;
@@ -209,6 +215,8 @@ h5 {
     border-style: hidden;
     margin: 5px;
     border-radius: 7px;
+    min-height: 100px;
+    height: auto;
 }
 
 #list{
