@@ -69,7 +69,7 @@ async function createCommentCard (){
     commentDiv.innerHTML = `
     <div>
     <span id="w_1">작성자:${item.data().commentName}</span><br/>
-    <textarea type="text" rows="4" cols="1" id="c_1">${item.data().commentContents}</textarea><br/>
+    <p id="c_1">${item.data().commentContents}</p><br/>
     </div>
     `;
     list.appendChild(commentDiv);
