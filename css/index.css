@@ -66,7 +66,7 @@ body {
 
 .main-header .main-team-text {
   position: absolute;
-  background-image: url('/images/main/B-02.svg');
+  background-image: url("/images/main/B-02.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: 50% 50%;
@@ -77,7 +77,7 @@ body {
 
 .main-header .main-text {
   position: relative;
-  background-image: url('/images/main/mainText.svg');
+  background-image: url("/images/main/mainText.svg");
   background-repeat: no-repeat;
   background-size: contain;
   margin: 8rem 0 0 8rem;
@@ -272,4 +272,10 @@ body {
   font-size: 4rem;
   font-weight: bold;
   color: var(--title-font-color);
+}
+
+.member-section__like-chart #myChart {
+  background-color: #151717;
+  padding: 2rem;
+  border-radius: 1rem;
 }

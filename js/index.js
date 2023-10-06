@@ -45,19 +45,6 @@ await getLikes();
 
 /*--------------차트 생성 start--------------*/
 
-// Canvas background color 변경 plugin
-const plugin = {
-  id: "customCanvasBackgroundColor",
-  beforeDraw: (chart, args, options) => {
-    const { ctx } = chart;
-    ctx.save();
-    ctx.globalCompositeOperation = "destination-over";
-    ctx.fillStyle = options.color || "#99ffff";
-    ctx.fillRect(0, 0, chart.width, chart.height);
-    ctx.restore();
-  },
-};
-
 let chart = new Chart(ctx, {
   type: "bar",
   data: {
@@ -73,16 +60,13 @@ let chart = new Chart(ctx, {
           `rgba(${randomNum()}, ${randomNum()}, ${randomNum()})`,
         ],
         borderWidth: 1,
+        borderRadius: 100,
+        barThickness: 50,
       },
     ],
   },
   options: {
     plugins: {
-      /* canvas 배경 색깔 */
-      customCanvasBackgroundColor: {
-        color: "#ffffff",
-      },
-
       /* dataset label 삭제*/
       legend: {
         display: false,
@@ -98,7 +82,7 @@ let chart = new Chart(ctx, {
       title: {
         display: true,
         text: "일단 버티조 좋아요 통계",
-        color: "#000000",
+        color: "#EEF0F2",
         font: {
           size: 20,
         },
@@ -111,15 +95,20 @@ let chart = new Chart(ctx, {
         grid: {
           display: false,
         },
+        ticks: {
+          color: "#EEF0F2",
+        },
       },
       x: {
         grid: {
           display: false,
         },
+        ticks: {
+          color: "#EEF0F2",
+        },
       },
     },
   },
-  plugins: [plugin],
 });
 
 /*--------------차트 생성 end--------------*/
