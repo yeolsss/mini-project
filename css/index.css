@@ -311,6 +311,8 @@ body {
 
 .member-section__like-cardarea {
   display: flex;
+  justify-content: center;
+  margin: 6rem 0;
 }
 
 .member-section__like-card {
@@ -363,21 +365,34 @@ body {
 }
 
 .member-section__likes .member-section__like-area .member-section__like-area__container {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .member-section__likes .member-section__like-area .member-section__like-area-image {
-  width: 30rem;
+  width: 20rem;
 }
 
 .member-section__likes .member-section__like-area .member-section__like-area-title {
-  font-size: 3.5rem;
-  padding-left: 2rem;
+  font-size: 4.5rem;
+  padding-left: 3rem;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.5;
+  letter-spacing: -0.3rem;
   color: var(--member-area-font-color);
+}
+
+.member-section__likes .member-section__like-area .member-section__like-area-keyword {
+  color: var(--member-card-bg-color);
+}
+
+.member-section__likes .member-section__like-area .member-section__like-area-underline {
+  width: 18rem;
+  position: absolute;
+  top: 18rem;
+  left: 20rem;
 }
 
 .member > canvas {
