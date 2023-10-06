@@ -66,7 +66,7 @@ body {
 
 .main-header .main-team-text {
   position: absolute;
-  background-image: url('/images/main/B-02.svg');
+  background-image: url("../images/main/B-02.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: 50% 50%;
@@ -77,36 +77,34 @@ body {
 
 .main-header .main-text {
   position: relative;
-  background-image: url('/images/main/mainText.svg');
+  background-image: url("../images/main/mainText.svg");
   background-repeat: no-repeat;
   background-size: contain;
   margin: 8rem 0 0 8rem;
   width: 300%;
   height: 45%;
-  z-index: 1;
 }
 
 .main-header .main-text-02 {
   position: relative;
-  background-image: url(/images/main/maingText_02.svg);
+  background-image: url("../images/main/maingText_02.svg");
   background-repeat: no-repeat;
   background-size: contain;
   margin: 5rem 0 0 40rem;
   width: 55%;
   height: 50%;
-  z-index: 1000;
+  z-index: 2;
 }
 
 .main-header .main-img {
   position: absolute;
-  background-image: url(/images/main/Design.png);
+  background-image: url("../images/main/Design.png");
   background-repeat: no-repeat;
   background-size: contain;
-  height: 35%;
   margin: -45rem 0 0 20rem;
   width: 40%;
   height: 45%;
-  z-index: 100;
+  z-index: 1;
 }
 
 /*슬라이더 섹션 css*/
