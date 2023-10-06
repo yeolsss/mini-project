@@ -92,7 +92,7 @@ body {
   display: block;
   color: #ff7675;
 }
-.wrap #main article:not(#gb-comment-wrap) {
+.wrap #main article:not(#gb-comment-wrap, #pwd-modal-wrap) {
   display: flex;
   flex-direction: column;
   justify-content: center;
