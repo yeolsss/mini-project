@@ -25,6 +25,7 @@ h5 {
   /* 멤버 카드에 사용하는 컬러 변수*/
   --member-card-bg-color: #fbc531;
   --member-card-font-color: black;
+  --member-area-font-color: #ffffff;
   /* 각 타이트별 font color*/
   --title-font-color: black;
   --main-bg-color: #db0606;
@@ -61,6 +62,49 @@ body {
   font-weight: bold;
   font-size: 4rem;
   color: var(--title-font-color);
+}
+
+.main-header .main-team-text {
+  position: absolute;
+  background-image: url("../images/main/B-02.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 50%;
+  width: 13%;
+  height: 10%;
+  margin: 4rem 0 0 85rem;
+}
+
+.main-header .main-text {
+  position: relative;
+  background-image: url("../images/main/mainText.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 8rem 0 0 8rem;
+  width: 300%;
+  height: 45%;
+}
+
+.main-header .main-text-02 {
+  position: relative;
+  background-image: url("../images/main/maingText_02.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 5rem 0 0 40rem;
+  width: 55%;
+  height: 50%;
+  z-index: 2;
+}
+
+.main-header .main-img {
+  position: absolute;
+  background-image: url("../images/main/Design.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: -45rem 0 0 20rem;
+  width: 40%;
+  height: 45%;
+  z-index: 1;
 }
 
 /*슬라이더 섹션 css*/
@@ -202,6 +246,7 @@ body {
   margin-top: 5rem;
 }
 
+<<<<<<< HEAD
 .member-section__like-cardarea {
   display: flex;
 }
@@ -255,6 +300,27 @@ body {
 }
 
 .member>canvas {
+=======
+.member-section__likes .member-section__like-area .member-section__like-area__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.member-section__likes .member-section__like-area .member-section__like-area-image {
+  width: 30rem;
+}
+
+.member-section__likes .member-section__like-area .member-section__like-area-title {
+  font-size: 3.5rem;
+  padding-left: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--member-area-font-color);
+}
+
+.member > canvas {
+>>>>>>> f31c732307f31b54aa1edc4ed0af8d09d42730d1
   width: 40rem !important;
   height: 20rem !important;
 }
