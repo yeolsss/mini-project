@@ -408,6 +408,10 @@ body {
   margin: 0.5rem;
   padding-top: 0.5rem;
   border-radius: 0.5rem;
+  transition: scale 0.3s ease-in;
+}
+.member-section__like-card:hover {
+  scale: 120%;
 }
 
 #member-section__like-btn1 {
@@ -424,14 +428,14 @@ body {
 
 #member-section__like-btn3 {
   background-image: url("../images/kang/1682240202623.jpg");
-  background-size: 20rem;
-  background-position: -2rem -9rem;
+  background-size: 40rem;
+  background-position: -10rem -23rem;
 }
 
 #member-section__like-btn4 {
   background-image: url("../images/jihyun_img/jihyun-photo.JPG");
-  background-size: 24rem;
-  background-position: -7rem -18rem;
+  background-size: 26rem;
+  background-position: -8rem -20rem;
 }
 
 #member-section__like-btn5 {
