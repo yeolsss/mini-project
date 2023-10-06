@@ -18,15 +18,15 @@ body {
 
 /* 페이지 헤더 부분 */
 .wrap #header {
-    margin-top: 7rem;
+    margin-top: 3rem;
 }
 
 .wrap #header .hd-team-name {
-    width: 80%;
+    width: 500px;
     font-size: 3rem;
     font-weight: 300;
     text-align: center;
-    margin: 0 0 3rem 4rem;
+    margin: 0 0 3rem 17rem;
     color: #ff7675;
 }
 
@@ -56,9 +56,9 @@ body {
 
 /* 페이지 내용 부분 */
 .wrap #main {
-    width: 55%;
-    height: 100%;
-    margin: 2rem 0 0 15rem;
+    width: 800px;
+    height: 400px;
+    margin: 60px 0 0 300px;
 }
 
 .wrap #main h3 {
