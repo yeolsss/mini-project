@@ -25,7 +25,6 @@ let dataIdArr = [];
 /*--------------헤더 애니메이션 효과 start--------------*/
 // 나타날 요소(.fade-in)들을찾기
 const fadeEls = document.querySelectorAll(".main-header__temp .fade-in");
-console.log(fadeEls);
 // 요소들을 하나씩 반복해서 처리!
 fadeEls.forEach(function (fadeEls, index) {
   gsap.to(fadeEls, 1, {
