@@ -1,262 +1,300 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
- 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>일단 버티조!</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="./css/index.css" />
-</head>
-
-<body>
-  <div class="wrapper" id="wrapper">
-    <header class="main-header">
-      <h1>일단 버티조</h1>
-      <!-- Slider main container -->
-      <div class="swiper">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-          <!-- 슬라이드 이 부분 꾸미면됩니다! 끝-->
-          <!-- 슬라이드 이 부분 꾸미면됩니다! 끝-->
-          <div class="swiper-slide">약속</div>
-          <div class="swiper-slide">목표</div>
-          <!-- 슬라이드 이 부분 꾸미면됩니다! 끝-->
-          <!-- 슬라이드 이 부분 꾸미면됩니다! 끝-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>일단 버티조!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <div class="wrapper" id="wrapper">
+      <header class="main-header">
+        <div class="main-header__temp">
+          <div class="main-team-text"></div>
+          <div class="main-text"></div>
+          <div class="main-text-02"></div>
+          <div class="main-img"></div>
         </div>
-        <!-- If 표we need pagination -->
-        <div class="swiper-pagination"></div>
+        <!-- Slider main container -->
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- 슬라이드 이 부분 꾸미면됩니다! 끝-->
+            <!-- 슬라이드 이 부분 꾸미면됩니다! 끝-->
+            <div class="swiper-slide">약속</div>
+            <div class="swiper-slide">목표</div>
+            <!-- 슬라이드 이 부분 꾸미면됩니다! 끝-->
+            <!-- 슬라이드 이 부분 꾸미면됩니다! 끝-->
+          </div>
+          <!-- If 표we need pagination -->
+          <div class="swiper-pagination"></div>
 
-        <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
 
-        <!-- If we need scrollbar -->
-        <!--<div class="swiper-scrollbar"></div>-->
-      </div>
-    </header>
-
-    <main class="member-section">
-      <!--사랑스런 팀원 자랑 시작!-->
-      <section class="member-section__cards">
-        <h1>일단 버티조 사랑스런 팀원</h1>
-        <div>
-          <!--권경열-->
-          <div class="member-section__card">
-            <a href="./yeol.html">
-              <div class="member-section__card-img"></div>
-            </a>
-            <div class="member-section__card__info">
-              <div>
-                <div>
-                  <span>이름:</span>
-                  <span>MBTI:</span>
-                  <span>GITHUB:</span>
-                  <span>BLOG:</span>
-                </div>
-                <div>
-                  <span>권경열</span>
-                  <span>ISFP</span>
-                  <span>
-                    <a href="https://github.com/yeolsss" target="_blank">
-                      <svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32"
-                        data-view-component="true" class="octicon octicon-mark-github v-align-middle color-fg-default">
-                        <path
-                          d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z">
-                        </path>
-                      </svg>
-                    </a>
-                  </span>
-                  <span>
-                    <a href="https://velog.io/@yeol10" target="_blank">
-                      <svg width="192" height="192" viewBox="0 0 192 192" fill="currentColor">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M24 0H168C181.255 0 192 10.7451 192 24V168C192 181.255 181.255 192 168 192H24C10.7451 192 0 181.255 0 168V24C0 10.7451 10.7451 0 24 0ZM49 57.9199V65.48H67L80.6799 142.52L98.5 141.26C116.02 119.06 127.84 102.44 133.96 91.3999C140.2 80.24 143.32 70.9399 143.32 63.5C143.32 59.0601 142 55.7 139.36 53.4199C136.84 51.1399 133.66 50 129.82 50C122.62 50 116.62 53.0601 111.82 59.1799C116.5 62.3 119.68 64.8799 121.36 66.9199C123.16 68.8401 124.06 71.4199 124.06 74.6599C124.06 80.0601 122.44 86.1799 119.2 93.02C116.08 99.8601 112.66 105.92 108.94 111.2C106.54 114.56 103.48 118.7 99.76 123.62L88.0601 57.2C87.1001 52.3999 84.1001 50 79.0601 50C76.78 50 72.3999 50.96 65.9199 52.8799C59.4399 54.6799 53.8 56.3601 49 57.9199Z"
-                          fill="currentColor"></path>
-                      </svg>
-                    </a>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!--최광희-->
-          <div class="member-section__card">
-            <a href="./choi.html">
-              <div class="member-section__card-img"></div>
-            </a>
-            <div class="member-section__card__info">
-              <div>
-                <div>
-                  <span>이름:</span>
-                  <span>MBTI:</span>
-                  <span>GITHUB:</span>
-                  <span>BLOG:</span>
-                </div>
-                <div>
-                  <span>최광희</span>
-                  <span>INFJ</span>
-                  <span>
-                    <a href="https://github.com/Pudliya" target="_blank">
-                      <svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32"
-                        data-view-component="true" class="octicon octicon-mark-github v-align-middle color-fg-default">
-                        <path
-                          d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z">
-                        </path>
-                      </svg>
-                    </a>
-                  </span>
-                  <span>
-                    <a href="https://velog.io/@rkdgh4427" target="_blank">
-                      <svg width="192" height="192" viewBox="0 0 192 192" fill="currentColor">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M24 0H168C181.255 0 192 10.7451 192 24V168C192 181.255 181.255 192 168 192H24C10.7451 192 0 181.255 0 168V24C0 10.7451 10.7451 0 24 0ZM49 57.9199V65.48H67L80.6799 142.52L98.5 141.26C116.02 119.06 127.84 102.44 133.96 91.3999C140.2 80.24 143.32 70.9399 143.32 63.5C143.32 59.0601 142 55.7 139.36 53.4199C136.84 51.1399 133.66 50 129.82 50C122.62 50 116.62 53.0601 111.82 59.1799C116.5 62.3 119.68 64.8799 121.36 66.9199C123.16 68.8401 124.06 71.4199 124.06 74.6599C124.06 80.0601 122.44 86.1799 119.2 93.02C116.08 99.8601 112.66 105.92 108.94 111.2C106.54 114.56 103.48 118.7 99.76 123.62L88.0601 57.2C87.1001 52.3999 84.1001 50 79.0601 50C76.78 50 72.3999 50.96 65.9199 52.8799C59.4399 54.6799 53.8 56.3601 49 57.9199Z"
-                          fill="currentColor"></path>
-                      </svg>
-                    </a>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!--전지현-->
-          <div class="member-section__card">
-            <a href="./jihyun.html">
-              <div class="member-section__card-img"></div>
-            </a>
-            <div class="member-section__card__info">
-              <div>
-                <div>
-                  <span>이름:</span>
-                  <span>MBTI:</span>
-                  <span>GITHUB:</span>
-                  <span>BLOG:</span>
-                </div>
-                <div>
-                  <span>전지현</span>
-                  <span>INTP</span>
-                  <span>
-                    <a href="https://github.com/jihyun-j" target="_blank">
-                      <svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32"
-                        data-view-component="true" class="octicon octicon-mark-github v-align-middle color-fg-default">
-                        <path
-                          d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z">
-                        </path>
-                      </svg>
-                    </a>
-                  </span>
-                  <span>
-                    <a href="https://jihyuni.notion.site/Developer-Blog-1d8f9e8553e84f318400d3739217c0b3"
-                      target="_blank">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"
-                        fill="none">
-                        <path
-                          d="M6.017 4.313l55.333 -4.087c6.797 -0.583 8.543 -0.19 12.817 2.917l17.663 12.443c2.913 2.14 3.883 2.723 3.883 5.053v68.243c0 4.277 -1.553 6.807 -6.99 7.193L24.467 99.967c-4.08 0.193 -6.023 -0.39 -8.16 -3.113L3.3 79.94c-2.333 -3.113 -3.3 -5.443 -3.3 -8.167V11.113c0 -3.497 1.553 -6.413 6.017 -6.8z"
-                          fill="#fff" />
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M61.35 0.227l-55.333 4.087C1.553 4.7 0 7.617 0 11.113v60.66c0 2.723 0.967 5.053 3.3 8.167l13.007 16.913c2.137 2.723 4.08 3.307 8.16 3.113l64.257 -3.89c5.433 -0.387 6.99 -2.917 6.99 -7.193V20.64c0 -2.21 -0.873 -2.847 -3.443 -4.733L74.167 3.143c-4.273 -3.107 -6.02 -3.5 -12.817 -2.917zM25.92 19.523c-5.247 0.353 -6.437 0.433 -9.417 -1.99L8.927 11.507c-0.77 -0.78 -0.383 -1.753 1.557 -1.947l53.193 -3.887c4.467 -0.39 6.793 1.167 8.54 2.527l9.123 6.61c0.39 0.197 1.36 1.36 0.193 1.36l-54.933 3.307 -0.68 0.047zM19.803 88.3V30.367c0 -2.53 0.777 -3.697 3.103 -3.893L86 22.78c2.14 -0.193 3.107 1.167 3.107 3.693v57.547c0 2.53 -0.39 4.67 -3.883 4.863l-60.377 3.5c-3.493 0.193 -5.043 -0.97 -5.043 -4.083zm59.6 -54.827c0.387 1.75 0 3.5 -1.75 3.7l-2.91 0.577v42.773c-2.527 1.36 -4.853 2.137 -6.797 2.137 -3.107 0 -3.883 -0.973 -6.21 -3.887l-19.03 -29.94v28.967l6.02 1.363s0 3.5 -4.857 3.5l-13.39 0.777c-0.39 -0.78 0 -2.723 1.357 -3.11l3.497 -0.97v-38.3L30.48 40.667c-0.39 -1.75 0.58 -4.277 3.3 -4.473l14.367 -0.967 19.8 30.327v-26.83l-5.047 -0.58c-0.39 -2.143 1.163 -3.7 3.103 -3.89l13.4 -0.78z"
-                          fill="#000" />
-                        <deepl-alert xmlns="" />
-                        <deepl-alert xmlns="" />
-                        <deepl-alert xmlns="" />
-                      </svg>
-                    </a>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!--강지향-->
-          <div class="member-section__card">
-            <a href="./kang.html">
-              <div class="member-section__card-img"></div>
-            </a>
-            <div class="member-section__card__info">
-              <div>
-                <div>
-                  <span>이름:</span>
-                  <span>MBTI:</span>
-                  <span>GITHUB:</span>
-                  <span>BLOG:</span>
-                </div>
-                <div>
-                  <span>강지향</span>
-                  <span>ISFJ</span>
-                  <span>
-                    <a href="https://github.com/KANG0417" target="_blank">
-                      <svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32"
-                        data-view-component="true" class="octicon octicon-mark-github v-align-middle color-fg-default">
-                        <path
-                          d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z">
-                        </path>
-                      </svg>
-                    </a>
-                  </span>
-                  <span>
-                    <a href="https://velog.io/@kanjang96" target="_blank">
-                      <svg width="192" height="192" viewBox="0 0 192 192" fill="currentColor">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M24 0H168C181.255 0 192 10.7451 192 24V168C192 181.255 181.255 192 168 192H24C10.7451 192 0 181.255 0 168V24C0 10.7451 10.7451 0 24 0ZM49 57.9199V65.48H67L80.6799 142.52L98.5 141.26C116.02 119.06 127.84 102.44 133.96 91.3999C140.2 80.24 143.32 70.9399 143.32 63.5C143.32 59.0601 142 55.7 139.36 53.4199C136.84 51.1399 133.66 50 129.82 50C122.62 50 116.62 53.0601 111.82 59.1799C116.5 62.3 119.68 64.8799 121.36 66.9199C123.16 68.8401 124.06 71.4199 124.06 74.6599C124.06 80.0601 122.44 86.1799 119.2 93.02C116.08 99.8601 112.66 105.92 108.94 111.2C106.54 114.56 103.48 118.7 99.76 123.62L88.0601 57.2C87.1001 52.3999 84.1001 50 79.0601 50C76.78 50 72.3999 50.96 65.9199 52.8799C59.4399 54.6799 53.8 56.3601 49 57.9199Z"
-                          fill="currentColor"></path>
-                      </svg>
-                    </a>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!--정효창-->
-          <div class="member-section__card">
-            <a href="./chang.html">
-              <div class="member-section__card-img"></div>
-            </a>
-            <div class="member-section__card__info">
-              <div>
-                <div>
-                  <span>이름:</span>
-                  <span>MBTI:</span>
-                  <span>GITHUB:</span>
-                  <span>BLOG:</span>
-                </div>
-                <div>
-                  <span>정효창</span>
-                  <span>ISFP</span>
-                  <span>
-                    <a href="https://github.com/HyoChang5147" target="_blank">
-                      <svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32"
-                        data-view-component="true" class="octicon octicon-mark-github v-align-middle color-fg-default">
-                        <path
-                          d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z">
-                        </path>
-                      </svg>
-                    </a>
-                  </span>
-                  <span>
-                    <a href="https://velog.io/@jhc729" target="_blank">
-                      <svg width="192" height="192" viewBox="0 0 192 192" fill="currentColor">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M24 0H168C181.255 0 192 10.7451 192 24V168C192 181.255 181.255 192 168 192H24C10.7451 192 0 181.255 0 168V24C0 10.7451 10.7451 0 24 0ZM49 57.9199V65.48H67L80.6799 142.52L98.5 141.26C116.02 119.06 127.84 102.44 133.96 91.3999C140.2 80.24 143.32 70.9399 143.32 63.5C143.32 59.0601 142 55.7 139.36 53.4199C136.84 51.1399 133.66 50 129.82 50C122.62 50 116.62 53.0601 111.82 59.1799C116.5 62.3 119.68 64.8799 121.36 66.9199C123.16 68.8401 124.06 71.4199 124.06 74.6599C124.06 80.0601 122.44 86.1799 119.2 93.02C116.08 99.8601 112.66 105.92 108.94 111.2C106.54 114.56 103.48 118.7 99.76 123.62L88.0601 57.2C87.1001 52.3999 84.1001 50 79.0601 50C76.78 50 72.3999 50.96 65.9199 52.8799C59.4399 54.6799 53.8 56.3601 49 57.9199Z"
-                          fill="currentColor"></path>
-                      </svg>
-                    </a>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
+          <!-- If we need scrollbar -->
+          <!--<div class="swiper-scrollbar"></div>-->
         </div>
-      </section>
-      <!--사랑스런 팀원 자랑 끝!-->
-      <!-- 좋아요 섹션 시작!-->
-      <section class="member-section__likes">
-        <div class="member-section__like-area">
-          <img src="" alt="" />
-          <h2>함께 물 한잔하고 하고싶은 존버러를 선택해주세요.</h2>
-          <!-- 멤버 카드 및 좋아요 버튼!-->
-          <div class="member-section__like-cardarea">
-            <div>
-              <button class="member-section__like-card" id="member-section__like-btn1">
-                <img width="130" height="180" alt="" />
+      </header>
 
+      <main class="member-section">
+        <!--사랑스런 팀원 자랑 시작!-->
+        <section class="member-section__cards">
+          <div>
+            <h2>Only Jonbeo is life way</h2>
+            <h1>존버한자들이<br />승리하리라.</h1>
+            <span>어떠한 <strong>에러</strong>에도 굴복하지 않는</span>
+            <span>프로존버러 5인!</span>
+            <img src="./images/main/searching.png" alt="" />
+          </div>
+
+          <div>
+            <!--권경열-->
+            <div class="member-section__card">
+              <a href="./yeol.html">
+                <div class="member-section__card-img"></div>
+              </a>
+              <div class="member-section__card__info">
+                <div>
+                  <div>
+                    <span>이름:</span>
+                    <span>MBTI:</span>
+                    <span>GITHUB:</span>
+                    <span>BLOG:</span>
+                  </div>
+                  <div>
+                    <span>권경열</span>
+                    <span>ISFP</span>
+                    <span>
+                      <a href="https://github.com/yeolsss" target="_blank">
+                        <svg
+                          height="32"
+                          aria-hidden="true"
+                          viewBox="0 0 16 16"
+                          version="1.1"
+                          width="32"
+                          data-view-component="true"
+                          class="octicon octicon-mark-github v-align-middle color-fg-default">
+                          <path
+                            d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+                        </svg>
+                      </a>
+                    </span>
+                    <span>
+                      <a href="https://velog.io/@yeol10" target="_blank">
+                        <svg width="192" height="192" viewBox="0 0 192 192" fill="currentColor">
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M24 0H168C181.255 0 192 10.7451 192 24V168C192 181.255 181.255 192 168 192H24C10.7451 192 0 181.255 0 168V24C0 10.7451 10.7451 0 24 0ZM49 57.9199V65.48H67L80.6799 142.52L98.5 141.26C116.02 119.06 127.84 102.44 133.96 91.3999C140.2 80.24 143.32 70.9399 143.32 63.5C143.32 59.0601 142 55.7 139.36 53.4199C136.84 51.1399 133.66 50 129.82 50C122.62 50 116.62 53.0601 111.82 59.1799C116.5 62.3 119.68 64.8799 121.36 66.9199C123.16 68.8401 124.06 71.4199 124.06 74.6599C124.06 80.0601 122.44 86.1799 119.2 93.02C116.08 99.8601 112.66 105.92 108.94 111.2C106.54 114.56 103.48 118.7 99.76 123.62L88.0601 57.2C87.1001 52.3999 84.1001 50 79.0601 50C76.78 50 72.3999 50.96 65.9199 52.8799C59.4399 54.6799 53.8 56.3601 49 57.9199Z"
+                            fill="currentColor"></path>
+                        </svg>
+                      </a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--최광희-->
+            <div class="member-section__card">
+              <a href="./choi.html">
+                <div class="member-section__card-img"></div>
+              </a>
+              <div class="member-section__card__info">
+                <div>
+                  <div>
+                    <span>이름:</span>
+                    <span>MBTI:</span>
+                    <span>GITHUB:</span>
+                    <span>BLOG:</span>
+                  </div>
+                  <div>
+                    <span>최광희</span>
+                    <span>INFJ</span>
+                    <span>
+                      <a href="https://github.com/Pudliya" target="_blank">
+                        <svg
+                          height="32"
+                          aria-hidden="true"
+                          viewBox="0 0 16 16"
+                          version="1.1"
+                          width="32"
+                          data-view-component="true"
+                          class="octicon octicon-mark-github v-align-middle color-fg-default">
+                          <path
+                            d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+                        </svg>
+                      </a>
+                    </span>
+                    <span>
+                      <a href="https://velog.io/@rkdgh4427" target="_blank">
+                        <svg width="192" height="192" viewBox="0 0 192 192" fill="currentColor">
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M24 0H168C181.255 0 192 10.7451 192 24V168C192 181.255 181.255 192 168 192H24C10.7451 192 0 181.255 0 168V24C0 10.7451 10.7451 0 24 0ZM49 57.9199V65.48H67L80.6799 142.52L98.5 141.26C116.02 119.06 127.84 102.44 133.96 91.3999C140.2 80.24 143.32 70.9399 143.32 63.5C143.32 59.0601 142 55.7 139.36 53.4199C136.84 51.1399 133.66 50 129.82 50C122.62 50 116.62 53.0601 111.82 59.1799C116.5 62.3 119.68 64.8799 121.36 66.9199C123.16 68.8401 124.06 71.4199 124.06 74.6599C124.06 80.0601 122.44 86.1799 119.2 93.02C116.08 99.8601 112.66 105.92 108.94 111.2C106.54 114.56 103.48 118.7 99.76 123.62L88.0601 57.2C87.1001 52.3999 84.1001 50 79.0601 50C76.78 50 72.3999 50.96 65.9199 52.8799C59.4399 54.6799 53.8 56.3601 49 57.9199Z"
+                            fill="currentColor"></path>
+                        </svg>
+                      </a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--전지현-->
+            <div class="member-section__card">
+              <a href="./jihyun.html">
+                <div class="member-section__card-img"></div>
+              </a>
+              <div class="member-section__card__info">
+                <div>
+                  <div>
+                    <span>이름:</span>
+                    <span>MBTI:</span>
+                    <span>GITHUB:</span>
+                    <span>BLOG:</span>
+                  </div>
+                  <div>
+                    <span>전지현</span>
+                    <span>INTP</span>
+                    <span>
+                      <a href="https://github.com/jihyun-j" target="_blank">
+                        <svg
+                          height="32"
+                          aria-hidden="true"
+                          viewBox="0 0 16 16"
+                          version="1.1"
+                          width="32"
+                          data-view-component="true"
+                          class="octicon octicon-mark-github v-align-middle color-fg-default">
+                          <path
+                            d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+                        </svg>
+                      </a>
+                    </span>
+                    <span>
+                      <a
+                        href="https://jihyuni.notion.site/Developer-Blog-1d8f9e8553e84f318400d3739217c0b3"
+                        target="_blank">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="100"
+                          height="100"
+                          viewBox="0 0 100 100"
+                          fill="none">
+                          <path
+                            d="M6.017 4.313l55.333 -4.087c6.797 -0.583 8.543 -0.19 12.817 2.917l17.663 12.443c2.913 2.14 3.883 2.723 3.883 5.053v68.243c0 4.277 -1.553 6.807 -6.99 7.193L24.467 99.967c-4.08 0.193 -6.023 -0.39 -8.16 -3.113L3.3 79.94c-2.333 -3.113 -3.3 -5.443 -3.3 -8.167V11.113c0 -3.497 1.553 -6.413 6.017 -6.8z"
+                            fill="#fff" />
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M61.35 0.227l-55.333 4.087C1.553 4.7 0 7.617 0 11.113v60.66c0 2.723 0.967 5.053 3.3 8.167l13.007 16.913c2.137 2.723 4.08 3.307 8.16 3.113l64.257 -3.89c5.433 -0.387 6.99 -2.917 6.99 -7.193V20.64c0 -2.21 -0.873 -2.847 -3.443 -4.733L74.167 3.143c-4.273 -3.107 -6.02 -3.5 -12.817 -2.917zM25.92 19.523c-5.247 0.353 -6.437 0.433 -9.417 -1.99L8.927 11.507c-0.77 -0.78 -0.383 -1.753 1.557 -1.947l53.193 -3.887c4.467 -0.39 6.793 1.167 8.54 2.527l9.123 6.61c0.39 0.197 1.36 1.36 0.193 1.36l-54.933 3.307 -0.68 0.047zM19.803 88.3V30.367c0 -2.53 0.777 -3.697 3.103 -3.893L86 22.78c2.14 -0.193 3.107 1.167 3.107 3.693v57.547c0 2.53 -0.39 4.67 -3.883 4.863l-60.377 3.5c-3.493 0.193 -5.043 -0.97 -5.043 -4.083zm59.6 -54.827c0.387 1.75 0 3.5 -1.75 3.7l-2.91 0.577v42.773c-2.527 1.36 -4.853 2.137 -6.797 2.137 -3.107 0 -3.883 -0.973 -6.21 -3.887l-19.03 -29.94v28.967l6.02 1.363s0 3.5 -4.857 3.5l-13.39 0.777c-0.39 -0.78 0 -2.723 1.357 -3.11l3.497 -0.97v-38.3L30.48 40.667c-0.39 -1.75 0.58 -4.277 3.3 -4.473l14.367 -0.967 19.8 30.327v-26.83l-5.047 -0.58c-0.39 -2.143 1.163 -3.7 3.103 -3.89l13.4 -0.78z"
+                            fill="#000" />
+                          <deepl-alert xmlns="" />
+                          <deepl-alert xmlns="" />
+                          <deepl-alert xmlns="" />
+                        </svg>
+                      </a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--강지향-->
+            <div class="member-section__card">
+              <a href="./kang.html">
+                <div class="member-section__card-img"></div>
+              </a>
+              <div class="member-section__card__info">
+                <div>
+                  <div>
+                    <span>이름:</span>
+                    <span>MBTI:</span>
+                    <span>GITHUB:</span>
+                    <span>BLOG:</span>
+                  </div>
+                  <div>
+                    <span>강지향</span>
+                    <span>ISFJ</span>
+                    <span>
+                      <a href="https://github.com/KANG0417" target="_blank">
+                        <svg
+                          height="32"
+                          aria-hidden="true"
+                          viewBox="0 0 16 16"
+                          version="1.1"
+                          width="32"
+                          data-view-component="true"
+                          class="octicon octicon-mark-github v-align-middle color-fg-default">
+                          <path
+                            d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+                        </svg>
+                      </a>
+                    </span>
+                    <span>
+                      <a href="https://velog.io/@kanjang96" target="_blank">
+                        <svg width="192" height="192" viewBox="0 0 192 192" fill="currentColor">
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M24 0H168C181.255 0 192 10.7451 192 24V168C192 181.255 181.255 192 168 192H24C10.7451 192 0 181.255 0 168V24C0 10.7451 10.7451 0 24 0ZM49 57.9199V65.48H67L80.6799 142.52L98.5 141.26C116.02 119.06 127.84 102.44 133.96 91.3999C140.2 80.24 143.32 70.9399 143.32 63.5C143.32 59.0601 142 55.7 139.36 53.4199C136.84 51.1399 133.66 50 129.82 50C122.62 50 116.62 53.0601 111.82 59.1799C116.5 62.3 119.68 64.8799 121.36 66.9199C123.16 68.8401 124.06 71.4199 124.06 74.6599C124.06 80.0601 122.44 86.1799 119.2 93.02C116.08 99.8601 112.66 105.92 108.94 111.2C106.54 114.56 103.48 118.7 99.76 123.62L88.0601 57.2C87.1001 52.3999 84.1001 50 79.0601 50C76.78 50 72.3999 50.96 65.9199 52.8799C59.4399 54.6799 53.8 56.3601 49 57.9199Z"
+                            fill="currentColor"></path>
+                        </svg>
+                      </a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--정효창-->
+            <div class="member-section__card">
+              <a href="./chang.html">
+                <div class="member-section__card-img"></div>
+              </a>
+              <div class="member-section__card__info">
+                <div>
+                  <div>
+                    <span>이름:</span>
+                    <span>MBTI:</span>
+                    <span>GITHUB:</span>
+                    <span>BLOG:</span>
+                  </div>
+                  <div>
+                    <span>정효창</span>
+                    <span>ISFP</span>
+                    <span>
+                      <a href="https://github.com/HyoChang5147" target="_blank">
+                        <svg
+                          height="32"
+                          aria-hidden="true"
+                          viewBox="0 0 16 16"
+                          version="1.1"
+                          width="32"
+                          data-view-component="true"
+                          class="octicon octicon-mark-github v-align-middle color-fg-default">
+                          <path
+                            d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+                        </svg>
+                      </a>
+                    </span>
+                    <span>
+                      <a href="https://velog.io/@jhc729" target="_blank">
+                        <svg width="192" height="192" viewBox="0 0 192 192" fill="currentColor">
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M24 0H168C181.255 0 192 10.7451 192 24V168C192 181.255 181.255 192 168 192H24C10.7451 192 0 181.255 0 168V24C0 10.7451 10.7451 0 24 0ZM49 57.9199V65.48H67L80.6799 142.52L98.5 141.26C116.02 119.06 127.84 102.44 133.96 91.3999C140.2 80.24 143.32 70.9399 143.32 63.5C143.32 59.0601 142 55.7 139.36 53.4199C136.84 51.1399 133.66 50 129.82 50C122.62 50 116.62 53.0601 111.82 59.1799C116.5 62.3 119.68 64.8799 121.36 66.9199C123.16 68.8401 124.06 71.4199 124.06 74.6599C124.06 80.0601 122.44 86.1799 119.2 93.02C116.08 99.8601 112.66 105.92 108.94 111.2C106.54 114.56 103.48 118.7 99.76 123.62L88.0601 57.2C87.1001 52.3999 84.1001 50 79.0601 50C76.78 50 72.3999 50.96 65.9199 52.8799C59.4399 54.6799 53.8 56.3601 49 57.9199Z"
+                            fill="currentColor"></path>
+                        </svg>
+                      </a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
         <!--사랑스런 팀원 자랑 끝!-->
         <!-- 좋아요 섹션 시작!-->
@@ -267,52 +305,47 @@
               <h2 class="member-section__like-area-title">함께 물 한잔하고 하고싶은 존버러를 선택해주세요.</h2>
             </div>
             <!-- 멤버 카드 및 좋아요 버튼!-->
-            <div class="member-section__like-card">
-              <img src="./images/yeol/profile04.png" alt="" />
-              <button class="member-section__like-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
-                  <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                  <path
-                    d="M323.8 34.8c-38.2-10.9-78.1 11.2-89 49.4l-5.7 20c-3.7 13-10.4 25-19.5 35l-51.3 56.4c-8.9 9.8-8.2 25 1.6 33.9s25 8.2 33.9-1.6l51.3-56.4c14.1-15.5 24.4-34 30.1-54.1l5.7-20c3.6-12.7 16.9-20.1 29.7-16.5s20.1 16.9 16.5 29.7l-5.7 20c-5.7 19.9-14.7 38.7-26.6 55.5c-5.2 7.3-5.8 16.9-1.7 24.9s12.3 13 21.3 13L448 224c8.8 0 16 7.2 16 16c0 6.8-4.3 12.7-10.4 15c-7.4 2.8-13 9-14.9 16.7s.1 15.8 5.3 21.7c2.5 2.8 4 6.5 4 10.6c0 7.8-5.6 14.3-13 15.7c-8.2 1.6-15.1 7.3-18 15.1s-1.6 16.7 3.6 23.3c2.1 2.7 3.4 6.1 3.4 9.9c0 6.7-4.2 12.6-10.2 14.9c-11.5 4.5-17.7 16.9-14.4 28.8c.4 1.3 .6 2.8 .6 4.3c0 8.8-7.2 16-16 16H286.5c-12.6 0-25-3.7-35.5-10.7l-61.7-41.1c-11-7.4-25.9-4.4-33.3 6.7s-4.4 25.9 6.7 33.3l61.7 41.1c18.4 12.3 40 18.8 62.1 18.8H384c34.7 0 62.9-27.6 64-62c14.6-11.7 24-29.7 24-50c0-4.5-.5-8.8-1.3-13c15.4-11.7 25.3-30.2 25.3-51c0-6.5-1-12.8-2.8-18.7C504.8 273.7 512 257.7 512 240c0-35.3-28.6-64-64-64l-92.3 0c4.7-10.4 8.7-21.2 11.8-32.2l5.7-20c10.9-38.2-11.2-78.1-49.4-89zM32 192c-17.7 0-32 14.3-32 32V448c0 17.7 14.3 32 32 32H96c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32H32z" />
-                </svg>
-
-              </button>
-            </div>
-            <div>
-              <button class="member-section__like-card" id="member-section__like-btn2">
-                <img width="130" height="180" alt="" />
-              </button>
-            </div>
-            <div>
-              <button class="member-section__like-card" id="member-section__like-btn3">
-                <img width="130" height="180" alt="" />
-              </button>
-            </div>
-            <div>
-              <button class="member-section__like-card" id="member-section__like-btn4">
-                <img width="130" height="180" alt="" />
-              </button>
-            </div>
-            <div>
-              <button  class="member-section__like-card" id="member-section__like-btn5">
-                <img width="130" height="180" alt="" />
-              </button>
+            <div class="member-section__like-cardarea">
+              <div>
+                <button class="member-section__like-card" id="member-section__like-btn1">
+                  <img width="130" height="180" alt="" />
+                </button>
+              </div>
+              <div>
+                <button class="member-section__like-card" id="member-section__like-btn2">
+                  <img width="130" height="180" alt="" />
+                </button>
+              </div>
+              <div>
+                <button class="member-section__like-card" id="member-section__like-btn3">
+                  <img width="130" height="180" alt="" />
+                </button>
+              </div>
+              <div>
+                <button class="member-section__like-card" id="member-section__like-btn4">
+                  <img width="130" height="180" alt="" />
+                </button>
+              </div>
+              <div>
+                <button class="member-section__like-card" id="member-section__like-btn5">
+                  <img width="130" height="180" alt="" />
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="member-section__like-chart">
-          <h1>좋아요 통계!</h1>
-          <canvas id="myChart"></canvas>
-        </div>
-      </section>
-      <!-- 좋아요 섹션 끝!-->
-    </main>
-  </div>
 
-  <script type="module" src="./js/yeol_firebase.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-  <script type="module" src="./js/index.js"></script>
-</body>
+          <div class="member-section__like-chart">
+            <h1>좋아요 통계!</h1>
+            <canvas id="myChart"></canvas>
+          </div>
+        </section>
+        <!-- 좋아요 섹션 끝!-->
+      </main>
+    </div>
 
+    <script type="module" src="./js/yeol_firebase.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script type="module" src="./js/index.js"></script>
+  </body>
 </html>

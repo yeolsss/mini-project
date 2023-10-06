@@ -3,6 +3,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&family=Space+Mono:wght@400;700&display=swap");
 /*동글*/
 @import url("https://fonts.googleapis.com/css2?family=Dongle:wght@400;700&family=Nanum+Gothic+Coding:wght@400;700&family=Space+Mono:wght@400;700&display=swap");
+/*intel*/
+@import url("https://fonts.googleapis.com/css2?family=Dongle:wght@400;700&family=Inter:wght@400;700&family=Nanum+Gothic+Coding:wght@400;700&family=Space+Mono:wght@400;700&display=swap");
 
 /* Reset */
 body,
@@ -22,10 +24,16 @@ h5 {
 
 /* Typography */
 :root {
+  /*font*/
+  --nanum-gothic-coding: "Nanum Gothic Coding", cursive;
+  --intel: "Inter", sans-serif;
+
   /* 멤버 카드에 사용하는 컬러 변수*/
   --member-card-bg-color: #fbc531;
   --member-card-font-color: black;
   --member-area-font-color: #ffffff;
+  --member-card-sub-title-color: rgba(255, 255, 255, 0.64);
+
   /* 각 타이트별 font color*/
   --title-font-color: black;
   --main-bg-color: #db0606;
@@ -56,6 +64,21 @@ body {
   display: flex;
   flex-direction: column;
   background-color: var(--main-bg-color);
+  position: relative;
+  padding-bottom: 5rem;
+  border-radius: 1rem;
+}
+
+.main-header .main-header__temp {
+  height: 50rem;
+  position: relative;
+}
+
+.main-header h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 4rem;
+  color: var(--title-font-color);
 }
 
 .main-header .main-team-text {
@@ -64,9 +87,10 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: 50% 50%;
-  width: 8%;
+  width: 11%;
   height: 10%;
-  margin: 4rem 0 0 90rem;
+  top: -5.5rem;
+  right: 2.7rem;
 }
 
 .main-header .main-text {
@@ -75,7 +99,6 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   margin: 8rem 0 0 8rem;
-  width: 300%;
   height: 45%;
 }
 
@@ -84,7 +107,7 @@ body {
   background-image: url("../images/main/maingText_02.svg");
   background-repeat: no-repeat;
   background-size: contain;
-  margin: 5rem 0 0 40rem;
+  margin: 10rem 0 0 40rem;
   width: 55%;
   height: 50%;
   z-index: 2;
@@ -95,15 +118,16 @@ body {
   background-image: url("../images/main/Design.png");
   background-repeat: no-repeat;
   background-size: 100%;
-  margin: -45rem 0 0 20rem;
   width: 40%;
   height: 60%;
+  top: 16rem;
+  left: 29%;
   z-index: 1;
 }
 
 /*슬라이더 섹션 css*/
 .swiper {
-  margin-top: 3rem;
+  margin-top: 5rem;
   width: 110rem;
   height: 40rem;
 }
@@ -121,6 +145,50 @@ body {
   flex-direction: column;
 }
 
+.member-section .member-section__cards > div:first-child {
+  position: relative;
+}
+.member-section .member-section__cards > div:first-child > img {
+  width: 39.6rem;
+  height: 37.4rem;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+}
+
+.member-section .member-section__cards > div:first-child > h2 {
+  font-size: 8rem;
+  font-weight: bold;
+  color: var(--member-card-sub-title-color);
+  text-align: center;
+  font-family: var(--intel);
+  margin: 0;
+}
+.member-section .member-section__cards > div:first-child > h1 {
+  font-size: 14.5rem;
+  font-weight: bold;
+  color: var(--member-area-font-color);
+  text-align: center;
+  font-family: var(--nanum-gothic-coding);
+  margin-top: -1.5rem;
+}
+
+.member-section .member-section__cards > div:first-child span {
+  display: block;
+  color: var(--member-area-font-color);
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+}
+.member-section .member-section__cards > div:first-child span strong {
+  color: var(--member-card-font-color);
+}
+
+.member-section .member-section__cards > div:first-child span:last-child {
+  margin-top: 5rem;
+  font-size: 6rem;
+}
+
 .member-section .member-section__cards {
   max-width: 100rem;
   display: flex;
@@ -128,15 +196,15 @@ body {
   margin: 0 auto;
 }
 
-.member-section .member-section__cards h1 {
+/*.member-section .member-section__cards h1 {
   text-align: center;
   font-size: 4rem;
   font-weight: bold;
   width: 100%;
   color: var(--title-font-color);
-}
+}*/
 
-.member-section .member-section__cards > div {
+.member-section .member-section__cards > div:last-child {
   display: flex;
   flex-wrap: wrap;
   margin: 2rem auto 0;
@@ -253,6 +321,7 @@ body {
   padding-top: 0.5rem;
   border-radius: 0.5rem;
 }
+
 #member-section__like-btn1 {
   background-image: url("../images/yeol/IMG_6772.jpg");
   background-size: 35rem;
