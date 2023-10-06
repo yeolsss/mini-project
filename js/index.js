@@ -120,7 +120,7 @@ const likeObj = {
 };
 
 // 좋아요 버튼
-const likeBtns = document.querySelectorAll(".member-section__like-btn");
+const likeBtns = document.querySelectorAll(".member-section__like-card");
 likeBtns.forEach((btn, index) => {
   btn.addEventListener("click", async event => {
     event.preventDefault();
