@@ -69,10 +69,22 @@
  ┗ 📜yeol.html  
 
 ## 화면 구성
+> 메인 홈  
+> ![스크린샷(27)](https://github.com/yeolsss/mini-project/assets/57513472/1efa4019-f941-43f2-bd24-af4856882b76)  
+> ![스크린샷(28)](https://github.com/yeolsss/mini-project/assets/57513472/b2df512e-689b-4dbe-ba28-c9ac9176b26b)  
+> ![스크린샷(29)](https://github.com/yeolsss/mini-project/assets/57513472/eaf4ab2a-61da-437d-ae8b-cce0fe698c20)  
+> 개인 페이지   
+> ![스크린샷(31)](https://github.com/yeolsss/mini-project/assets/57513472/29588ff1-cfc1-402e-ac6b-2ff3d422dc39)  
+> ![스크린샷(32)](https://github.com/yeolsss/mini-project/assets/57513472/b9b9b340-4be1-4143-8e18-3059aa630dff)  
+> ![스크린샷(34)](https://github.com/yeolsss/mini-project/assets/57513472/95e56c6e-595d-4f49-8255-839f28744170)
+> ![스크린샷(33)](https://github.com/yeolsss/mini-project/assets/57513472/a25f04b5-a11c-4a62-9913-007ff0a865b9)
+
+
+
 
 
 ## 배포 주소
-
+https://yeolsss.github.io/mini-project/
 
 ## 개인 블로그 주소
 블로그에는 프로젝트를 만들 때 발생한 에러와 해결방식이 담겨있다.
