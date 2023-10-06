@@ -4,7 +4,7 @@
 /*동글*/
 @import url("https://fonts.googleapis.com/css2?family=Dongle:wght@400;700&family=Nanum+Gothic+Coding:wght@400;700&family=Space+Mono:wght@400;700&display=swap");
 
-/* Rest */
+/* Reset */
 body,
 div {
   margin: unset;
@@ -121,17 +121,21 @@ body {
   background-repeat: no-repeat;
 }
 
-/*member image demo*/
-.member-section .member-section__cards .member-section__card .member-section__card-img {
-  background-image: url("../images/yeol/profile04.png");
-  background-size: cover;
-}
-
 /* 권경열 멤버카드 사진 */
 .member-section .member-section__cards .member-section__card:nth-child(1) .member-section__card-img {
   background-image: url("../images/yeol/IMG_6772.jpg");
   background-size: 36rem;
   background-position: -6rem -5rem;
+}
+.member-section .member-section__cards .member-section__card:nth-child(2) .member-section__card-img {
+  background-image: url("../images/choi/IMG_2.jpg");
+  background-size: cover;
+  background-position: 0 -6rem;
+}
+.member-section .member-section__cards .member-section__card:nth-child(3) .member-section__card-img {
+  background-image: url("../images/jihyun_img/jihyun-photo.JPG");
+  background-size: 30rem;
+  background-position: -6rem 0;
 }
 
 /* 강지향 멤버카드 사진 */
@@ -139,6 +143,11 @@ body {
   background-image: url("../images/kang/1682240202623.jpg");
   background-size: 100rem;
   background-position: -31rem -61rem;
+}
+.member-section .member-section__cards .member-section__card:nth-child(5) .member-section__card-img {
+  background-image: url("../images/chang/profile-img-main.jpg");
+  background-size: 26rem;
+  background-position: 0 -5rem;
 }
 
 .member-section .member-section__cards .member-section__card .member-section__card-img:hover {

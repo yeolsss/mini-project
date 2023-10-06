@@ -13,7 +13,6 @@ import {
 
 const db = getFirestore(app);
 const commentRef = collection(db, "comment");
-const testdata = await getDocs(commentRef);
 
 const commentObj = {
   commentId: "",
@@ -35,11 +34,6 @@ const getDate = () => {
   return `${year}.${month}.${date} ${hours}:${minutes}:${seconds}`;
 };
 
-
-const testAdd = async () => {
-
-};
-
 const writer = document.querySelector("#writer");
 const pwd = document.querySelector("#pwd");
 const content = document.querySelector("#content");
@@ -57,7 +51,7 @@ savebtn.addEventListener("click", async function (event) {
     .then((refDoc) => {
       alert('등록완료');
       createCommentCard();
-    })
+                                                                        })
     .catch((error) => {
       console.error(error);
     });
