@@ -25,6 +25,7 @@ h5 {
   /* 멤버 카드에 사용하는 컬러 변수*/
   --member-card-bg-color: #fbc531;
   --member-card-font-color: black;
+  --member-area-font-color: #ffffff;
   /* 각 타이트별 font color*/
   --title-font-color: black;
   --main-bg-color: #db0606;
@@ -197,6 +198,24 @@ body {
 
 .member-section__likes {
   margin-top: 5rem;
+}
+
+.member-section__likes .member-section__like-area .member-section__like-area__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.member-section__likes .member-section__like-area .member-section__like-area-image {
+  width: 30rem;
+}
+
+.member-section__likes .member-section__like-area .member-section__like-area-title {
+  font-size: 3.5rem;
+  padding-left: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--member-area-font-color);
 }
 
 .member > canvas {
