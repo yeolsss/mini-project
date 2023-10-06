@@ -68,11 +68,11 @@ body {
   position: absolute;
   background-image: url("../images/main/B-02.svg");
   background-repeat: no-repeat;
-  background-size: contain;
   background-position: 50% 50%;
-  width: 13%;
+  background-size: contain;
+  width: 8%;
   height: 10%;
-  margin: 4rem 0 0 85rem;
+  margin: 4rem 0 0 80rem;
 }
 
 .main-header .main-text {
@@ -101,9 +101,10 @@ body {
   background-image: url("../images/main/Design.png");
   background-repeat: no-repeat;
   background-size: contain;
+  background-position: 50% 50%;
   margin: -45rem 0 0 20rem;
-  width: 40%;
-  height: 45%;
+  width: 20%;
+  height: 30%;
   z-index: 1;
 }
 
