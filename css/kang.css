@@ -92,7 +92,7 @@ body {
   display: block;
   color: #ff7675;
 }
-.wrap #main article:not(#gb-comment-wrap, #pwd-modal-wrap) {
+.wrap #main article:not(#gb-comment-wrap, #pwd-modal-wrap, #scroll) {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -394,7 +394,7 @@ body {
 
 /* 더보기 버튼 */
 .wrap #main #scroll .btn-load-more {
-  width: 75%;
+  width: 55%;
   height: 3rem;
   border: 0;
   background-color: #dadbe1dd;
@@ -403,8 +403,8 @@ body {
   color: #747474;
   font-weight: 600;
   font-size: 1rem;
-  margin-bottom: 5rem;
   display: none;
+  margin: auto;
 }
 
 /* 맨위로 버튼 */
