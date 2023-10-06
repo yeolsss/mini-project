@@ -39,6 +39,8 @@ body {
   align-items: center;
   font-size: 30px;
   line-height: 36px;
+  padding: 5rem 0 5rem;
+  box-sizing: border-box;
 }
 
 .mainsite {
@@ -94,44 +96,44 @@ hr {
 }
 
 .textbox {
-    background-color: white;
-    word-wrap: break-word;
-    color: black;
-    width: 700px;
-    resize: none;
-    border-style: hidden;
-    margin: 5px;
-    border-radius: 7px;
-    min-height: 100px;
-    height: auto;
-    font-size: medium;
+  background-color: white;
+  word-wrap: break-word;
+  color: black;
+  width: 700px;
+  resize: none;
+  border-style: hidden;
+  margin: 5px;
+  border-radius: 7px;
+  min-height: 100px;
+  height: auto;
+  font-size: medium;
 }
 
 h5 {
-    color : rgb(129, 107, 255);
-    margin: 10px 0px -5px 5px;
+  color: rgb(129, 107, 255);
+  margin: 10px 0px -5px 5px;
 }
 
-.visitor{
-    background-color: rgb(240, 237, 255);
-    padding : 5px 10px 5px 10px;
-    margin : 10px 0px 0px 0px;
+.visitor {
+  background-color: rgb(240, 237, 255);
+  padding: 5px 10px 5px 10px;
+  margin: 10px 0px 0px 0px;
 }
 
-.guestbook{
-    color : rgb(129, 107, 255);
-    font-size: small;
-    margin : 0px 0px -5px 5px;
+.guestbook {
+  color: rgb(129, 107, 255);
+  font-size: small;
+  margin: 0px 0px -5px 5px;
 }
 
 .content {
-    word-wrap: break-word;
-    color: black;
-    width: 700px;
-    resize: none;
-    border-style: hidden;
-    margin: 5px;
-    border-radius: 7px;
+  word-wrap: break-word;
+  color: black;
+  width: 700px;
+  resize: none;
+  border-style: hidden;
+  margin: 5px;
+  border-radius: 7px;
 }
 
 .tablebox {
@@ -202,23 +204,23 @@ h5 {
 }
 
 .w_1 {
-    font-size: small;
-    margin-left: 20px;
+  font-size: small;
+  margin-left: 20px;
 }
 
 .c_1 {
-    background-color: white;
-    word-wrap: break-word;
-    color: black;
-    width: 700px;
-    resize: none;
-    border-style: hidden;
-    margin: 5px;
-    border-radius: 7px;
-    min-height: 100px;
-    height: auto;
+  background-color: white;
+  word-wrap: break-word;
+  color: black;
+  width: 700px;
+  resize: none;
+  border-style: hidden;
+  margin: 5px;
+  border-radius: 7px;
+  min-height: 100px;
+  height: auto;
 }
 
-#list{
-    margin: 10px 0px -5px 5px;
+#list {
+  margin: 10px 0px -5px 5px;
 }
