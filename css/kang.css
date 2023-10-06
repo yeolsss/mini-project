@@ -18,15 +18,15 @@ body {
 
 /* 페이지 헤더 부분 */
 .wrap #header {
-    margin-top: 80px;
+    margin-top: 7rem;
 }
 
 .wrap #header .hd-team-name {
-    width: 500px;
+    width: 80%;
     font-size: 3rem;
     font-weight: 300;
     text-align: center;
-    margin: 0 0 30px 250px;
+    margin: 0 0 3rem 4rem;
     color: #ff7675;
 }
 
@@ -34,7 +34,7 @@ body {
     font-size: 2.5rem;
     font-weight: 300;
     text-align: center;
-    margin: 30px;
+    margin: 2rem;
 }
 
 .wrap #header .hd-member-img {
@@ -44,24 +44,21 @@ body {
     background-image: url('../images/kang/1682240202623.jpg');
     background-repeat: no-repeat;
     background-position: 40% 57%;
-    margin: 5% 0 0 35%;
+    margin: 5rem 0 0 26rem;
 }
 
 .wrap #header .hd-member-text {
     text-align: center;
-    line-height: 20px;
+    line-height: 1.3rem;
     font-weight: 600;
     color: #7b7b7b;
 }
 
 /* 페이지 내용 부분 */
 .wrap #main {
-    width: 800px;
-    height: 1000px;
-    border-radius: 25px;
-    top: 15%;
-    left: 250px;
-    margin: 50px 0 0 250px;
+    width: 55%;
+    height: 100%;
+    margin: 2rem 0 0 15rem;
 }
 
 .wrap #main h3 {
