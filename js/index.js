@@ -133,9 +133,16 @@ const likeObj = {
 
 // 좋아요 버튼
 const likeBtns = document.querySelectorAll(".member-section__like-card");
+const image = document.querySelector(".hidden-like");
 likeBtns.forEach((btn, index) => {
   btn.addEventListener("click", async event => {
     event.preventDefault();
+    // Test
+    image.classList.remove("hidden-like");
+    setInterval(() => {
+      image.classList.add("hidden-like");
+    }, 3500);
+    // Test ends
     const currentLikeId = dataIdArr[index];
     const getLike = await getDoc(doc(db, "member_like", currentLikeId));
     likeObj.name = getLike.data().name;
@@ -147,6 +154,56 @@ likeBtns.forEach((btn, index) => {
     });
   });
 });
+
+/*-------------- 좋아요 버튼 이미지 생성 start --------------*/
+
+
+
+
+/*-------------- 좋아요 버튼 이미지 생성 end --------------*/
+
+
+/*-------------- 좋아요 버튼 애니메이션 start --------------*/
+gsap.to("#member-section__like-btn1", 1.5, {
+  delay: 1.7, // 얼마나 늦게 애니메이션을 시작할 것인지 지연 시간을 설정.
+  y: 15, // 'transform : translateY(수치);`와 같음, 수직으로 얼마나 움직일지 설정.
+  repeat: -1, // 몇 번 반복하는지를 설정, `-1`은 무한 반복.
+  yoyo: true, // 한번 재생된 애니메이션을 다시 뒤로 재생.
+  ease: Power1.easeInOut // Easing 함수 적용.
+});
+
+gsap.to("#member-section__like-btn2", 1.5, {
+  delay: 1, 
+  y: 13,
+  repeat: -1,
+  yoyo: true, 
+  ease: Power1.easeInOut
+});
+
+gsap.to("#member-section__like-btn3", 1.5, {
+  delay: 1.5, 
+  y: 16,
+  repeat: -1,
+  yoyo: true, 
+  ease: Power1.easeInOut
+});
+
+gsap.to("#member-section__like-btn4", 1.5, {
+  delay: 1.2, 
+  y: 13,
+  repeat: -1,
+  yoyo: true, 
+  ease: Power1.easeInOut
+});
+
+gsap.to("#member-section__like-btn5", 1.5, {
+  delay: 1.3,
+  y: 14,
+  repeat: -1,
+  yoyo: true, 
+  ease: Power1.easeInOut
+});
+/*-------------- 좋아요 버튼 애니메이션 end --------------*/
 
 /*-------------- swiper 생성 start --------------*/
 const swiper = new Swiper(".swiper", {
@@ -170,3 +227,4 @@ const swiper = new Swiper(".swiper", {
   },
 });
 /*-------------- swiper 생성 end --------------*/
+

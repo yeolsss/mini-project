@@ -404,7 +404,7 @@ body {
 
 .member-section__like-card {
   cursor: pointer;
-  box-shadow: 3px 5px 3px 3px black;
+  box-shadow: -3px 5px 3px 3px black;
   margin: 0.5rem;
   padding-top: 0.5rem;
   border-radius: 0.5rem;
@@ -442,16 +442,6 @@ body {
   background-image: url("../images/chang/profile-img-main.jpg");
   background-size: 16rem;
   background-position: -1rem -1rem;
-}
-
-.member-section__like-card:active {
-  transform: translate(4px, 4px);
-  box-shadow: 1px 1px 1px 1px black;
-}
-
-.member-section__like-btn2:active {
-  transform: translate(4px, 4px);
-  box-shadow: 1px 1px 1px 1px black;
 }
 
 .member-section__likes .member-section__like-area .member-section__like-area__container {
@@ -500,4 +490,12 @@ body {
   background-color: #151717;
   padding: 2rem;
   border-radius: 1rem;
+}
+
+.likeimg{
+  top: 10rem;
+}
+
+.hidden-like{
+  display: none;
 }
