@@ -32,6 +32,9 @@ ul {
 }
 
 body {
+  background-image: url("../images/choi/backgraund-img3.jpg");
+  background-repeat : no-repeat;
+  background-size : cover;
   display: flex;
   width: 100%;
   height: 100%;
@@ -39,18 +42,18 @@ body {
   align-items: center;
   font-size: 30px;
   line-height: 36px;
-  padding: 5rem 0 5rem;
-  box-sizing: border-box;
 }
 
 .mainsite {
-  background-color: rgb(240, 237, 255);
+  background-color: transparent;
   margin-top: 10px;
+  padding-top: 5px;
+  border-radius: 5px;
 }
 
 a {
-  background-color: rgb(240, 237, 255);
-  font-size: 30px;
+  background-color: transparent;
+  font-size: 50px;
   text-decoration: none;
   display: flex;
   width: 100%;
@@ -58,23 +61,22 @@ a {
   justify-content: center;
   align-items: center;
   color: rgb(129, 107, 255);
-  padding-bottom: 5px;
-  padding-top: 5px;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 .profile {
-  background-color: white;
+  background-color: transparent;
   padding-top: 8px;
   padding-left: 28%;
 }
 
 .profile img {
-  background-color: green;
   width: 60%;
   border-radius: 50%;
 }
 
 .myname {
-  background-color: rgb(240, 237, 255);
+  background-color: transparent;
   color: rgb(129, 107, 255);
   display: flex;
   width: 100%;
@@ -88,56 +90,62 @@ a {
   text-align: center;
 }
 
-hr {
-  margin: 0px;
-}
 .menubox {
   margin: 5px;
 }
 
+hr {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .textbox {
-  background-color: white;
-  word-wrap: break-word;
-  color: black;
-  width: 700px;
-  resize: none;
-  border-style: hidden;
-  margin: 5px;
-  border-radius: 7px;
-  min-height: 100px;
-  height: auto;
-  font-size: medium;
+    background-color: white;
+    word-wrap: break-word;
+    color: black;
+    width: 700px;
+    resize: none;
+    border-style: solid;
+    border-color:rgb(222, 216, 255);
+    margin: 5px;
+    border-radius: 7px;
+    min-height: 100px;
+    height: auto;
+    font-size: medium;
 }
 
 h5 {
-  color: rgb(129, 107, 255);
-  margin: 10px 0px -5px 5px;
+    color : rgb(129, 107, 255);
+    margin: 10px 0px -5px 5px;
 }
 
-.visitor {
-  background-color: rgb(240, 237, 255);
-  padding: 5px 10px 5px 10px;
-  margin: 10px 0px 0px 0px;
-}
-
-.guestbook {
-  color: rgb(129, 107, 255);
-  font-size: small;
-  margin: 0px 0px -5px 5px;
+#t1{
+  background-color: rgb(228, 253, 254);
+  border-style: solid;
+  border-color:rgb(207, 198, 255);
+  border-radius: 7px;
+  margin: 10px;
 }
 
 .content {
-  word-wrap: break-word;
-  color: black;
-  width: 700px;
-  resize: none;
-  border-style: hidden;
-  margin: 5px;
-  border-radius: 7px;
+    word-wrap: break-word;
+    color: black;
+    width: 687px;
+    height: 100px;
+    resize: none;
+    margin: 5px;
+    border-color: rgb(207, 198, 255);
+    border-width: 2px;
+    border-radius: 5px;
 }
 
 .tablebox {
   margin-top: -20px;
+}
+
+.comment-container{
+  background-color: transparent;
+  margin-bottom: 30px;
 }
 
 .commentbox {
@@ -168,9 +176,8 @@ h5 {
   color: black;
   width: 700px;
   resize: none;
-  border-style: hidden;
+  border-style: none;
   margin: 5px;
-  border-radius: 7px;
 }
 
 .submitbtn {
@@ -203,24 +210,39 @@ h5 {
   padding-left: 10px;
 }
 
+.divbox{
+  background-color: rgb(228, 253, 254);
+  border-style: solid;
+  border-color:rgb(207, 198, 255);
+  border-radius: 7px;
+  margin: 6px 10px 6px 6px;
+}
+
 .w_1 {
-  font-size: small;
-  margin-left: 20px;
+    font-size: large;
+    margin-left: 10px;
 }
 
 .c_1 {
-  background-color: white;
-  word-wrap: break-word;
-  color: black;
-  width: 700px;
-  resize: none;
-  border-style: hidden;
-  margin: 5px;
-  border-radius: 7px;
-  min-height: 100px;
-  height: auto;
+    background-color: white;
+    word-wrap: break-word;
+    color: black;
+    width: 687px;
+    resize: none;
+    border-style: solid;
+    border-color:rgb(207, 198, 255);
+    border-width: 2px;
+    margin: 5px;
+    border-radius: 7px;
+    min-height: 100px;
+    height: auto;
 }
 
-#list {
+#list{
   margin: 10px 0px -5px 5px;
+}
+
+.btnbox{
+  margin-left: 33.54rem;
+  margin-bottom : 2px;
 }
