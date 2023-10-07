@@ -12,6 +12,7 @@
   font-weight: 700;
   font-style: normal;
 }
+
 /*땅스부대찌개*/
 @font-face {
   font-family: "TTTtangsbudaejjigaeB";
@@ -127,6 +128,7 @@ body {
   font-size: 30rem;
   margin: 0;
 }
+
 .main-header .main-text h1 {
   margin-top: 7rem;
   text-align: left;
@@ -412,12 +414,15 @@ body {
 .show .back-to-position.delay-1 {
   transition-delay: 0.3s;
 }
+
 .show .back-to-position.delay-2 {
   transition-delay: 0.6s;
 }
+
 .show .back-to-position.delay-3 {
   transition-delay: 0.9s;
 }
+
 .show .back-to-position.delay-4 {
   transition-delay: 1.2s;
 }
@@ -428,7 +433,7 @@ body {
   margin-top: 5rem;
 }
 
-.member-section__like-cardarea {
+.member-section__like-card-area {
   display: flex;
   justify-content: space-between;
   margin: 6rem 0;
@@ -441,7 +446,9 @@ body {
   padding-top: 0.5rem;
   border-radius: 0.5rem;
   transition: scale 0.3s ease-in;
+  position: relative;
 }
+
 .member-section__like-card:hover {
   scale: 120%;
 }
@@ -524,10 +531,35 @@ body {
   border-radius: 1rem;
 }
 
-.likeimg{
-  top: 10rem;
+.likeimg {
+  width: 7rem;
+  height: 8rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  opacity: 0;
+  /*transition: transition-delay: 1s;*/
+}
+.member-section__like-card:active {
+  scale: 80%;
 }
 
-.hidden-like{
-  display: none;
+.active-like {
+  /*opacity: 100%;*/
+  /*transition-delay: 0s;*/
+  animation: fade_in 0.6s ease-in;
+}
+
+@keyframes fade_in {
+  0% {
+    opacity: 70%;
+  }
+  50%,
+  70% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0;
+  }
 }
