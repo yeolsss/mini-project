@@ -56,7 +56,6 @@ const getLikes = async () => {
   likesData.forEach(data => {
     const getData = data.data();
     dataIdArr.push(data.id);
-    console.log(getData.name);
     nameArr.push(getData.name);
     likeArr.push(getData.like);
   });
