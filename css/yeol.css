@@ -261,7 +261,7 @@ textarea:focus {
 }
 
 .comment-card__section .comment-card__more-btn {
-  bottom: -3rem;
+  bottom: -1rem;
   left: 50%;
   right: 50%;
   width: 10rem;
@@ -428,11 +428,6 @@ textarea:focus {
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  scrollbar-width: none;
-}
-.delete-modal__form form::-webkit-scrollbar,
-.update-modal__form form::-webkit-scrollbar {
-  display: none;
 }
 
 .update-modal__form form {
@@ -501,11 +496,16 @@ textarea:focus {
   display: none;
 }
 
-.update-modal__form .update-modal__form {
+.update-modal__form .update-input__group {
   display: flex;
   justify-content: space-between;
   width: 80%;
   margin-bottom: calc(3% + 0.5rem);
+  scrollbar-width: none;
+}
+.update-modal__form::-webkit-scrollbar,
+.delete-modal__form::-webkit-scrollbar {
+  display: none;
 }
 
 .update-modal__form .update-input__group input:first-child {
