@@ -428,6 +428,11 @@ textarea:focus {
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
+  scrollbar-width: none;
+}
+.delete-modal__form form::-webkit-scrollbar,
+.update-modal__form form::-webkit-scrollbar {
+  display: none;
 }
 
 .update-modal__form form {
@@ -496,7 +501,7 @@ textarea:focus {
   display: none;
 }
 
-.update-modal__form .update-input__group {
+.update-modal__form .update-modal__form {
   display: flex;
   justify-content: space-between;
   width: 80%;
