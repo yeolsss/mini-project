@@ -76,9 +76,8 @@ a {
 /* Contents */
 body {
   display: flex;
-  width: 100vw;
   height: auto;
-  padding: 2rem 2rem 5rem;
+  padding: 2rem 0 5rem;
   box-sizing: border-box;
   font-family: "Nanum Gothic Coding", cursive;
 }
