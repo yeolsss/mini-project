@@ -45,41 +45,7 @@
  ┃ ┣ 📜choi.css  
  ┃ ┣ 📜index.css  
  ┃ ┣ 📜jihyun.css  
- ┃ ┣ 📜kang.css  
- ┃ ┣ 📜reset.css  
- ┃ ┗ 📜yeol.css  
- ┣ 📂js  
- ┃ ┣ 📜chang.js  
- ┃ ┣ 📜choi.js  
- ┃ ┣ 📜choi_firebase.js  
- ┃ ┣ 📜hyochang_firebase.js  
- ┃ ┣ 📜index.js  
- ┃ ┣ 📜jihyun.js  
- ┃ ┣ 📜kang.js  
- ┃ ┣ 📜kang_firebase.js  
- ┃ ┣ 📜yeol.js  
- ┃ ┗ 📜yeol_firebase.js  
- ┣ 📜.gitignore  
- ┣ 📜.prettierrc.js  
- ┣ 📜chang.html  
- ┣ 📜choi.html  
- ┣ 📜index.html  
- ┣ 📜jihyun.html  
- ┣ 📜kang.html  
- ┣ 📜readme.md  
- ┗ 📜yeol.html  
-
-## 화면 구성
-<details>
-    <summary>메인 페이지</summary>
-
-> ![스크린샷(27)](https://github.com/yeolsss/mini-project/assets/57513472/1efa4019-f941-43f2-bd24-af4856882b76)  
-> ![스크린샷(28)](https://github.com/yeolsss/mini-project/assets/57513472/b2df512e-689b-4dbe-ba28-c9ac9176b26b)  
-> ![스크린샷(29)](https://github.com/yeolsss/mini-project/assets/57513472/eaf4ab2a-61da-437d-ae8b-cce0fe698c20)  
-</details>
-
-<details>
-    <summary>게인페이지</summary>
+ ┃ ┣ 📜ka개인페이지</summary>
 
 > ![스크린샷(31)](https://github.com/yeolsss/mini-project/assets/57513472/29588ff1-cfc1-402e-ac6b-2ff3d422dc39)  
 > ![스크린샷(32)](https://github.com/yeolsss/mini-project/assets/57513472/b9b9b340-4be1-4143-8e18-3059aa630dff)  
