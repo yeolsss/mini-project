@@ -19,6 +19,14 @@ const ctx = document.getElementById("myChart");
 const db = getFirestore(app);
 const likeRef = collection(db, "member_like");
 
+// getLikes return 배열 index 상수
+// 차트 네임테그 배열
+const NAME_ARR = 0;
+// 차트 좋아요 숫자 데이터 배열
+const LIKE_ARR = 1;
+// firestore 문서 ID 배열
+const ID_ARR = 2;
+
 /*--------------헤더 애니메이션 효과 start--------------*/
 // 나타날 요소(.fade-in)들을찾기
 const fadeEls = document.querySelectorAll(".main-header__temp .fade-in");
@@ -44,6 +52,8 @@ spyEls.forEach(function (spyEl) {
 });
 /*--------------멤버카드 스크롤 애니메이션 효과 end--------------*/
 
+// 데이터베이스에서 데이터를 받아와
+// 각 필요한 데이터 배열에 할당하는 함수
 const getLikes = async () => {
   const likesData = await getDocs(query(likeRef, orderBy("order", "asc")));
   let nameArr = [];
@@ -69,10 +79,10 @@ getLikes().then(likeArr => {
   chart = new Chart(ctx, {
     type: "bar",
     data: {
-      labels: likeArr[0],
+      labels: likeArr[NAME_ARR],
       datasets: [
         {
-          data: likeArr[1],
+          data: likeArr[LIKE_ARR],
           backgroundColor: [
             `rgba(${randomNum()}, ${randomNum()}, ${randomNum()})`,
             `rgba(${randomNum()}, ${randomNum()}, ${randomNum()})`,
@@ -145,33 +155,38 @@ const likeObj = {
 const likeBtns = document.querySelectorAll(".member-section__like-card");
 likeBtns.forEach((btn, index) => {
   btn.addEventListener("click", async event => {
-    event.preventDefault();
+    // event.preventDefault();
 
     // 현재 클릭된 인원으 id값을 return
-    const currentLikeId = await getLikes().then(likeArr => {
-      return likeArr[2][index];
-    });
+    const currentLikeArr = await getLikes();
+    const currentLikeId = currentLikeArr[ID_ARR][index];
 
     // 르탄이 이미지 찾기
-    const image = event.currentTarget.children[1];
+    const image = event.target.children[1];
+
     // 르탄이 이미지 출력 class 삭제
     image.classList.remove("active-like");
 
+    // 좋아요 버튼이 클릭된 유저의 데이터를 받아와서 좋아요 숫자를 +1 증가시킴
     const getLike = await getDoc(doc(db, "member_like", currentLikeId));
+
     likeObj.name = getLike.data().name;
     likeObj.like = getLike.data().like + 1;
     likeObj.order = getLike.data().order;
-    await setDoc(doc(likeRef, currentLikeId), likeObj).then(async () => {
-      // 데이터 update 성공했을때 처리
-      // 르탄이 이미지 출력 class add
-      image.classList.add("active-like");
-      // 업데이트된 데이터를 가져온 후 chart데이터에 할당
-      await getLikes().then(likeArr => {
-        chart.data.datasets[0].data = likeArr[1];
+
+    // 증가시킨 데이터를 업데이트
+    await setDoc(doc(likeRef, currentLikeId), likeObj)
+      .then(async () => {
+        // 데이터 update 성공했을때 처리
+        // 르탄이 이미지 출력 class add
+        image.classList.add("active-like");
+        // 업데이트된 데이터를 가져온 후 chart데이터에 할당
+        const likesData = await getLikes();
+        chart.data.datasets[0].data = likesData[LIKE_ARR];
         // 할당된 데이터를 업데이트
         chart.update();
-      });
-    });
+      })
+      .catch(e => console.error(e));
   });
 });
 

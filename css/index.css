@@ -456,6 +456,10 @@ body {
   scale: 120%;
 }
 
+.member-section__like-card img {
+  pointer-events: none;
+}
+
 #member-section__like-btn1 {
   background-image: url("../images/yeol/IMG_6772.jpg");
   background-size: 35rem;
