@@ -19,9 +19,6 @@ const ctx = document.getElementById("myChart");
 const db = getFirestore(app);
 const likeRef = collection(db, "member_like");
 
-let nameArr = [];
-let dataIdArr = [];
-
 /*--------------헤더 애니메이션 효과 start--------------*/
 // 나타날 요소(.fade-in)들을찾기
 const fadeEls = document.querySelectorAll(".main-header__temp .fade-in");
@@ -49,9 +46,9 @@ spyEls.forEach(function (spyEl) {
 
 const getLikes = async () => {
   const likesData = await getDocs(query(likeRef, orderBy("order", "asc")));
-  nameArr = [];
+  let nameArr = [];
   let likeArr = [];
-  dataIdArr = [];
+  let dataIdArr = [];
   // chart에 필요한 data array
   likesData.forEach(data => {
     const getData = data.data();
@@ -59,84 +56,84 @@ const getLikes = async () => {
     nameArr.push(getData.name);
     likeArr.push(getData.like);
   });
-  return likeArr;
+  return [nameArr, likeArr, dataIdArr];
 };
 
 // chart color 생성 랜덤 함수
 const randomNum = () => Math.floor(Math.random() * (235 - 52 + 1) + 52);
 
-// 첫 로딩시 통계 출력
-await getLikes();
-
-/*--------------차트 생성 start--------------*/
-
-let chart = new Chart(ctx, {
-  type: "bar",
-  data: {
-    labels: nameArr,
-    datasets: [
-      {
-        data: await getLikes(),
-        backgroundColor: [
-          `rgba(${randomNum()}, ${randomNum()}, ${randomNum()})`,
-          `rgba(${randomNum()}, ${randomNum()}, ${randomNum()})`,
-          `rgba(${randomNum()}, ${randomNum()}, ${randomNum()})`,
-          `rgba(${randomNum()}, ${randomNum()}, ${randomNum()})`,
-          `rgba(${randomNum()}, ${randomNum()}, ${randomNum()})`,
-        ],
-        borderWidth: 1,
-        borderRadius: 100,
-        barThickness: 50,
-      },
-    ],
-  },
-  options: {
-    plugins: {
-      /* dataset label 삭제*/
-      legend: {
-        display: false,
-      },
-      tooltips: {
-        callbacks: {
-          label: function (tooltipItem) {
-            return tooltipItem.yLabel;
+// 첫 로딩시 차트 출력
+let chart = "";
+getLikes().then(likeArr => {
+  /*--------------차트 생성 start--------------*/
+  chart = new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: likeArr[0],
+      datasets: [
+        {
+          data: likeArr[1],
+          backgroundColor: [
+            `rgba(${randomNum()}, ${randomNum()}, ${randomNum()})`,
+            `rgba(${randomNum()}, ${randomNum()}, ${randomNum()})`,
+            `rgba(${randomNum()}, ${randomNum()}, ${randomNum()})`,
+            `rgba(${randomNum()}, ${randomNum()}, ${randomNum()})`,
+            `rgba(${randomNum()}, ${randomNum()}, ${randomNum()})`,
+          ],
+          borderWidth: 1,
+          borderRadius: 100,
+          barThickness: 50,
+        },
+      ],
+    },
+    options: {
+      plugins: {
+        /* dataset label 삭제*/
+        legend: {
+          display: false,
+        },
+        tooltips: {
+          callbacks: {
+            label: function (tooltipItem) {
+              return tooltipItem.yLabel;
+            },
+          },
+        },
+        /* dataset label 삭제 끝*/
+        title: {
+          display: true,
+          text: "일단 버티조 좋아요 통계",
+          color: "#EEF0F2",
+          font: {
+            size: 20,
           },
         },
       },
-      /* dataset label 삭제 끝*/
-      title: {
-        display: true,
-        text: "일단 버티조 좋아요 통계",
-        color: "#EEF0F2",
-        font: {
-          size: 20,
-        },
-      },
-    },
 
-    scales: {
-      y: {
-        beginAtZero: true,
-        grid: {
-          display: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+          grid: {
+            display: false,
+          },
+          ticks: {
+            color: "#EEF0F2",
+          },
         },
-        ticks: {
-          color: "#EEF0F2",
-        },
-      },
-      x: {
-        grid: {
-          display: false,
-        },
-        ticks: {
-          color: "#EEF0F2",
+        x: {
+          grid: {
+            display: false,
+          },
+          ticks: {
+            color: "#EEF0F2",
+          },
         },
       },
     },
-  },
+  });
+
+  /*--------------차트 생성 end--------------*/
 });
-
-/*--------------차트 생성 end--------------*/
 
 const likeObj = {
   name: "",
@@ -149,24 +146,34 @@ const likeBtns = document.querySelectorAll(".member-section__like-card");
 likeBtns.forEach((btn, index) => {
   btn.addEventListener("click", async event => {
     event.preventDefault();
+
+    // 현재 클릭된 인원으 id값을 return
+    const currentLikeId = await getLikes().then(likeArr => {
+      return likeArr[2][index];
+    });
+
+    // 르탄이 이미지 찾기
     const image = event.currentTarget.children[1];
-    const currentLikeId = dataIdArr[index];
+    // 르탄이 이미지 출력 class 삭제
     image.classList.remove("active-like");
+
     const getLike = await getDoc(doc(db, "member_like", currentLikeId));
     likeObj.name = getLike.data().name;
     likeObj.like = getLike.data().like + 1;
     likeObj.order = getLike.data().order;
     await setDoc(doc(likeRef, currentLikeId), likeObj).then(async () => {
+      // 데이터 update 성공했을때 처리
+      // 르탄이 이미지 출력 class add
       image.classList.add("active-like");
-      chart.data.datasets[0].data = await getLikes();
-      chart.update();
+      // 업데이트된 데이터를 가져온 후 chart데이터에 할당
+      await getLikes().then(likeArr => {
+        chart.data.datasets[0].data = likeArr[1];
+        // 할당된 데이터를 업데이트
+        chart.update();
+      });
     });
   });
 });
-
-/*-------------- 좋아요 버튼 이미지 생성 start --------------*/
-
-/*-------------- 좋아요 버튼 이미지 생성 end --------------*/
 
 /*-------------- 좋아요 버튼 애니메이션 start --------------*/
 gsap.to("#member-section__like-btn1", 1.5, {
