@@ -141,17 +141,11 @@ getLikes().then(likeObj => {
   /*--------------차트 생성 end--------------*/
 });
 
-const likeObj = {
-  name: "",
-  like: 0,
-  order: "0",
-};
-
 // 좋아요 버튼
 const likeBtns = document.querySelectorAll(".member-section__like-card");
 likeBtns.forEach((btn, index) => {
   btn.addEventListener("click", async event => {
-    // event.preventDefault();
+    event.preventDefault();
 
     // 현재 클릭된 인원으 id값을 return
     const currentLikeArr = await getLikes();
@@ -166,9 +160,11 @@ likeBtns.forEach((btn, index) => {
     // 좋아요 버튼이 클릭된 유저의 데이터를 받아와서 좋아요 숫자를 +1 증가시킴
     const getLike = await getDoc(doc(db, "member_like", currentLikeId));
 
-    likeObj.name = getLike.data().name;
-    likeObj.like = getLike.data().like + 1;
-    likeObj.order = getLike.data().order;
+    const likeObj = {
+      name: getLike.data().name,
+      like: getLike.data().like + 1,
+      order: getLike.data().order,
+    };
 
     // 증가시킨 데이터를 업데이트
     await setDoc(doc(likeRef, currentLikeId), likeObj)
