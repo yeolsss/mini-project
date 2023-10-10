@@ -171,7 +171,7 @@ $commentMakeBtn.click(async function () {
   let $commentPwd = $("#gb-pwd").val();
 
   // 생성한 콜렉션 조회
-  const newDocRef = doc(collection(db, "kang_comment"));
+  const newDocRef = doc(commentRef);
 
   // 유효성 검사 함수
   if (!inputCheck()) return;
