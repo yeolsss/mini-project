@@ -53,11 +53,11 @@ h5 {
 
   /* 각 타이트별 font color*/
   --title-font-color: black;
-  --main-bg-color: #db0606;
+  --main-bg-color: #0097e6;
   --swiper-theme-color: #fbc531;
   --swiper-pagination-bullet-inactive-color: white;
   --header-main-text-color: #ffc700;
-
+  --main-strong-text-color: #db0606;
   /*slider bg color*/
   --slider-bg-color: #151717;
 
@@ -277,6 +277,10 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+}
+
+.member-section .member-section__cards .member-section__cards-strong {
+  color: var(--main-strong-text-color);
 }
 
 .member-section .member-section__cards > div:last-child {

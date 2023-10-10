@@ -150,14 +150,14 @@ likeBtns.forEach((btn, index) => {
   btn.addEventListener("click", async event => {
     event.preventDefault();
     const image = event.currentTarget.children[1];
-    image.classList.remove("active-like");
     const currentLikeId = dataIdArr[index];
+    image.classList.remove("active-like");
     const getLike = await getDoc(doc(db, "member_like", currentLikeId));
     likeObj.name = getLike.data().name;
     likeObj.like = getLike.data().like + 1;
     likeObj.order = getLike.data().order;
-    image.classList.add("active-like");
     await setDoc(doc(likeRef, currentLikeId), likeObj).then(async () => {
+      image.classList.add("active-like");
       chart.data.datasets[0].data = await getLikes();
       chart.update();
     });
