@@ -124,7 +124,9 @@ addCommentBtn.addEventListener("click", async event => {
 
         // 등록이 완료되면 방명록 리스트 다시 호출
         alert("등록이 완료되었습니다.");
-        searchComment();
+        searchComment().then(dataList => {
+          createCommentCard(dataList);
+        });
       })
       .catch(error => {
         // 방명록 등록시 에러가 생기면 console에 에러 출력
@@ -143,7 +145,9 @@ const commentMoreBtn = document.querySelector("#more_btn");
 commentMoreBtn.addEventListener("click", async event => {
   event.preventDefault();
   commentLimit += 5;
-  searchComment();
+  searchComment().then(dataList => {
+    createCommentCard(dataList);
+  });
 });
 
 /**
@@ -167,7 +171,7 @@ const searchComment = async () => {
 
   // 방명록에 데이터가 있을 경우 숨김처리 해제
   commentCardSection.classList.remove("hide");
-  createCommentCard(dataList);
+  return dataList;
 };
 
 // 방명록 출력 함수
@@ -270,7 +274,9 @@ delModalConfirm.addEventListener("click", async event => {
     await deleteDoc(getData)
       .then(result => {
         // 삭제 후 방명록 리스트 생성 함수를 다시 호출한다.
-        searchComment();
+        searchComment().then(dataList => {
+          createCommentCard(dataList);
+        });
         alert("삭제가 완료되었습니다.");
         // 삭제에 사용된 입력 필드를 초기화한다.
         currentCommentId = "";
@@ -358,7 +364,9 @@ updateModalConfirm.addEventListener("click", async event => {
       // 커스텀 alert 만들기
       // 입력 필드 초기화
       inputReset(updateUserName, updateInputPassword, updateTextarea);
-      searchComment();
+      searchComment().then(dataList => {
+        createCommentCard(dataList);
+      });
       alert("수정이 완료되었습니다.");
       activeToggle(updateModal);
     })
@@ -368,4 +376,6 @@ updateModalConfirm.addEventListener("click", async event => {
 });
 
 // 처음 화면 로딩때 방명록 생성
-searchComment();
+searchComment().then(dataList => {
+  createCommentCard(dataList);
+});
