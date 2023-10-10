@@ -136,19 +136,19 @@ commentData.forEach(item => {
   // 수정된 댓글 html
   if (dataContentEdit) {
     commentHtml = `
-            <div class="gb-comment" data-id=${dataId} value=${dataId}>
-            <p class="comment-name">
-            ${dataName}
-            <span class="edit-marker">수정됨(${editDate})</span>
-            </p>
-            <div class="comment-box">
-            ${dataContentEdit}
-            </div>
-            <span class="comment-date">${editDate}</span>
-            <button class="btn-comment-update" value=${dataId}>수정</button>
-            <button class="btn-comment-del" value=${dataId}>삭제</button>
-            </div>
-        `;
+    <div class="gb-comment" data-id=${dataId} value=${dataId}>
+    <p class="comment-name">
+    ${dataName}
+    <span class="edit-marker">수정됨(${editDate})</span>
+    </p>
+    <div class="comment-box">
+    ${dataContentEdit}
+    </div>
+    <span class="comment-date">${editDate}</span>
+    <button class="btn-comment-update" value=${dataId}>수정</button>
+    <button class="btn-comment-del" value=${dataId}>삭제</button>
+    </div>
+`;
   }
   // html태그 방명록테두리안에 넣어주기
   $commentWrap.append(commentHtml);
@@ -263,25 +263,29 @@ $updateConfirm.click(async function (event) {
   // 본인 댓글 수정상태일때 다른댓글 수정삭제 버튼 숨기기
   $(".btn-comment-update").hide();
   $(".btn-comment-del").hide();
-
+  
   if ($inputPwd.val() !== password) {
     $messagePwd.fadeIn().text("비밀번호가 다릅니다");
     console.log("비밀번호가 다릅니다");
+    $(".btn-comment-update").show();
+    $(".btn-comment-del").show();
   } else {
     $(".gb-comment").each(function () {
       if ($(this).data("id") == currentCommentId) {
         let commentEditHtml = `
-                <div class="gb-comment-edit">
-                <p class="comment-name-edit">
-                ${nickName}
-                </p>
-                <textarea name="gb-content-confirm" id="gb-content-confirm" cols="65" rows="10" required>${
-                  dataEditContent ? dataEditContent : dataContent
-                }</textarea>
-                <button class="btn-update-confirm">수정</button>
-                <button class="btn-update-cancel">취소</button>
-                </div>
-                `;
+            <div class="gb-comment-edit">
+            <p class="comment-name-edit">
+            ${nickName}
+            </p>
+            <textarea name="gb-content-confirm" id="gb-content-confirm" cols="100" rows="10" required>${
+              dataEditContent ? dataEditContent : dataContent
+            }</textarea>
+            <div id="gb-content-confirm">
+              <button class="btn-update-confirm">수정</button>
+              <button class="btn-update-cancel">취소</button>
+            </div>
+            </div>
+            `;
 
         // 모달창 숨기기
         $modalPwd.hide();
@@ -381,7 +385,8 @@ $loadMoreButton.click(async function () {
         `;
 
     // 수정된 댓글 html
-    let commentEditHtml = `
+    if (dataContentEdit) {
+      commentHtml = `
         <div class="gb-comment" data-id=${row["commentId"]}>
         <p class="comment-name">
         ${dataName}
@@ -395,9 +400,10 @@ $loadMoreButton.click(async function () {
         <button class="btn-comment-del" value=${row["commentId"]}>삭제</button>
         </div>
         `;
+    }
 
     // 수정된 댓글이 있다면 수정된 html로 붙여주기
-    $commentWrap.append(`${dataContentEdit ? commentEditHtml : commentHtml}`);
+    $commentWrap.append(commentHtml);
 
     autoScroll();
   });

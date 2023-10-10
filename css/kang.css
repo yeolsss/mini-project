@@ -179,10 +179,12 @@ body {
   flex-direction: column;
   position: relative;
 }
+
 .wrap .gb-comment-title__wrap {
   width: 55%;
   margin: auto;
 }
+
 .wrap #main #gb-comment-wrap > div {
   margin: auto;
 }
@@ -352,8 +354,12 @@ body {
 }
 
 /* 수정 입력창 */
-.wrap #main #gb-comment-wrap .gb-comment-edit {
-  margin-bottom: 2rem;
+.wrap #main #gb-comment-wrap .gb-comment-edit textarea {
+  margin: 2rem 0 2rem 4rem;
+  font-weight: 600;
+  color: #747474;
+  letter-spacing: 1.1px;
+  line-height: 120%;
 }
 
 .wrap #main #gb-comment-wrap .gb-comment-edit .comment-name-edit {
@@ -362,7 +368,7 @@ body {
 }
 
 .wrap #main #gb-comment-wrap #gb-content-confirm {
-  margin: 1rem 0 1rem 0;
+  margin: 0.5rem 0 1rem 0;
   font-size: 1rem;
 }
 
@@ -379,7 +385,7 @@ body {
   font-weight: 600;
   color: #babdccdd;
   cursor: pointer;
-  margin: 0 0 0 1rem;
+  margin: 0 0 0 2rem;
   border: 0;
   line-height: 2rem;
 }
