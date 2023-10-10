@@ -379,7 +379,7 @@ $loadMoreButton.click(async function () {
         ${dataContent}
         </div>
         <span class="comment-date">${regDate}</span>
-            <button class="btn-comment-update" value=${row["commentId"]}>수정</button>
+            <button class="btn-comment-update" value=${dataId}>수정</button>
             <button class="btn-comment-del" value=${dataId}>삭제</button>
         </div>
         `;
@@ -387,7 +387,7 @@ $loadMoreButton.click(async function () {
     // 수정된 댓글 html
     if (dataContentEdit) {
       commentHtml = `
-        <div class="gb-comment" data-id=${row["commentId"]}>
+        <div class="gb-comment" data-id=${dataId}>
         <p class="comment-name">
         ${dataName}
         <span class="edit-marker">수정됨(${dateEdit})</span>
@@ -396,8 +396,8 @@ $loadMoreButton.click(async function () {
         ${dataContentEdit}
         </div>
         <span class="comment-date">${regDate}</span>
-        <button class="btn-comment-update" value=${row["commentId"]}>수정</button>
-        <button class="btn-comment-del" value=${row["commentId"]}>삭제</button>
+        <button class="btn-comment-update" value=${dataId}>수정</button>
+        <button class="btn-comment-del" value=${dataId}>삭제</button>
         </div>
         `;
     }
