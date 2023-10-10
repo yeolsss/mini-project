@@ -19,14 +19,6 @@ const ctx = document.getElementById("myChart");
 const db = getFirestore(app);
 const likeRef = collection(db, "member_like");
 
-// getLikes return 배열 index 상수
-// 차트 네임테그 배열
-const NAME_ARR = 0;
-// 차트 좋아요 숫자 데이터 배열
-const LIKE_ARR = 1;
-// firestore 문서 ID 배열
-const ID_ARR = 2;
-
 /*--------------헤더 애니메이션 효과 start--------------*/
 // 나타날 요소(.fade-in)들을찾기
 const fadeEls = document.querySelectorAll(".main-header__temp .fade-in");
@@ -66,7 +58,11 @@ const getLikes = async () => {
     nameArr.push(getData.name);
     likeArr.push(getData.like);
   });
-  return [nameArr, likeArr, dataIdArr];
+  return {
+    nameArr,
+    likeArr,
+    dataIdArr,
+  };
 };
 
 // chart color 생성 랜덤 함수
@@ -74,15 +70,15 @@ const randomNum = () => Math.floor(Math.random() * (235 - 52 + 1) + 52);
 
 // 첫 로딩시 차트 출력
 let chart = "";
-getLikes().then(likeArr => {
+getLikes().then(likeObj => {
   /*--------------차트 생성 start--------------*/
   chart = new Chart(ctx, {
     type: "bar",
     data: {
-      labels: likeArr[NAME_ARR],
+      labels: likeObj.nameArr,
       datasets: [
         {
-          data: likeArr[LIKE_ARR],
+          data: likeObj.likeArr,
           backgroundColor: [
             `rgba(${randomNum()}, ${randomNum()}, ${randomNum()})`,
             `rgba(${randomNum()}, ${randomNum()}, ${randomNum()})`,
@@ -159,7 +155,7 @@ likeBtns.forEach((btn, index) => {
 
     // 현재 클릭된 인원으 id값을 return
     const currentLikeArr = await getLikes();
-    const currentLikeId = currentLikeArr[ID_ARR][index];
+    const currentLikeId = currentLikeArr.dataIdArr[index];
 
     // 르탄이 이미지 찾기
     const image = event.target.children[1];
@@ -182,7 +178,7 @@ likeBtns.forEach((btn, index) => {
         image.classList.add("active-like");
         // 업데이트된 데이터를 가져온 후 chart데이터에 할당
         const likesData = await getLikes();
-        chart.data.datasets[0].data = likesData[LIKE_ARR];
+        chart.data.datasets[0].data = likesData.likeArr;
         // 할당된 데이터를 업데이트
         chart.update();
       })
