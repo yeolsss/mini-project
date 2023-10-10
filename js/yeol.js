@@ -56,11 +56,17 @@ const commentContents = document.querySelector("#comment");
 // 방명록 생성 시  입력값 유효성 검사
 // 입력 유효성 검사는 삭제, 수정에서도 필요하기 때문에 함수로 만들었음.
 /**
- * @param tag - 대상 태그
+ *
+ * @param tag
+ * @param msg - option
  * @returns {boolean}
  */
-const validData = tag => {
+const validData = (tag, msg = "") => {
   if (tag.value.replaceAll(" ", "") === "") {
+    if (msg !== "") {
+      alert(msg);
+    }
+
     errorClassAdd(tag);
     return false;
   } else {
@@ -107,7 +113,11 @@ addCommentBtn.addEventListener("click", async event => {
   event.preventDefault();
 
   // 유효성 검사를 통과 했을때
-  if (validData(commentName) && validData(commentPassword) && validData(commentContents)) {
+  if (
+    validData(commentName, "이름을 입력해 주세요.") &&
+    validData(commentPassword, "비밀번호를 입력해 주세요.") &&
+    validData(commentContents, "내용을 입력해 주세요.")
+  ) {
     // comment obj
     commentObj.commentId = Date.now();
     commentObj.commentName = commentName.value;
@@ -254,8 +264,7 @@ delModalConfirm.addEventListener("click", async event => {
   event.preventDefault();
 
   // 비밀번호 입력이 없고 삭제 버튼을 눌렀을때
-  if (!validData(delInputPassword)) {
-    alert("비밀번호를 입력하세요.");
+  if (!validData(delInputPassword, "비밀번호를 입력해주세요.")) {
     return;
   }
 
@@ -269,27 +278,27 @@ delModalConfirm.addEventListener("click", async event => {
   const password = getDelDoc.data().commentPassword;
 
   // 입력받은 비밀번호와 데이터베이스에서 받아온 password를 비교한다.
-  if (sha256(delInputPassword.value) === password) {
-    // 비밀번호가 서로 맞다면 데이터를 삭제한다.
-    await deleteDoc(getData)
-      .then(result => {
-        // 삭제 후 방명록 리스트 생성 함수를 다시 호출한다.
-        searchComment().then(dataList => {
-          createCommentCard(dataList);
-        });
-        alert("삭제가 완료되었습니다.");
-        // 삭제에 사용된 입력 필드를 초기화한다.
-        currentCommentId = "";
-        delInputPassword.value = "";
-        // 삭제가 완료되면 삭제 modal을 닫는다.
-        activeToggle(delModal);
-      })
-      .catch(error => console.error(error)); // 삭제 시 오류가 생기면 console로 error출력한다.
-  } else {
-    // 비밀번호가 다를경우
+  // 비밀번호가 다를경우
+  if (sha256(delInputPassword.value) !== password) {
     errorClassAdd(delInputPassword);
     alert("비밀번호가 다릅니다. \n 다시 입력해주세요.");
+    return;
   }
+  // 비밀번호가 서로 맞다면 데이터를 삭제한다.
+  deleteDoc(getData)
+    .then(result => {
+      // 삭제 후 방명록 리스트 생성 함수를 다시 호출한다.
+      searchComment().then(dataList => {
+        createCommentCard(dataList);
+      });
+      alert("삭제가 완료되었습니다.");
+      // 삭제에 사용된 입력 필드를 초기화한다.
+      currentCommentId = "";
+      delInputPassword.value = "";
+      // 삭제가 완료되면 삭제 modal을 닫는다.
+      activeToggle(delModal);
+    })
+    .catch(error => console.error(error)); // 삭제 시 오류가 생기면 console로 error출력한다.
 });
 
 // 수정 관련
@@ -341,7 +350,12 @@ updateModelCloseBtn.addEventListener("click", event => {
 // modal에서 수정 버튼 눌렀을때
 updateModalConfirm.addEventListener("click", async event => {
   event.preventDefault();
-  if (!validData(updateUserName) || !validData(updateInputPassword) || !validData(updateTextarea)) return;
+  if (
+    !validData(updateUserName, "이름을 입력해주세요.") ||
+    !validData(updateInputPassword, "비밀번호를 입력해주세요.") ||
+    !validData(updateTextarea, "내용을 입력해주세요.")
+  )
+    return;
 
   const getPassword = doc(db, "yeol_comment", currentCommentId);
   const getUpdateDoc = await getDoc(getPassword);
