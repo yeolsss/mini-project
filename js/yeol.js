@@ -126,7 +126,7 @@ addCommentBtn.addEventListener("click", async event => {
     commentObj.regDate = getDate();
 
     // 방명록 등록
-    await setDoc(doc(commentRef, `${Date.now()}`), commentObj)
+    setDoc(doc(commentRef, `${Date.now()}`), commentObj)
       .then(refDoc => {
         // 커스텀 alert 만들기
         // 입력 필드 초기화 함수 호출
@@ -373,7 +373,7 @@ updateModalConfirm.addEventListener("click", async event => {
   commentObj.commentContents = updateTextarea.value.replaceAll("\n", "<br>");
   commentObj.regDate = getUpdateDoc.data().regDate;
 
-  await setDoc(doc(commentRef, currentCommentId), commentObj)
+  setDoc(doc(commentRef, currentCommentId), commentObj)
     .then(refDoc => {
       // 커스텀 alert 만들기
       // 입력 필드 초기화
