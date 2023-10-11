@@ -167,7 +167,7 @@ likeBtns.forEach((btn, index) => {
     };
 
     // 증가시킨 데이터를 업데이트
-    await setDoc(doc(likeRef, currentLikeId), likeObj)
+    setDoc(doc(likeRef, currentLikeId), likeObj)
       .then(async () => {
         // 데이터 update 성공했을때 처리
         // 르탄이 이미지 출력 class add
